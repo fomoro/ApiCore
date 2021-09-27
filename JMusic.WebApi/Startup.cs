@@ -4,6 +4,7 @@ using JMusic.Data.Repositorios;
 using JMusic.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,10 +36,12 @@ namespace JMusic.WebApi
 
             services.AddDbContext<TiendaDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TiendaDb")));
             
-
             services.AddScoped<IRepositorioGenerico<Perfil>, RepositorioPerfiles>();
             services.AddScoped<IProductosRepositorio, RepositorioProductosLogger>();
             services.AddScoped<IOrdenesRepositorio, RepositorioOrdenes>();
+
+            services.AddScoped<IUsuariosRepositorio, RepositorioUsuarios>();
+            services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
