@@ -1,6 +1,5 @@
 ﻿namespace JMusic.Dtos
 {
-
     public class DetalleOrdenDto
     {
         public int Id { get; set; }

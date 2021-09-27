@@ -2,11 +2,9 @@
 using System;
 using System.Collections.Generic;
 
-#nullable disable
-
 namespace JMusic.Models
 {
-    public partial class Orden
+    public class Orden
     {
         public Orden()
         {

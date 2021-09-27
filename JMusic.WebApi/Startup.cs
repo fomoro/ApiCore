@@ -38,6 +38,7 @@ namespace JMusic.WebApi
 
             services.AddScoped<IRepositorioGenerico<Perfil>, RepositorioPerfiles>();
             services.AddScoped<IProductosRepositorio, RepositorioProductosLogger>();
+            services.AddScoped<IOrdenesRepositorio, RepositorioOrdenes>();
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
