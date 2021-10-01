@@ -89,9 +89,9 @@ namespace JMusic.Data.Repositorios
 
         public async Task<IEnumerable<Orden>> ObtenerTodosAsync()
         {
-            return await _dbSet.Where(u=>u.EstatusOrden== EstatusOrden.Activo)
-                                .Include(orden => orden.Usuario)                                                               
-                                .ToListAsync();
+            return await _dbSet.Include(orden => orden.Usuario)
+                .Where(u=>u.EstatusOrden== EstatusOrden.Activo)
+                .ToListAsync();
         }
 
         public async Task<IEnumerable<Orden>> ObtenerTodosConDetallesAsync()
