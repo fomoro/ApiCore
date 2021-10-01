@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using JMusic.Data.Contratos;
 using JMusic.Dtos;
 using JMusic.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JMusik.WebApi.Controllers
 {
+
+    //[Authorize(Roles = "Administrador")]
     [Route("api/[controller]")]
     [ApiController]
     public class UsuariosController : ControllerBase

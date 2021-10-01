@@ -12,9 +12,9 @@ namespace JMusik.WebApi.Profiles
             this.CreateMap<Producto, ProductoDto>().ReverseMap();
             this.CreateMap<Perfil, PerfilDto>().ReverseMap();
             this.CreateMap<Orden, OrdenDto>()
-              .ForMember(u => u.Usuario, p => p.MapFrom(m => m.Usuario.Username))
-              .ReverseMap()
-              .ForMember(u => u.Usuario, p => p.Ignore());//que no cree la entiedad usuario
+                .ForMember(u => u.Usuario, p => p.MapFrom(m => m.Usuario.Username))
+                .ReverseMap()
+                .ForMember(u => u.Usuario, p => p.Ignore());//que no cree la entiedad usuario
 
             this.CreateMap<DetalleOrden, DetalleOrdenDto>()
                 .ForMember(u => u.Producto, p => p.MapFrom(u => u.Producto.Nombre))

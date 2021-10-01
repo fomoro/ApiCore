@@ -16,11 +16,12 @@ namespace JMusic.Data
         {
         }
 
-        public virtual DbSet<DetalleOrden> DetallesOrden { get; set; }
-        public virtual DbSet<Orden> Ordenes { get; set; }
         public virtual DbSet<Perfil> Perfiles { get; set; }
-        public virtual DbSet<Producto> Productos { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<Orden> Ordenes { get; set; }
+        public virtual DbSet<DetalleOrden> DetallesOrden { get; set; }                
+        public virtual DbSet<Producto> Productos { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

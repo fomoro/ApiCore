@@ -50,7 +50,6 @@ namespace JMusic.Data.Repositorios
             }
             return false;
         }
-
         public async Task<Usuario> Agregar(Usuario entity)
         {
             entity.Estatus = EstatusUsuario.Activo;
@@ -66,7 +65,6 @@ namespace JMusic.Data.Repositorios
             }
             return entity;
         }
-
         public async Task<bool> CambiarContrasena(Usuario usuario)
         {            
             var usuarioBd = await _dbSet.FirstOrDefaultAsync(u => u.Id == usuario.Id);
@@ -81,7 +79,6 @@ namespace JMusic.Data.Repositorios
             }
             return false;
         }
-
         public async Task<bool> CambiarPerfil(Usuario usuario)
         {
             var usuarioBd = await _dbSet.FirstOrDefaultAsync(u => u.Id == usuario.Id);
@@ -96,7 +93,6 @@ namespace JMusic.Data.Repositorios
             }
             return false;
         }
-
         public async Task<bool> Eliminar(int id)
         {
             var entity = await _dbSet.SingleOrDefaultAsync(u => u.Id == id);
@@ -111,22 +107,17 @@ namespace JMusic.Data.Repositorios
             }
             return false;
         }
-
         public async Task<Usuario> ObtenerAsync(int id)
         {
             return await _dbSet.Include(usuario => usuario.Perfil)
                                 .SingleOrDefaultAsync(c => c.Id == id && c.Estatus== EstatusUsuario.Activo);
-        }
-
-     
-
+        }     
         public async Task<IEnumerable<Usuario>> ObtenerTodosAsync()
         {
             return await _dbSet.Include(usuario => usuario.Perfil)
                                 .Where(u=>u.Estatus==EstatusUsuario.Activo)
                                 .ToListAsync();
         }
-
         public async Task<bool> ValidarContrasena(Usuario usuario)
         {
             var usuarioBd = await _dbSet.FirstOrDefaultAsync(u => u.Id == usuario.Id);                        
@@ -141,5 +132,25 @@ namespace JMusic.Data.Repositorios
             }
             return false;
         }
+        public async Task<(bool resultado, Usuario usuario)> ValidarDatosLogin(Usuario datosLoginUsuario)
+        {
+            var usuarioBd = await _dbSet
+                                    .Include(u => u.Perfil)
+                                    .FirstOrDefaultAsync(u => u.Username == datosLoginUsuario.Username);
+            if (usuarioBd != null)
+            {
+                try
+                {
+                    var resultado = _passwordHasher.VerifyHashedPassword(usuarioBd, usuarioBd.Password, datosLoginUsuario.Password);
+                    return (resultado == PasswordVerificationResult.Success ? true : false, usuarioBd);
+                }
+                catch (Exception excepcion)
+                {
+                    _logger.LogError($"Error en {nameof(ValidarDatosLogin)}: " + excepcion.Message);
+                }
+            }
+            return (false, null);
+        }
+
     }
 }

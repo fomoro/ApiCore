@@ -6,6 +6,7 @@ using AutoMapper;
 using JMusic.Data.Contratos;
 using JMusic.Dtos;
 using JMusic.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.Logging;
 
 namespace JMusik.WebApi.Controllers
 {
+    //[Authorize(Roles = "Administrador,Vendedor")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductosLoggerController : ControllerBase

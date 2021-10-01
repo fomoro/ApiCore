@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace JMusic.Models.Enum
+﻿namespace JMusic.Models.Enum
 {
     public enum EstatusOrden
     {
