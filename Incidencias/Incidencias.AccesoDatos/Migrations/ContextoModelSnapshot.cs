@@ -46,6 +46,233 @@ namespace Incidencias.AccesoDatos.Migrations
                     b.HasIndex("ProyectoId");
 
                     b.ToTable("Incidencias");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia a",
+                            ProyectoId = 1,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia b",
+                            ProyectoId = 1,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia c",
+                            ProyectoId = 1,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia ad",
+                            ProyectoId = 1,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia e",
+                            ProyectoId = 1,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia df",
+                            ProyectoId = 1,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia 1",
+                            ProyectoId = 1,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia 40",
+                            ProyectoId = 1,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia g",
+                            ProyectoId = 2,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia 564",
+                            ProyectoId = 2,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia d1f",
+                            ProyectoId = 2,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia ol",
+                            ProyectoId = 2,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia aew",
+                            ProyectoId = 2,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia afw",
+                            ProyectoId = 2,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia aww",
+                            ProyectoId = 3,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia a598",
+                            ProyectoId = 3,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia a369",
+                            ProyectoId = 3,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia a963",
+                            ProyectoId = 3,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia a1244",
+                            ProyectoId = 3,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia 74568",
+                            ProyectoId = 3,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 21,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia carro",
+                            ProyectoId = 2,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 22,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia tejado",
+                            ProyectoId = 2,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 23,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia politico",
+                            ProyectoId = 2,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 24,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia casa",
+                            ProyectoId = 2,
+                            Version = 1f
+                        },
+                        new
+                        {
+                            Id = 25,
+                            Descripcion = " carreta ",
+                            EstatusIncidencia = 1,
+                            Nombre = "incidencia tes",
+                            ProyectoId = 2,
+                            Version = 1f
+                        });
                 });
 
             modelBuilder.Entity("Incidencias.Modelos.Perfil", b =>
@@ -108,21 +335,21 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 1,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 186, DateTimeKind.Local).AddTicks(6832),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 855, DateTimeKind.Local).AddTicks(9072),
                             Nombre = "Alpina"
                         },
                         new
                         {
                             Id = 2,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 187, DateTimeKind.Local).AddTicks(5104),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 856, DateTimeKind.Local).AddTicks(6539),
                             Nombre = "Bavaria"
                         },
                         new
                         {
                             Id = 3,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 187, DateTimeKind.Local).AddTicks(5135),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 856, DateTimeKind.Local).AddTicks(6574),
                             Nombre = "Postobon"
                         });
                 });
@@ -237,77 +464,77 @@ namespace Incidencias.AccesoDatos.Migrations
                         new
                         {
                             Id = 1,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(1766),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(2301),
                             ProyectoId = 1,
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 2,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2568),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3120),
                             ProyectoId = 2,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 3,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2590),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3142),
                             ProyectoId = 3,
                             UsuarioId = 5
                         },
                         new
                         {
                             Id = 4,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2605),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3157),
                             ProyectoId = 1,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 5,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2618),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3171),
                             ProyectoId = 2,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 6,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2637),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3187),
                             ProyectoId = 2,
                             UsuarioId = 3
                         },
                         new
                         {
                             Id = 7,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2650),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3201),
                             ProyectoId = 2,
                             UsuarioId = 4
                         },
                         new
                         {
                             Id = 8,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2662),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3214),
                             ProyectoId = 2,
                             UsuarioId = 5
                         },
                         new
                         {
                             Id = 9,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2675),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3228),
                             ProyectoId = 3,
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 10,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2690),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3243),
                             ProyectoId = 3,
                             UsuarioId = 4
                         },
                         new
                         {
                             Id = 11,
-                            FechaRegistro = new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2703),
+                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3256),
                             ProyectoId = 3,
                             UsuarioId = 5
                         });

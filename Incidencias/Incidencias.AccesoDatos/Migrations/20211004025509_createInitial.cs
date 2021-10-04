@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Incidencias.AccesoDatos.Migrations
 {
-    public partial class createinitial : Migration
+    public partial class createInitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -126,9 +126,41 @@ namespace Incidencias.AccesoDatos.Migrations
                 columns: new[] { "Id", "EstatusProyecto", "FechaActualizacion", "FechaRegistro", "Nombre" },
                 values: new object[,]
                 {
-                    { 1, 1, null, new DateTime(2021, 10, 1, 1, 16, 54, 186, DateTimeKind.Local).AddTicks(6832), "Alpina" },
-                    { 2, 1, null, new DateTime(2021, 10, 1, 1, 16, 54, 187, DateTimeKind.Local).AddTicks(5104), "Bavaria" },
-                    { 3, 1, null, new DateTime(2021, 10, 1, 1, 16, 54, 187, DateTimeKind.Local).AddTicks(5135), "Postobon" }
+                    { 1, 1, null, new DateTime(2021, 10, 3, 21, 55, 8, 855, DateTimeKind.Local).AddTicks(9072), "Alpina" },
+                    { 2, 1, null, new DateTime(2021, 10, 3, 21, 55, 8, 856, DateTimeKind.Local).AddTicks(6539), "Bavaria" },
+                    { 3, 1, null, new DateTime(2021, 10, 3, 21, 55, 8, 856, DateTimeKind.Local).AddTicks(6574), "Postobon" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Incidencias",
+                columns: new[] { "Id", "Descripcion", "EstatusIncidencia", "Nombre", "ProyectoId", "Version" },
+                values: new object[,]
+                {
+                    { 10, " carreta ", 1, "incidencia 564", 2, 1f },
+                    { 18, " carreta ", 1, "incidencia a963", 3, 1f },
+                    { 17, " carreta ", 1, "incidencia a369", 3, 1f },
+                    { 16, " carreta ", 1, "incidencia a598", 3, 1f },
+                    { 15, " carreta ", 1, "incidencia aww", 3, 1f },
+                    { 25, " carreta ", 1, "incidencia tes", 2, 1f },
+                    { 24, " carreta ", 1, "incidencia casa", 2, 1f },
+                    { 23, " carreta ", 1, "incidencia politico", 2, 1f },
+                    { 22, " carreta ", 1, "incidencia tejado", 2, 1f },
+                    { 21, " carreta ", 1, "incidencia carro", 2, 1f },
+                    { 14, " carreta ", 1, "incidencia afw", 2, 1f },
+                    { 13, " carreta ", 1, "incidencia aew", 2, 1f },
+                    { 12, " carreta ", 1, "incidencia ol", 2, 1f },
+                    { 11, " carreta ", 1, "incidencia d1f", 2, 1f },
+                    { 20, " carreta ", 1, "incidencia 74568", 3, 1f },
+                    { 9, " carreta ", 1, "incidencia g", 2, 1f },
+                    { 8, " carreta ", 1, "incidencia 40", 1, 1f },
+                    { 7, " carreta ", 1, "incidencia 1", 1, 1f },
+                    { 6, " carreta ", 1, "incidencia df", 1, 1f },
+                    { 5, " carreta ", 1, "incidencia e", 1, 1f },
+                    { 4, " carreta ", 1, "incidencia ad", 1, 1f },
+                    { 3, " carreta ", 1, "incidencia c", 1, 1f },
+                    { 2, " carreta ", 1, "incidencia b", 1, 1f },
+                    { 1, " carreta ", 1, "incidencia a", 1, 1f },
+                    { 19, " carreta ", 1, "incidencia a1244", 3, 1f }
                 });
 
             migrationBuilder.InsertData(
@@ -136,11 +168,11 @@ namespace Incidencias.AccesoDatos.Migrations
                 columns: new[] { "Id", "Apellidos", "Email", "Estatus", "Nombre", "Password", "PerfilId", "Username" },
                 values: new object[,]
                 {
-                    { 1, "Somma", "agustina.somma@gsoft.com.uy", 1, "Agustina", null, 1, null },
-                    { 2, "Valente", "valente@gsoft.com.uy", 1, "Viviana", null, 2, null },
-                    { 3, "Wolfan", "valente@gsoft.com.uy", 1, "Jonathan", null, 2, null },
+                    { 5, "Perez", "test@gsoft.com.uy", 1, "Juan", null, 3, null },
                     { 4, "Rozo", "valente@gsoft.com.uy", 1, "Ingri", null, 2, null },
-                    { 5, "Perez", "test@gsoft.com.uy", 1, "Juan", null, 3, null }
+                    { 3, "Wolfan", "valente@gsoft.com.uy", 1, "Jonathan", null, 2, null },
+                    { 2, "Valente", "valente@gsoft.com.uy", 1, "Viviana", null, 2, null },
+                    { 1, "Somma", "agustina.somma@gsoft.com.uy", 1, "Agustina", null, 1, null }
                 });
 
             migrationBuilder.InsertData(
@@ -148,17 +180,17 @@ namespace Incidencias.AccesoDatos.Migrations
                 columns: new[] { "Id", "FechaRegistro", "ProyectoId", "UsuarioId" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(1766), 1, 1 },
-                    { 9, new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2675), 3, 1 },
-                    { 2, new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2568), 2, 2 },
-                    { 4, new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2605), 1, 2 },
-                    { 5, new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2618), 2, 2 },
-                    { 6, new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2637), 2, 3 },
-                    { 7, new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2650), 2, 4 },
-                    { 10, new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2690), 3, 4 },
-                    { 3, new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2590), 3, 5 },
-                    { 8, new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2662), 2, 5 },
-                    { 11, new DateTime(2021, 10, 1, 1, 16, 54, 188, DateTimeKind.Local).AddTicks(2703), 3, 5 }
+                    { 1, new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(2301), 1, 1 },
+                    { 9, new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3228), 3, 1 },
+                    { 2, new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3120), 2, 2 },
+                    { 4, new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3157), 1, 2 },
+                    { 5, new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3171), 2, 2 },
+                    { 6, new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3187), 2, 3 },
+                    { 7, new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3201), 2, 4 },
+                    { 10, new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3243), 3, 4 },
+                    { 3, new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3142), 3, 5 },
+                    { 8, new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3214), 2, 5 },
+                    { 11, new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3256), 3, 5 }
                 });
 
             migrationBuilder.CreateIndex(

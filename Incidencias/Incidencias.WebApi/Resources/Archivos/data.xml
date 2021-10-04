@@ -1,0 +1,19 @@
+<Empresa1>
+	<Proyecto>Bavaria</Proyecto>
+	<Bugs>
+		<Bug>
+			<Id>1</Id>
+			<Nombre>lobo</Nombre>
+			<Descripcion>Cota Chireño</Descripcion>
+			<Version>1.0</Version>
+			<Estado>Activo</Estado>
+		</Bug>
+		<Bug>
+			<Id>2</Id>
+			<Nombre>tigre</Nombre>
+			<Descripcion>tigre bogotano </Descripcion>
+			<Version>1.0</Version>
+			<Estado>Activo</Estado>
+		</Bug>
+	</Bugs>
+</Empresa1>

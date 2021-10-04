@@ -38,6 +38,7 @@ namespace Incidencias.AccesoDatos.Repositorios
             incidenciaDb.EstatusIncidencia = entity.EstatusIncidencia;
             incidenciaDb.Descripcion = entity.Descripcion;
             incidenciaDb.Version = entity.Version;
+
             try
             {
                 return await _contexto.SaveChangesAsync() > 0 ? true : false;
@@ -50,7 +51,7 @@ namespace Incidencias.AccesoDatos.Repositorios
         }
 
         public async Task<Incidencia> Agregar(Incidencia entity)
-        {
+        {            
             entity.EstatusIncidencia = EstatusIncidencia.Activo;
             _dbSet.Add(entity);
             try
@@ -92,6 +93,19 @@ namespace Incidencias.AccesoDatos.Repositorios
             return await _dbSet
                 .Include(Incidencia => Incidencia.Proyecto)
                 .Where(u => u.EstatusIncidencia == EstatusIncidencia.Activo).ToListAsync();
+        }
+
+        public async Task<Incidencia> ObtenerNombreAsync(string nombre)
+        {
+            try
+            {
+                return await _dbSet.Where(c => c.Nombre == nombre && c.EstatusIncidencia == EstatusIncidencia.Activo).FirstOrDefaultAsync();
+            }
+            catch (Exception excepcion)
+            {
+                return null;
+                _logger.LogError($"Error en {nameof(ObtenerNombreAsync)}: " + excepcion.Message);
+            }
         }
     }
 }

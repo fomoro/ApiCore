@@ -24,6 +24,8 @@ namespace Incidencias.AccesoDatos
             AgregarUsuarios(modelBuilder);
             AgregarProyectos(modelBuilder);
             AgregarUsuariosProyectos(modelBuilder);
+            AgregarIncidencias(modelBuilder);
+            
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
@@ -37,11 +39,17 @@ namespace Incidencias.AccesoDatos
 
         private void AgregarUsuarios(ModelBuilder builder)
         {
-            builder.Entity<Usuario>().HasData(new Usuario() { Id = 1, Nombre = "Agustina", Apellidos = "Somma", Email = "agustina.somma@gsoft.com.uy", PerfilId = (int)TipPerfil.Administrador, Estatus = EstatusUsuario.Activo });
-            builder.Entity<Usuario>().HasData(new Usuario() { Id = 2, Nombre = "Viviana", Apellidos = "Valente", Email = "valente@gsoft.com.uy", PerfilId = (int)TipPerfil.Desarrollador, Estatus = EstatusUsuario.Activo });
-            builder.Entity<Usuario>().HasData(new Usuario() { Id = 3, Nombre = "Jonathan", Apellidos = "Wolfan", Email = "valente@gsoft.com.uy", PerfilId = (int)TipPerfil.Desarrollador, Estatus = EstatusUsuario.Activo });
-            builder.Entity<Usuario>().HasData(new Usuario() { Id = 4, Nombre = "Ingri", Apellidos = "Rozo", Email = "valente@gsoft.com.uy", PerfilId = (int)TipPerfil.Desarrollador, Estatus = EstatusUsuario.Activo });
-            builder.Entity<Usuario>().HasData(new Usuario() { Id = 5, Nombre = "Juan", Apellidos = "Perez", Email = "test@gsoft.com.uy", PerfilId = (int)TipPerfil.Tester, Estatus = EstatusUsuario.Activo });
+            builder.Entity<Usuario>().HasData(new Usuario() { Id = 1, Nombre = "Agustina", 
+                Apellidos = "Somma", Email = "agustina.somma@gsoft.com.uy", 
+                PerfilId = (int)TipPerfil.Administrador, Estatus = EstatusUsuario.Activo });
+            builder.Entity<Usuario>().HasData(new Usuario() { Id = 2, Nombre = "Viviana", 
+                Apellidos = "Valente", Email = "valente@gsoft.com.uy", PerfilId = (int)TipPerfil.Desarrollador, Estatus = EstatusUsuario.Activo });
+            builder.Entity<Usuario>().HasData(new Usuario() { Id = 3, Nombre = "Jonathan", 
+                Apellidos = "Wolfan", Email = "valente@gsoft.com.uy", PerfilId = (int)TipPerfil.Desarrollador, Estatus = EstatusUsuario.Activo });
+            builder.Entity<Usuario>().HasData(new Usuario() { Id = 4, Nombre = "Ingri", 
+                Apellidos = "Rozo", Email = "valente@gsoft.com.uy", PerfilId = (int)TipPerfil.Desarrollador, Estatus = EstatusUsuario.Activo });
+            builder.Entity<Usuario>().HasData(new Usuario() { Id = 5, Nombre = "Juan", 
+                Apellidos = "Perez", Email = "test@gsoft.com.uy", PerfilId = (int)TipPerfil.Tester, Estatus = EstatusUsuario.Activo });
         }
 
         private void AgregarProyectos(ModelBuilder builder)
@@ -67,5 +75,33 @@ namespace Incidencias.AccesoDatos
             builder.Entity<UsuariosProyectos>().HasData(new UsuariosProyectos() { Id = 11, FechaRegistro = DateTime.Now, ProyectoId = 3, UsuarioId = 5 });
         }
 
+        private void AgregarIncidencias(ModelBuilder builder)
+        {
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 1, Nombre = "incidencia a", Descripcion = " carreta ", ProyectoId = 1, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 2, Nombre = "incidencia b", Descripcion = " carreta ", ProyectoId = 1, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 3, Nombre = "incidencia c", Descripcion = " carreta ", ProyectoId = 1, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 4, Nombre = "incidencia ad", Descripcion = " carreta ", ProyectoId = 1, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 5, Nombre = "incidencia e", Descripcion = " carreta ", ProyectoId = 1, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 6, Nombre = "incidencia df", Descripcion = " carreta ", ProyectoId = 1, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 7, Nombre = "incidencia 1", Descripcion = " carreta ", ProyectoId = 1, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 8, Nombre = "incidencia 40", Descripcion = " carreta ", ProyectoId = 1, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 9, Nombre = "incidencia g", Descripcion = " carreta ", ProyectoId = 2, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 10, Nombre = "incidencia 564", Descripcion = " carreta ", ProyectoId = 2, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 11, Nombre = "incidencia d1f", Descripcion = " carreta ", ProyectoId = 2, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 12, Nombre = "incidencia ol", Descripcion = " carreta ", ProyectoId = 2, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 13, Nombre = "incidencia aew", Descripcion = " carreta ", ProyectoId = 2, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 14, Nombre = "incidencia afw", Descripcion = " carreta ", ProyectoId = 2, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 15, Nombre = "incidencia aww", Descripcion = " carreta ", ProyectoId = 3, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 16, Nombre = "incidencia a598", Descripcion = " carreta ", ProyectoId = 3, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 17, Nombre = "incidencia a369", Descripcion = " carreta ", ProyectoId = 3, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 18, Nombre = "incidencia a963", Descripcion = " carreta ", ProyectoId = 3, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 19, Nombre = "incidencia a1244", Descripcion = " carreta ", ProyectoId = 3, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 20, Nombre = "incidencia 74568", Descripcion = " carreta ", ProyectoId = 3, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 21, Nombre = "incidencia carro", Descripcion = " carreta ", ProyectoId = 2, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 22, Nombre = "incidencia tejado", Descripcion = " carreta ", ProyectoId = 2, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 23, Nombre = "incidencia politico", Descripcion = " carreta ", ProyectoId = 2, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 24, Nombre = "incidencia casa", Descripcion = " carreta ", ProyectoId = 2, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+            builder.Entity<Incidencia>().HasData(new Incidencia() { Id = 25, Nombre = "incidencia tes", Descripcion = " carreta ", ProyectoId = 2, Version = 1, EstatusIncidencia = EstatusIncidencia.Activo });
+        }
     }
 }

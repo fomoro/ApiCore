@@ -9,5 +9,6 @@ namespace Incidencias.AccesoDatos.Contratos
 {
     public interface IIncidenciasRepositorio : IRepositorioGenerico<Incidencia>
     {
+        Task<Incidencia> ObtenerNombreAsync(string nombre);
     }
 }

@@ -77,6 +77,18 @@ namespace Incidencias.AccesoDatos.Repositorios
                                 && c.EstatusProyecto == EstatusProyecto.Activo);
         }
 
+        public async Task<Proyecto> ObtenerNombreAsync(string nombre)
+        {                        
+            try
+            {                
+                return await  _dbSet.Where(c => c.Nombre == nombre && c.EstatusProyecto == EstatusProyecto.Activo).FirstOrDefaultAsync();
+            }
+            catch (Exception excepcion)
+            {
+                return null;
+                _logger.LogError($"Error en {nameof(ObtenerNombreAsync)}: " + excepcion.Message);
+            }            
+        }
         public async Task<Proyecto> ObtenerConDetallesAsync(int id)
         {
             return await _dbSet.Include(proyecto => proyecto.UsuariosProyectos)                

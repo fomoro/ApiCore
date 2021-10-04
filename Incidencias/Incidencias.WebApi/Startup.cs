@@ -6,6 +6,7 @@ using Incidencias.AccesoDatos;
 using Incidencias.AccesoDatos.Contratos;
 using Incidencias.AccesoDatos.Repositorios;
 using Incidencias.Modelos;
+using Incidencias.WebApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -51,6 +52,8 @@ namespace Incidencias.WebApi
 
             services.AddScoped<IProyectosRepositorio, ProyectosRepositorio>();
             services.AddScoped<IIncidenciasRepositorio, IncidenciasRepositorio>();
+
+            //services.AddHostedService<LectorDeArchivos>();
 
         }
 
