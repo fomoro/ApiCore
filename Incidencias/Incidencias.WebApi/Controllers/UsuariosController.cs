@@ -6,12 +6,15 @@ using AutoMapper;
 using Incidencias.AccesoDatos.Contratos;
 using Incidencias.Modelos;
 using Incidencias.WebApi.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Incidencias.WebApi.Controllers
 {
+    [Authorize(Roles = "Desarrollador")]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsuariosController : ControllerBase

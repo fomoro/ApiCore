@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Incidencias.WebApi.ViewModels
 {
     public class ArchivosMV
-    {        
-        public string Extencion { get; set; }
-        public string URL { get; set; }                
+    {                
+        public string URL { get; set; }
+        public string Proveedor { get; set; }
     }
 
 }

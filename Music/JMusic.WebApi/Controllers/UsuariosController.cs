@@ -13,6 +13,7 @@ namespace JMusik.WebApi.Controllers
 {
 
     //[Authorize(Roles = "Administrador")]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsuariosController : ControllerBase

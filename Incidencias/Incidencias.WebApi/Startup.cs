@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Incidencias.AccesoDatos;
 using Incidencias.AccesoDatos.Contratos;
 using Incidencias.AccesoDatos.Repositorios;
 using Incidencias.Modelos;
 using Incidencias.WebApi.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -17,6 +19,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
@@ -46,7 +49,8 @@ namespace Incidencias.WebApi
                 x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddScoped<IRepositorioGenerico<Perfil>, PerfilesRepositorio>();
+            //Inyeccion de dependencias 
+            services.AddScoped<IRepositorioGenerico<Perfil>, PerfilesRepositorio>();            
             services.AddScoped<IUsuariosRepositorio, UsuariosRepositorio>();
             services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
 
@@ -54,6 +58,58 @@ namespace Incidencias.WebApi
             services.AddScoped<IIncidenciasRepositorio, IncidenciasRepositorio>();
 
             //services.AddHostedService<LectorDeArchivos>();
+            #region JWT
+            services.AddSingleton<TokenService>(); //es como si fuera una clase estatica
+            //Accedemos a la sección JwtSettings del archivo appsettings.json
+            var jwtSettings = Configuration.GetSection("JwtSettings");
+            //Obtenemos la clave secreta guardada en JwtSettings:SecretKey
+            string secretKey = jwtSettings.GetValue<string>("SecretKey");
+            //Obtenemos el tiempo de vida en minutos del Jwt guardada en JwtSettings:MinutesToExpiration
+            int minutes = jwtSettings.GetValue<int>("MinutesToExpiration");
+            //Obtenemos el valor del emisor del token en JwtSettings:Issuer
+            string issuer = jwtSettings.GetValue<string>("Issuer");
+            //Obtenemos el valor de la audiencia a la que está destinado el Jwt en JwtSettings:Audience
+            string audience = jwtSettings.GetValue<string>("Audience");
+
+            var key = Encoding.ASCII.GetBytes(secretKey);
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = true,
+                    ValidIssuer = issuer,
+                    ValidateAudience = true,
+                    ValidAudience = audience,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.FromMinutes(minutes)
+                };
+            });
+
+            //politica de acceso permitiendo acceder desde cualquier origen 
+            //metodo  o encabezados
+            services.AddCors(options =>
+            {
+
+                options.AddPolicy("CorsPolicy",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        //.AllowCredentials()
+                        .AllowAnyHeader();
+                    });
+
+            });
+            #endregion
 
         }
 
@@ -71,6 +127,12 @@ namespace Incidencias.WebApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            
+            app.UseCors("CorsPolicy");
+            app.UseAuthentication();
+            //app.UseAuthorization();
+
 
             app.UseAuthorization();
 

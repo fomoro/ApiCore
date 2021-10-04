@@ -41,12 +41,12 @@ namespace Incidencias.WebApi.Controllers
             try
             {
                 List<Incidencia> incidencias;
-                switch (fileMV.Extencion)
+                switch (fileMV.Proveedor)
                 {
-                    case "xml":
+                    case "Proveedor1":
                         incidencias = LecturaDelXml(fileMV.URL).Result.bugs;
                         break;
-                    case "txt":
+                    case "Proveedor2":
                         incidencias = LecturaDelTxt(fileMV.URL).Result.bugs;
                         break;
                     default:
@@ -57,8 +57,9 @@ namespace Incidencias.WebApi.Controllers
                 foreach (var bug in incidencias)
                 {
                     var incidenciaActual = await _incidenciasRepositorio.ObtenerNombreAsync(bug.Nombre);
-                    if (incidenciaActual != null)
+                    if (incidenciaActual != null && incidenciaActual.ProyectoId == bug.ProyectoId)
                     {
+                        bug.Id = incidenciaActual.Id;
                         await _incidenciasRepositorio.Actualizar(bug);
                     }
                     else
@@ -85,7 +86,7 @@ namespace Incidencias.WebApi.Controllers
                 var nombreProyecto = xmlDoc.SelectNodes("//Empresa1//Proyecto")[0].InnerText;
                 XmlNodeList file = xmlDoc.SelectNodes("//Empresa1");
 
-                var proyecto = await _proyectosRepositorio.ObtenerNombreAsync(nombreProyecto);
+                var proyecto = await _proyectosRepositorio.ObtenerNombreAsync(nombreProyecto);                
                 if (proyecto != null)
                 {
                     List<Incidencia> incidencias = new List<Incidencia>();

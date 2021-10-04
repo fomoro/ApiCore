@@ -11,6 +11,6 @@ namespace Incidencias.AccesoDatos.Contratos
     {
         Task<Proyecto> ObtenerNombreAsync(string nombre);
         Task<IEnumerable<Proyecto>> ObtenerTodosConDetallesAsync();
-        Task<Proyecto> ObtenerConDetallesAsync(int id);
+        Task<Proyecto> ObtenerConDetallesAsync(int id);        
     }
 }
