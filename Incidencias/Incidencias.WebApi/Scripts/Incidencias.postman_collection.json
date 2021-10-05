@@ -1,286 +1,27 @@
 {
 	"info": {
-		"_postman_id": "7630682b-48d4-4102-8dc9-df55bd3efd0d",
+		"_postman_id": "c7fc7676-d4da-49a5-bef3-ddfbcdb5329a",
 		"name": "Incidencias",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "ProyectosBasico",
-			"item": [
-				{
-					"name": "Get",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{urlApi}}Proyectos"
-					},
-					"response": []
-				},
-				{
-					"name": "GetId",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "https://localhost:44363/api/Proyectos/1"
-					},
-					"response": []
-				},
-				{
-					"name": "Add",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 0,\r\n    \"nombre\": \"Proy\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://localhost:44363/api/Proyectos"
-					},
-					"response": []
-				},
-				{
-					"name": "Update",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 4,\r\n    \"nombre\": \"Proy Cambiado\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://localhost:44363/api/Proyectos/4"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://localhost:44363/api/Proyectos/4"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "ProductosAutoMapper",
-			"item": [
-				{
-					"name": "GetProducto",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://localhost:44323/api/ProductosAutoMapper"
-					},
-					"response": []
-				},
-				{
-					"name": "GetProductoId",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "https://localhost:44323/api/ProductosAutoMapper/2"
-					},
-					"response": []
-				},
-				{
-					"name": "AddProducto",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 0,\r\n    \"nombre\": \"Guacharaca\",\r\n    \"precio\": 2550.00\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://localhost:44323/api/ProductosAutoMapper/"
-					},
-					"response": []
-				},
-				{
-					"name": "UpdateProducto",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 14,\r\n    \"nombre\": \"Saxofón Selmer Mark 6\",\r\n    \"precio\": 13000.00\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://localhost:44323/api/ProductosAutoMapper/14"
-					},
-					"response": []
-				},
-				{
-					"name": "DeleteProducto",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://localhost:44323/api/ProductosAutoMapper/14"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "ProductosLogger",
-			"item": [
-				{
-					"name": "GetProducto",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://localhost:44323/api/ProductosLogger"
-					},
-					"response": []
-				},
-				{
-					"name": "GetProductoId",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "https://localhost:44323/api/ProductosLogger/2"
-					},
-					"response": []
-				},
-				{
-					"name": "AddProducto",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 0,\r\n    \"nombre\": \"palitos\",\r\n    \"precio\": 2550.00\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://localhost:44323/api/ProductosLogger/"
-					},
-					"response": []
-				},
-				{
-					"name": "UpdateProducto",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\": 14,\r\n    \"nombre\": \"Saxofón Selmer Mark 6\",\r\n    \"precio\": 13000.00\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://localhost:44323/api/ProductosLogger/14"
-					},
-					"response": []
-				},
-				{
-					"name": "DeleteProducto",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "https://localhost:44323/api/ProductosLogger/14"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Perfiles",
+			"name": "01 Perfiles",
 			"item": [
 				{
 					"name": "PerfilesGetById",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{urlApi}}perfiles/1",
+						"url": {
+							"raw": "{{urlApi}}perfiles/1",
+							"host": [
+								"{{urlApi}}perfiles"
+							],
+							"path": [
+								"1"
+							]
+						},
 						"description": "Obtener un perfil dado su identificador"
 					},
 					"response": []
@@ -290,7 +31,12 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{urlApi}}perfiles",
+						"url": {
+							"raw": "{{urlApi}}perfiles",
+							"host": [
+								"{{urlApi}}perfiles"
+							]
+						},
 						"description": "Obtener una lista de perfiles"
 					},
 					"response": []
@@ -311,7 +57,12 @@
 							"mode": "raw",
 							"raw": "{\n\t\"id\":0,\n\t\"nombre\":\"Invitado\"\n}"
 						},
-						"url": "{{urlApi}}perfiles"
+						"url": {
+							"raw": "{{urlApi}}perfiles",
+							"host": [
+								"{{urlApi}}perfiles"
+							]
+						}
 					},
 					"response": []
 				},
@@ -329,9 +80,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\":4,\n\t\"nombre\":\"Desarrollador\"\n}"
+							"raw": "{\n\t\"id\": 4,\n\t\"nombre\":\"modificado\"\n}"
 						},
-						"url": "{{urlApi}}perfiles/4",
+						"url": {
+							"raw": "{{urlApi}}perfiles/4",
+							"host": [
+								"{{urlApi}}perfiles"
+							],
+							"path": [
+								"4"
+							]
+						},
 						"description": "Actualiza un Perfil"
 					},
 					"response": []
@@ -341,7 +100,15 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{urlApi}}perfiles/5",
+						"url": {
+							"raw": "{{urlApi}}perfiles/4",
+							"host": [
+								"{{urlApi}}perfiles"
+							],
+							"path": [
+								"4"
+							]
+						},
 						"description": "Elimina un Perfil"
 					},
 					"response": []
@@ -349,91 +116,22 @@
 			]
 		},
 		{
-			"name": "Productos",
-			"item": [
-				{
-					"name": "ProductoById",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{urlApi}}productos/1",
-						"description": "Obtiene un producto con base en su Identificador"
-					},
-					"response": []
-				},
-				{
-					"name": "ProductosGet",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{urlApi}}productos",
-						"description": "Obtiene todos los productos"
-					},
-					"response": []
-				},
-				{
-					"name": "ProductosPost",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"id\": 0,\n    \"nombre\": \"Guitarra Eléctrica Framus Devin Townsend Signature XI\",\n    \"precio\": 40000\n}"
-						},
-						"url": "{{urlApi}}productos",
-						"description": "Agrega un producto"
-					},
-					"response": []
-				},
-				{
-					"name": "ProductosPut",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"nombre\": \"Guitarra Eléctrica PRS SE Custom X\",\n    \"precio\": 25000\n}"
-						},
-						"url": "{{urlApi}}productos/1",
-						"description": "Actualiza un producto"
-					},
-					"response": []
-				},
-				{
-					"name": "ProductosDelete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": "{{urlApi}}productos/14",
-						"description": "Eliminar un producto"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Usuarios",
+			"name": "02 Usuarios",
 			"item": [
 				{
 					"name": "UsuarioById",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{urlApi}}usuarios/1",
+						"url": {
+							"raw": "{{urlApi}}usuarios/6",
+							"host": [
+								"{{urlApi}}usuarios"
+							],
+							"path": [
+								"6"
+							]
+						},
 						"description": "Obtiene un usuario con base en su Identificador"
 					},
 					"response": []
@@ -443,7 +141,12 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{urlApi}}usuarios",
+						"url": {
+							"raw": "{{urlApi}}usuarios",
+							"host": [
+								"{{urlApi}}usuarios"
+							]
+						},
 						"description": "Obtiene todos los usuarios"
 					},
 					"response": []
@@ -462,9 +165,14 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": 0,\n    \"nombre\": \"Alberto\",\n    \"apellidos\": \"Martínez\",\n    \"email\":\"albertomartinez@correo.com\",\n    \"username\":\"amartinez\",\n    \"password\":\"123456\",\n    \"perfilId\":2\n}"
+							"raw": "{\n\t\"id\": 0,\n    \"nombre\": \"Carmen\",\n    \"apellidos\": \"Martinez\",\n    \"email\":\"carmen@correo.com\",\n    \"username\":\"carmen\",\n    \"password\":\"ury123\",\n    \"perfilId\":3\n}"
 						},
-						"url": "{{urlApi}}usuarios",
+						"url": {
+							"raw": "{{urlApi}}usuarios",
+							"host": [
+								"{{urlApi}}usuarios"
+							]
+						},
 						"description": "Agrega un usuario"
 					},
 					"response": []
@@ -483,9 +191,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": 1,\n    \"nombre\": \"Administrador\",\n    \"apellidos\": \"Administrador X3A\",\n    \"email\":\"administradorx3a@correo.com\"\n}"
+							"raw": "{\n\t\"id\": 1,\n    \"nombre\": \"Ingri\",\n    \"apellidos\": \"Rozo\",\n    \"email\":\"testIngri@correo.com\"\n}"
 						},
-						"url": "{{urlApi}}usuarios/1",
+						"url": {
+							"raw": "{{urlApi}}usuarios/1",
+							"host": [
+								"{{urlApi}}usuarios"
+							],
+							"path": [
+								"1"
+							]
+						},
 						"description": "Actualiza un usuario, aunque en este método no se actualiza su contraseña."
 					},
 					"response": []
@@ -495,7 +211,15 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{urlApi}}usuarios/11",
+						"url": {
+							"raw": "{{urlApi}}usuarios/1",
+							"host": [
+								"{{urlApi}}usuarios"
+							],
+							"path": [
+								"1"
+							]
+						},
 						"description": "Eliminar un usuario"
 					},
 					"response": []
@@ -514,9 +238,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}"
+							"raw": "{\n    \"id\": 1,\n    \"username\": \"VivianaValente\",\n    \"password\": \"Somma\"\n}"
 						},
-						"url": "{{urlApi}}usuarios/cambiarcontrasena",
+						"url": {
+							"raw": "{{urlApi}}usuarios/cambiarcontrasena",
+							"host": [
+								"{{urlApi}}usuarios"
+							],
+							"path": [
+								"cambiarcontrasena"
+							]
+						},
 						"description": "Cambiar la contraseña del usuario"
 					},
 					"response": []
@@ -535,9 +267,17 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"perfilId\": 2\n}"
+							"raw": "{\n    \"id\": 2,\n    \"perfilId\": 2\n}"
 						},
-						"url": "{{urlApi}}usuarios/cambiarperfil",
+						"url": {
+							"raw": "{{urlApi}}usuarios/cambiarperfil",
+							"host": [
+								"{{urlApi}}usuarios"
+							],
+							"path": [
+								"cambiarperfil"
+							]
+						},
 						"description": "Cambia el perfil del usuario"
 					},
 					"response": []
@@ -545,50 +285,80 @@
 			]
 		},
 		{
-			"name": "Ordenes",
+			"name": "03 Proyectos",
 			"item": [
 				{
-					"name": "OrdenById",
+					"name": "ProyectosGet",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{urlApi}}ordenes/1",
-						"description": "Obtiene una orden con base en su Identificador"
-					},
-					"response": []
-				},
-				{
-					"name": "OrdenDetallesById",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{urlApi}}ordenes/1/detalles",
-						"description": "Obtiene una orden con sus detalles con base en su Identificador"
-					},
-					"response": []
-				},
-				{
-					"name": "OrdenesGet",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": "{{urlApi}}ordenes",
+						"url": {
+							"raw": "{{urlApi}}proyectos",
+							"host": [
+								"{{urlApi}}proyectos"
+							]
+						},
 						"description": "Obtiene todas las órdenes"
 					},
 					"response": []
 				},
 				{
-					"name": "OrdenesDetallesGet",
+					"name": "ProyectosIncidenciasGet",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{urlApi}}ordenes/detalles",
+						"url": {
+							"raw": "{{urlApi}}Proyectos/incidencias",
+							"host": [
+								"{{urlApi}}Proyectos"
+							],
+							"path": [
+								"incidencias"
+							]
+						},
 						"description": "Obtiene todos las órdenes con detalles"
 					},
 					"response": []
 				},
 				{
-					"name": "OrdenesPost",
+					"name": "ProyectosById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}proyectos/1",
+							"host": [
+								"{{urlApi}}proyectos"
+							],
+							"path": [
+								"1"
+							]
+						},
+						"description": "Obtiene una orden con base en su Identificador"
+					},
+					"response": []
+				},
+				{
+					"name": "ProyectoConIncidenciasById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}proyectos/1/incidencias",
+							"host": [
+								"{{urlApi}}proyectos"
+							],
+							"path": [
+								"1",
+								"incidencias"
+							]
+						},
+						"description": "Obtiene una orden con sus detalles con base en su Identificador"
+					},
+					"response": []
+				},
+				{
+					"name": "ProyectosPost",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -601,20 +371,175 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 0,\n    \"cantidadArticulos\": 2,\n    \"importe\": 35000,\n    \"usuarioId\": 1,\n    \"detalleOrden\": [\n        {\n            \"productoId\": 1,\n            \"producto\": \"Guitarra Eléctrica PRS SE Custom X\",\n            \"cantidad\": 1,\n            \"precioUnitario\": 15000,\n            \"total\": 15000\n        },\n        {\n            \"productoId\": 3,\n            \"producto\": \"Guitarra Eléctrica Ibanez 550G\",\n            \"cantidad\": 1,\n            \"precioUnitario\": 15000,\n            \"total\": 20000\n        }\n    ]\n}"
+							"raw": "{\n        \"id\": 0,\n        \"nombre\": \"Fiesta\",        \n        \"incidencias\": [\n            {         \n                \"nombre\": \"test\",\n                \"descripcion\": \"descripcion\",\n                \"estatusIncidencia\": 1,\n                \"version\": 12\n            }\n        ],\n        \"usuariosProyectos\": [\n            {\n                \"usuarioId\": 1\n            }\n        ]\n}\n"
 						},
-						"url": "{{urlApi}}ordenes",
+						"url": {
+							"raw": "{{urlApi}}proyectos",
+							"host": [
+								"{{urlApi}}proyectos"
+							]
+						},
 						"description": "Agrega una orden"
 					},
 					"response": []
 				},
 				{
-					"name": "OrdenesDelete",
+					"name": "ProyectosDelete",
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{urlApi}}ordenes/3",
+						"url": {
+							"raw": "{{urlApi}}Proyectos/8",
+							"host": [
+								"{{urlApi}}Proyectos"
+							],
+							"path": [
+								"8"
+							]
+						},
 						"description": "Eliminar una orden"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04 Incidencias",
+			"item": [
+				{
+					"name": "IncidenciasGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}Incidencias",
+							"host": [
+								"{{urlApi}}Incidencias"
+							]
+						},
+						"description": "Obtiene todos los usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "IncidenciasById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}Incidencias/2",
+							"host": [
+								"{{urlApi}}Incidencias"
+							],
+							"path": [
+								"2"
+							]
+						},
+						"description": "Obtiene un usuario con base en su Identificador"
+					},
+					"response": []
+				},
+				{
+					"name": "IncidenciasPut",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,    \n    \"nombre\": \"Pantalla no Carga\",\n    \"descripcion\": \"La pantalla que carca la nomina genera error 500\",\n    \"estatusIncidencia\": 1,\n    \"version\": 2\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}Incidencias/2",
+							"host": [
+								"{{urlApi}}Incidencias"
+							],
+							"path": [
+								"2"
+							]
+						},
+						"description": "Actualiza un usuario, aunque en este método no se actualiza su contraseña."
+					},
+					"response": []
+				},
+				{
+					"name": "IncidenciasPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 0,\n    \"proyectoId\": 2,\n    \"nombre\": \"Tabla en Bca\",\n    \"descripcion\": \"el plano no cumple con los datos del ministerio\",\n    \"estatusIncidencia\": 1,\n    \"version\": 2\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}Incidencias",
+							"host": [
+								"{{urlApi}}Incidencias"
+							]
+						},
+						"description": "Agrega un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "IncidenciasDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}Incidencias/5",
+							"host": [
+								"{{urlApi}}Incidencias"
+							],
+							"path": [
+								"5"
+							]
+						},
+						"description": "Eliminar un usuario"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "05 Archivos",
+			"item": [
+				{
+					"name": "ArchivosPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"Proveedor\": \"Proveedor1\",\n    \"URL\": \"C:/Users/57350/source/repos/CoreApi/Incidencias/Incidencias.WebApi/Resources/Archivos/data.xml\"\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}Archivos",
+							"host": [
+								"{{urlApi}}Archivos"
+							]
+						},
+						"description": "Agrega un usuario"
 					},
 					"response": []
 				}
@@ -644,7 +569,7 @@
 	"variable": [
 		{
 			"key": "urlApi",
-			"value": "https://localhost:44363/api/"
+			"value": "https://localhost:5001/api/"
 		}
 	]
 }

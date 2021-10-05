@@ -97,7 +97,10 @@ namespace JMusic.Data.Repositorios
                 .ToListAsync();
         }
 
-
+        public Task<(int totalRegistros, IEnumerable<Producto> registros)> ObtenerPaginasProductosAsync(int paginaActual, int registrosPorPagina)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

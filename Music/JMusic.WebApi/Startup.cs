@@ -2,6 +2,7 @@ using JMusic.Data;
 using JMusic.Data.Contratos;
 using JMusic.Data.Repositorios;
 using JMusic.Models;
+using JMusic.WebApi.Extensions;
 using JMusic.WebApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -31,74 +32,25 @@ namespace JMusic.WebApi
         public IConfiguration Configuration { get; }        
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(Startup));
-            services.AddControllers();
-
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "JMusic.WebApi", Version = "v1" });
             });
 
-            services.AddDbContext<TiendaDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("TiendaDb")));
-            
-            services.AddScoped<IRepositorioGenerico<Perfil>, RepositorioPerfiles>();
-            services.AddScoped<IProductosRepositorio, RepositorioProductosLogger>();
-            services.AddScoped<IOrdenesRepositorio, RepositorioOrdenes>();
+            services.AddAutoMapper(typeof(Startup));
 
-            services.AddScoped<IUsuariosRepositorio, RepositorioUsuarios>();
-            services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
-
-            #region JWT
-            services.AddSingleton<TokenService>(); //es como si fuera una clase estatica
-            //Accedemos a la sección JwtSettings del archivo appsettings.json
-            var jwtSettings = Configuration.GetSection("JwtSettings");
-            //Obtenemos la clave secreta guardada en JwtSettings:SecretKey
-            string secretKey = jwtSettings.GetValue<string>("SecretKey");
-            //Obtenemos el tiempo de vida en minutos del Jwt guardada en JwtSettings:MinutesToExpiration
-            int minutes = jwtSettings.GetValue<int>("MinutesToExpiration");
-            //Obtenemos el valor del emisor del token en JwtSettings:Issuer
-            string issuer = jwtSettings.GetValue<string>("Issuer");
-            //Obtenemos el valor de la audiencia a la que está destinado el Jwt en JwtSettings:Audience
-            string audience = jwtSettings.GetValue<string>("Audience");
-
-            var key = Encoding.ASCII.GetBytes(secretKey);
-
-            services.AddAuthentication(x =>
+            services.AddControllers(config =>
             {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(x =>
-            {
-                x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
-                x.TokenValidationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = true,
-                    ValidIssuer = issuer,
-                    ValidateAudience = true,
-                    ValidAudience = audience,
-                    ValidateLifetime = true,
-                    ClockSkew = TimeSpan.FromMinutes(minutes)
-                };
-            });
+                //valida en la respuesta si el valor solicitado es aceptado o no 
+                config.ReturnHttpNotAcceptable = true;
+            }).AddXmlDataContractSerializerFormatters();
 
-            //politica de acceso permitiendo acceder desde cualquier origen 
-            //metodo  o encabezados
-            services.AddCors(options =>
-            {
+            services.AddDbContext<TiendaDbContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("TiendaDb")));
 
-                options.AddPolicy("CorsPolicy",
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin()
-                        .AllowAnyMethod()
-                        .AllowAnyHeader();
-                    });
-
-            });
-            #endregion
+            services.ConfigureDependencies();
+            services.ConfigureJwt(Configuration);
+            services.ConfigureCors();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
