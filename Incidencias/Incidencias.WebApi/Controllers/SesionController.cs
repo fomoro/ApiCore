@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Incidencias.AccesoDatos.Contratos;
+using Incidencias.Interfaces.AccesoDatos;
 using Incidencias.Modelos;
 using Incidencias.WebApi.Services;
 using Incidencias.WebApi.ViewModels;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using Incidencias.AccesoDatos.Contratos;
+using Incidencias.Interfaces.AccesoDatos;
 using Incidencias.Modelos;
 using Incidencias.WebApi.ViewModels;
 using Microsoft.AspNetCore.Authorization;

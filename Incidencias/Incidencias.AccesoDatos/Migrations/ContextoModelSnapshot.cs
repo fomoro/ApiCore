@@ -335,22 +335,22 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 1,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 855, DateTimeKind.Local).AddTicks(9072),
-                            Nombre = "Alpina"
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 945, DateTimeKind.Local).AddTicks(9478),
+                            Nombre = "Facturacion"
                         },
                         new
                         {
                             Id = 2,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 856, DateTimeKind.Local).AddTicks(6539),
-                            Nombre = "Bavaria"
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 947, DateTimeKind.Local).AddTicks(679),
+                            Nombre = "Financiero"
                         },
                         new
                         {
                             Id = 3,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 856, DateTimeKind.Local).AddTicks(6574),
-                            Nombre = "Postobon"
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 947, DateTimeKind.Local).AddTicks(734),
+                            Nombre = "Salud"
                         });
                 });
 
@@ -393,46 +393,56 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 1,
                             Apellidos = "Somma",
-                            Email = "agustina.somma@gsoft.com.uy",
+                            Email = "agustina@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Agustina",
-                            PerfilId = 1
+                            Password = "AQAAAAEAACcQAAAAEPJ3eDQ+/KM98+2ezT+bdj/AVVy9AgvIDfeFcwLACyl8Xx9n6Z8PDxyWgU/ea2PaGg==",
+                            PerfilId = 1,
+                            Username = "agustina"
                         },
                         new
                         {
                             Id = 2,
                             Apellidos = "Valente",
-                            Email = "valente@gsoft.com.uy",
+                            Email = "viviana@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Viviana",
-                            PerfilId = 2
+                            Password = "AQAAAAEAACcQAAAAEMy3YQfQdwes/BqOqePlK/BJD7BZYWQqZg6Yj3m2V5EsgByW1/NfrqCWeUBLg7V3bw==",
+                            PerfilId = 2,
+                            Username = "viviana"
                         },
                         new
                         {
                             Id = 3,
-                            Apellidos = "Wolfan",
-                            Email = "valente@gsoft.com.uy",
+                            Apellidos = "Lopez",
+                            Email = "maria@gsoft.com.uy",
                             Estatus = 1,
-                            Nombre = "Jonathan",
-                            PerfilId = 2
+                            Nombre = "Maria",
+                            Password = "AQAAAAEAACcQAAAAEBX72IRr5qgnJMxFPoqCs84fycEJ4AzZ2XD9UOKtoGpgO2Gs6CIiRj3Oqp5/HMeZjA==",
+                            PerfilId = 2,
+                            Username = "maria"
                         },
                         new
                         {
                             Id = 4,
-                            Apellidos = "Rozo",
-                            Email = "valente@gsoft.com.uy",
+                            Apellidos = "Martinez",
+                            Email = "pedro@gsoft.com.uy",
                             Estatus = 1,
-                            Nombre = "Ingri",
-                            PerfilId = 2
+                            Nombre = "Pedro",
+                            Password = "AQAAAAEAACcQAAAAEM1iOjAS1temRkV5aBawLp/25jvLduRRT8Slq4NS7O1mflpPnKPIHwGgbZXth0ArxA==",
+                            PerfilId = 2,
+                            Username = "pedro"
                         },
                         new
                         {
                             Id = 5,
                             Apellidos = "Perez",
-                            Email = "test@gsoft.com.uy",
+                            Email = "juan@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Juan",
-                            PerfilId = 3
+                            Password = "AQAAAAEAACcQAAAAEDQZw/655u8YyXe3TDm2sb3LgzHBVOdYZriGphAUgZ7FM2ULzUNe4b9nbRQtjqRiYA==",
+                            PerfilId = 3,
+                            Username = "juan"
                         });
                 });
 
@@ -464,77 +474,77 @@ namespace Incidencias.AccesoDatos.Migrations
                         new
                         {
                             Id = 1,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(2301),
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(446),
                             ProyectoId = 1,
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 2,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3120),
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(1947),
                             ProyectoId = 2,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 3,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3142),
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(1983),
                             ProyectoId = 3,
                             UsuarioId = 5
                         },
                         new
                         {
                             Id = 4,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3157),
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2007),
                             ProyectoId = 1,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 5,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3171),
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2030),
                             ProyectoId = 2,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 6,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3187),
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2058),
                             ProyectoId = 2,
                             UsuarioId = 3
                         },
                         new
                         {
                             Id = 7,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3201),
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2080),
                             ProyectoId = 2,
                             UsuarioId = 4
                         },
                         new
                         {
                             Id = 8,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3214),
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2103),
                             ProyectoId = 2,
                             UsuarioId = 5
                         },
                         new
                         {
                             Id = 9,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3228),
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2126),
                             ProyectoId = 3,
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 10,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3243),
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2153),
                             ProyectoId = 3,
                             UsuarioId = 4
                         },
                         new
                         {
                             Id = 11,
-                            FechaRegistro = new DateTime(2021, 10, 3, 21, 55, 8, 857, DateTimeKind.Local).AddTicks(3256),
+                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2177),
                             ProyectoId = 3,
                             UsuarioId = 5
                         });

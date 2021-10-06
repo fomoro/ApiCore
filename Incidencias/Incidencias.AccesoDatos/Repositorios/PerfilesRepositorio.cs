@@ -1,4 +1,5 @@
-﻿using Incidencias.AccesoDatos.Contratos;
+﻿
+using Incidencias.Interfaces;
 using Incidencias.Modelos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -66,8 +67,18 @@ namespace Incidencias.AccesoDatos.Repositorios
         }
 
         public async Task<Perfil> ObtenerAsync(int id)
-        {
-            return await _dbSet.SingleOrDefaultAsync(c => c.Id == id);
+        {            
+            try
+            {
+                var resultado = await _dbSet.SingleOrDefaultAsync(c => c.Id == id);
+                return resultado;
+            }
+            catch (Exception excepcion)
+            {
+                _logger.LogError($"Error en {nameof(Eliminar)}: " + excepcion.Message);
+                return null;
+            }
+            
         }
 
         public async Task<IEnumerable<Perfil>> ObtenerTodosAsync()

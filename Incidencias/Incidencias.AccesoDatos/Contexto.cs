@@ -25,7 +25,6 @@ namespace Incidencias.AccesoDatos
             AgregarProyectos(modelBuilder);
             AgregarUsuariosProyectos(modelBuilder);
             AgregarIncidencias(modelBuilder);
-            
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
@@ -39,33 +38,27 @@ namespace Incidencias.AccesoDatos
 
         private void AgregarUsuarios(ModelBuilder builder)
         {
-            builder.Entity<Usuario>().HasData(new Usuario() { Id = 1, Nombre = "Agustina", 
-                Apellidos = "Somma", Email = "agustina.somma@gsoft.com.uy", 
-                PerfilId = (int)TipPerfil.Administrador, Estatus = EstatusUsuario.Activo });
-            builder.Entity<Usuario>().HasData(new Usuario() { Id = 2, Nombre = "Viviana", 
-                Apellidos = "Valente", Email = "valente@gsoft.com.uy", PerfilId = (int)TipPerfil.Desarrollador, Estatus = EstatusUsuario.Activo });
-            builder.Entity<Usuario>().HasData(new Usuario() { Id = 3, Nombre = "Jonathan", 
-                Apellidos = "Wolfan", Email = "valente@gsoft.com.uy", PerfilId = (int)TipPerfil.Desarrollador, Estatus = EstatusUsuario.Activo });
-            builder.Entity<Usuario>().HasData(new Usuario() { Id = 4, Nombre = "Ingri", 
-                Apellidos = "Rozo", Email = "valente@gsoft.com.uy", PerfilId = (int)TipPerfil.Desarrollador, Estatus = EstatusUsuario.Activo });
-            builder.Entity<Usuario>().HasData(new Usuario() { Id = 5, Nombre = "Juan", 
-                Apellidos = "Perez", Email = "test@gsoft.com.uy", PerfilId = (int)TipPerfil.Tester, Estatus = EstatusUsuario.Activo });
+            builder.Entity<Usuario>().HasData(new Usuario() { Id = 1, Nombre = "Agustina", Apellidos = "Somma", Email = "agustina@gsoft.com.uy", Username = "agustina", Password = "AQAAAAEAACcQAAAAEPJ3eDQ+/KM98+2ezT+bdj/AVVy9AgvIDfeFcwLACyl8Xx9n6Z8PDxyWgU/ea2PaGg==", PerfilId = (int)TipPerfil.Administrador, Estatus = EstatusUsuario.Activo });
+            builder.Entity<Usuario>().HasData(new Usuario() { Id = 2, Nombre = "Viviana", Apellidos = "Valente", Email = "viviana@gsoft.com.uy", Username = "viviana", Password = "AQAAAAEAACcQAAAAEMy3YQfQdwes/BqOqePlK/BJD7BZYWQqZg6Yj3m2V5EsgByW1/NfrqCWeUBLg7V3bw==", PerfilId = (int)TipPerfil.Desarrollador, Estatus = EstatusUsuario.Activo });
+            builder.Entity<Usuario>().HasData(new Usuario() { Id = 3, Nombre = "Maria", Apellidos = "Lopez", Email = "maria@gsoft.com.uy", Username = "maria", Password = "AQAAAAEAACcQAAAAEBX72IRr5qgnJMxFPoqCs84fycEJ4AzZ2XD9UOKtoGpgO2Gs6CIiRj3Oqp5/HMeZjA==", PerfilId = (int)TipPerfil.Desarrollador, Estatus = EstatusUsuario.Activo });
+            builder.Entity<Usuario>().HasData(new Usuario() { Id = 4, Nombre = "Pedro", Apellidos = "Martinez", Email = "pedro@gsoft.com.uy", Username = "pedro", Password = "AQAAAAEAACcQAAAAEM1iOjAS1temRkV5aBawLp/25jvLduRRT8Slq4NS7O1mflpPnKPIHwGgbZXth0ArxA==", PerfilId = (int)TipPerfil.Desarrollador, Estatus = EstatusUsuario.Activo });
+            builder.Entity<Usuario>().HasData(new Usuario() { Id = 5, Nombre = "Juan", Apellidos = "Perez", Email = "juan@gsoft.com.uy", Username = "juan", Password = "AQAAAAEAACcQAAAAEDQZw/655u8YyXe3TDm2sb3LgzHBVOdYZriGphAUgZ7FM2ULzUNe4b9nbRQtjqRiYA==", PerfilId = (int)TipPerfil.Tester, Estatus = EstatusUsuario.Activo });
         }
 
         private void AgregarProyectos(ModelBuilder builder)
         {
-            builder.Entity<Proyecto>().HasData(new Proyecto() { Id = 1, Nombre = "Alpina", FechaRegistro = DateTime.Now, EstatusProyecto = EstatusProyecto.Activo });
-            builder.Entity<Proyecto>().HasData(new Proyecto() { Id = 2, Nombre = "Bavaria", FechaRegistro = DateTime.Now, EstatusProyecto = EstatusProyecto.Activo });
-            builder.Entity<Proyecto>().HasData(new Proyecto() { Id = 3, Nombre = "Postobon", FechaRegistro = DateTime.Now, EstatusProyecto = EstatusProyecto.Activo });
+            builder.Entity<Proyecto>().HasData(new Proyecto() { Id = 1, Nombre = "Facturacion", FechaRegistro = DateTime.Now, EstatusProyecto = EstatusProyecto.Activo });
+            builder.Entity<Proyecto>().HasData(new Proyecto() { Id = 2, Nombre = "Financiero", FechaRegistro = DateTime.Now, EstatusProyecto = EstatusProyecto.Activo });
+            builder.Entity<Proyecto>().HasData(new Proyecto() { Id = 3, Nombre = "Salud", FechaRegistro = DateTime.Now, EstatusProyecto = EstatusProyecto.Activo });
         }
 
         private void AgregarUsuariosProyectos(ModelBuilder builder)
         {
-            
+
             builder.Entity<UsuariosProyectos>().HasData(new UsuariosProyectos() { Id = 1, FechaRegistro = DateTime.Now, ProyectoId = 1, UsuarioId = 1 });
             builder.Entity<UsuariosProyectos>().HasData(new UsuariosProyectos() { Id = 2, FechaRegistro = DateTime.Now, ProyectoId = 2, UsuarioId = 2 });
             builder.Entity<UsuariosProyectos>().HasData(new UsuariosProyectos() { Id = 3, FechaRegistro = DateTime.Now, ProyectoId = 3, UsuarioId = 5 });
-            builder.Entity<UsuariosProyectos>().HasData(new UsuariosProyectos() { Id = 4, FechaRegistro = DateTime.Now, ProyectoId = 1, UsuarioId = 2 });            
+            builder.Entity<UsuariosProyectos>().HasData(new UsuariosProyectos() { Id = 4, FechaRegistro = DateTime.Now, ProyectoId = 1, UsuarioId = 2 });
             builder.Entity<UsuariosProyectos>().HasData(new UsuariosProyectos() { Id = 5, FechaRegistro = DateTime.Now, ProyectoId = 2, UsuarioId = 2 });
             builder.Entity<UsuariosProyectos>().HasData(new UsuariosProyectos() { Id = 6, FechaRegistro = DateTime.Now, ProyectoId = 2, UsuarioId = 3 });
             builder.Entity<UsuariosProyectos>().HasData(new UsuariosProyectos() { Id = 7, FechaRegistro = DateTime.Now, ProyectoId = 2, UsuarioId = 4 });

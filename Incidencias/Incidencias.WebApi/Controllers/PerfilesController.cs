@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using Incidencias.AccesoDatos.Contratos;
+using Incidencias.Interfaces;
 using Incidencias.Modelos;
 using Incidencias.WebApi.ViewModels;
 using Microsoft.AspNetCore.Http;
@@ -48,17 +48,28 @@ namespace Incidencias.WebApi.Controllers
         }
 
         // GET: api/perfiles/5
+        /*[HttpGet("{id}")]
+         [ProducesResponseType(StatusCodes.Status200OK)]
+         [ProducesResponseType(StatusCodes.Status404NotFound)]
+         public async Task<ActionResult<PerfilVM>> Get(int id)*/
         [HttpGet("{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<PerfilVM>> Get(int id)
-        {
-            var perfil = await _perfilesRepositorio.ObtenerAsync(id);
-            if (perfil == null)
+        public IActionResult Get(int id)
+        {           
+            try
             {
-                return NotFound();
+                var perfil =  _perfilesRepositorio.ObtenerAsync(id);
+                if (perfil.Result == null)
+                {
+                    return NotFound();
+                }
+                var resultado = _mapper.Map<PerfilVM>(perfil.Result);
+                return Ok(resultado);                
             }
-            return _mapper.Map<PerfilVM>(perfil);
+            catch (Exception excepcion)
+            {
+                _logger.LogError($"Error en {nameof(Get)}: " + excepcion.Message);
+                return BadRequest();
+            }
         }
 
         // POST: api/perfiles
@@ -95,16 +106,25 @@ namespace Incidencias.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<PerfilVM>> Put(int id, [FromBody] PerfilVM perfilViewModels)
         {
-            if (perfilViewModels == null)
-                return NotFound();
+            try
+            {
+                if (perfilViewModels == null)
+                    return NotFound();
 
+                var perfil = _mapper.Map<Perfil>(perfilViewModels);
+                var resultado = await _perfilesRepositorio.Actualizar(perfil);
+                if (!resultado)
+                    return BadRequest();
 
-            var perfil = _mapper.Map<Perfil>(perfilViewModels);
-            var resultado = await _perfilesRepositorio.Actualizar(perfil);
-            if (!resultado)
+                return perfilViewModels;
+            }
+            catch (Exception excepcion)
+            {
+                _logger.LogError($"Error en {nameof(Put)}: " + excepcion.Message);
                 return BadRequest();
+            }
 
-            return perfilViewModels;
+            
         }
 
         // DELETE: api/perfiles/5

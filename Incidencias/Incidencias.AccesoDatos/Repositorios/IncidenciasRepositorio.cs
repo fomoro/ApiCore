@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 using System.Linq;
 using Incidencias.Modelos;
 using Incidencias.Modelos.Enum;
-using Incidencias.AccesoDatos.Contratos;
 using Microsoft.AspNetCore.Identity;
+using Incidencias.Interfaces.AccesoDatos;
 
 namespace Incidencias.AccesoDatos.Repositorios
 {

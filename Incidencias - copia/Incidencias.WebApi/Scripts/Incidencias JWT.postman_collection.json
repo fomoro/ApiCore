@@ -1,0 +1,652 @@
+{
+	"info": {
+		"_postman_id": "bbf41acd-d001-42ed-8df8-beea85056d4e",
+		"name": "Incidencias JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01 Perfiles",
+			"item": [
+				{
+					"name": "PerfilesGetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}perfiles/1",
+							"host": [
+								"{{urlApi}}perfiles"
+							],
+							"path": [
+								"1"
+							]
+						},
+						"description": "Obtener un perfil dado su identificador"
+					},
+					"response": []
+				},
+				{
+					"name": "PerfilesGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}perfiles",
+							"host": [
+								"{{urlApi}}perfiles"
+							]
+						},
+						"description": "Obtener una lista de perfiles"
+					},
+					"response": []
+				},
+				{
+					"name": "PerfilesPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":0,\n\t\"nombre\":\"Invitado\"\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}perfiles",
+							"host": [
+								"{{urlApi}}perfiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PerfilesPut",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 4,\n\t\"nombre\":\"modificado\"\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}perfiles/4",
+							"host": [
+								"{{urlApi}}perfiles"
+							],
+							"path": [
+								"4"
+							]
+						},
+						"description": "Actualiza un Perfil"
+					},
+					"response": []
+				},
+				{
+					"name": "PerfilesDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}perfiles/4",
+							"host": [
+								"{{urlApi}}perfiles"
+							],
+							"path": [
+								"4"
+							]
+						},
+						"description": "Elimina un Perfil"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "02 Usuarios",
+			"item": [
+				{
+					"name": "UsuarioById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}usuarios/1",
+							"host": [
+								"{{urlApi}}usuarios"
+							],
+							"path": [
+								"1"
+							]
+						},
+						"description": "Obtiene un usuario con base en su Identificador"
+					},
+					"response": []
+				},
+				{
+					"name": "UsuariosGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}usuarios",
+							"host": [
+								"{{urlApi}}usuarios"
+							]
+						},
+						"description": "Obtiene todos los usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "UsuariosPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 0,\n    \"nombre\": \"Alberto\",\n    \"apellidos\": \"Martínez\",\n    \"email\":\"albertomartinez@correo.com\",\n    \"username\":\"amartinez\",\n    \"password\":\"123456\",\n    \"perfilId\":2\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}usuarios",
+							"host": [
+								"{{urlApi}}usuarios"
+							]
+						},
+						"description": "Agrega un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "UsuariosPut",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n    \"nombre\": \"Administrador\",\n    \"apellidos\": \"Administrador X3A\",\n    \"email\":\"administradorx3a@correo.com\"\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}usuarios/1",
+							"host": [
+								"{{urlApi}}usuarios"
+							],
+							"path": [
+								"1"
+							]
+						},
+						"description": "Actualiza un usuario, aunque en este método no se actualiza su contraseña."
+					},
+					"response": []
+				},
+				{
+					"name": "UsuariosDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}usuarios/11",
+							"host": [
+								"{{urlApi}}usuarios"
+							],
+							"path": [
+								"11"
+							]
+						},
+						"description": "Eliminar un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "UsuarioCambiarContrasena",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}usuarios/cambiarcontrasena",
+							"host": [
+								"{{urlApi}}usuarios"
+							],
+							"path": [
+								"cambiarcontrasena"
+							]
+						},
+						"description": "Cambiar la contraseña del usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "UsuarioValidarCredenciales",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}usuarios/validarusuario",
+							"host": [
+								"{{urlApi}}usuarios"
+							],
+							"path": [
+								"validarusuario"
+							]
+						},
+						"description": "Cambiar la contraseña del usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "UsuarioCambiarPerfil",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"perfilId\": 2\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}usuarios/cambiarperfil",
+							"host": [
+								"{{urlApi}}usuarios"
+							],
+							"path": [
+								"cambiarperfil"
+							]
+						},
+						"description": "Cambia el perfil del usuario"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03 Proyectos",
+			"item": [
+				{
+					"name": "ProyectosGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}proyectos",
+							"host": [
+								"{{urlApi}}proyectos"
+							]
+						},
+						"description": "Obtiene todas las órdenes"
+					},
+					"response": []
+				},
+				{
+					"name": "ProyectosIncidenciasGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}Proyectos/incidencias",
+							"host": [
+								"{{urlApi}}Proyectos"
+							],
+							"path": [
+								"incidencias"
+							]
+						},
+						"description": "Obtiene todos las órdenes con detalles"
+					},
+					"response": []
+				},
+				{
+					"name": "ProyectosById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}proyectos/1",
+							"host": [
+								"{{urlApi}}proyectos"
+							],
+							"path": [
+								"1"
+							]
+						},
+						"description": "Obtiene una orden con base en su Identificador"
+					},
+					"response": []
+				},
+				{
+					"name": "ProyectoConIncidenciasById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}proyectos/1/incidencias",
+							"host": [
+								"{{urlApi}}proyectos"
+							],
+							"path": [
+								"1",
+								"incidencias"
+							]
+						},
+						"description": "Obtiene una orden con sus detalles con base en su Identificador"
+					},
+					"response": []
+				},
+				{
+					"name": "ProyectosPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 0,\n        \"nombre\": \"Fiesta\",        \n        \"incidencias\": [\n            {         \n                \"nombre\": \"test\",\n                \"descripcion\": \"descripcion\",\n                \"estatusIncidencia\": 1,\n                \"version\": 12\n            }\n        ],\n        \"usuariosProyectos\": [\n            {\n                \"usuarioId\": 1\n            }\n        ]\n}\n"
+						},
+						"url": {
+							"raw": "{{urlApi}}proyectos",
+							"host": [
+								"{{urlApi}}proyectos"
+							]
+						},
+						"description": "Agrega una orden"
+					},
+					"response": []
+				},
+				{
+					"name": "ProyectosDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}Proyectos/8",
+							"host": [
+								"{{urlApi}}Proyectos"
+							],
+							"path": [
+								"8"
+							]
+						},
+						"description": "Eliminar una orden"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04 Incidencias",
+			"item": [
+				{
+					"name": "IncidenciasGet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}Incidencias",
+							"host": [
+								"{{urlApi}}Incidencias"
+							]
+						},
+						"description": "Obtiene todos los usuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "IncidenciasById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}Incidencias/2",
+							"host": [
+								"{{urlApi}}Incidencias"
+							],
+							"path": [
+								"2"
+							]
+						},
+						"description": "Obtiene un usuario con base en su Identificador"
+					},
+					"response": []
+				},
+				{
+					"name": "IncidenciasPut",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,    \n    \"nombre\": \"Pantalla no Carga\",\n    \"descripcion\": \"La pantalla que carca la nomina genera error 500\",\n    \"estatusIncidencia\": 1,\n    \"version\": 2\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}Incidencias/2",
+							"host": [
+								"{{urlApi}}Incidencias"
+							],
+							"path": [
+								"2"
+							]
+						},
+						"description": "Actualiza un usuario, aunque en este método no se actualiza su contraseña."
+					},
+					"response": []
+				},
+				{
+					"name": "IncidenciasPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 0,\n    \"proyectoId\": 2,\n    \"nombre\": \"Tabla en Bca\",\n    \"descripcion\": \"el plano no cumple con los datos del ministerio\",\n    \"estatusIncidencia\": 1,\n    \"version\": 2\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}Incidencias",
+							"host": [
+								"{{urlApi}}Incidencias"
+							]
+						},
+						"description": "Agrega un usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "IncidenciasDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}Incidencias/5",
+							"host": [
+								"{{urlApi}}Incidencias"
+							],
+							"path": [
+								"5"
+							]
+						},
+						"description": "Eliminar un usuario"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "05 Archivos",
+			"item": [
+				{
+					"name": "ArchivosPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"Proveedor\": \"Proveedor1\",\n    \"URL\": \"C:/Users/57350/source/repos/CoreApi/Incidencias/Incidencias.WebApi/Resources/Archivos/data.xml\"\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}Archivos",
+							"host": [
+								"{{urlApi}}Archivos"
+							]
+						},
+						"description": "Agrega un usuario"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sesion",
+			"item": [
+				{
+					"name": "LoginJWT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"VivianaValente\",\n\t\"password\":\"Somma\"\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}sesion/login/",
+							"host": [
+								"{{urlApi}}sesion"
+							],
+							"path": [
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "urlApi",
+			"value": "https://localhost:5001/api/"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiVml2aWFuYVZhbGVudGUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJ2YWxlbnRlQGdzb2Z0LmNvbS51eSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkRlc2Fycm9sbGFkb3IiLCJuYmYiOjE2MzMzNjg0MjUsImV4cCI6MTYzMzM2OTAyNSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMS8iLCJhdWQiOiJJbmNpZGVuY2lhc1dlYkFwaSJ9.nltlcCz4c_NygR7hmSex3cqSZAUmXlCNDwuVdMn7nx4"
+		}
+	]
+}
