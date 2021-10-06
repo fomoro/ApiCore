@@ -17,8 +17,6 @@ namespace Incidencias.Modelos
         public DateTime? FechaActualizacion { get; set; }        
         public EstatusProyecto EstatusProyecto { get; set; }
 
-
-
         public ICollection<UsuariosProyectos> UsuariosProyectos { get; set; }
         public ICollection<Incidencia> Incidencias { get; set; }
     }

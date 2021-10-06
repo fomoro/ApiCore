@@ -92,14 +92,16 @@ namespace Incidencias.AccesoDatos.Repositorios
         {
             return await _dbSet
                 .Include(Incidencia => Incidencia.Proyecto)
-                .Where(u => u.EstatusIncidencia == EstatusIncidencia.Activo).ToListAsync();
+                .Where(u => u.EstatusIncidencia != EstatusIncidencia.Inactivo).ToListAsync();
         }
 
         public async Task<Incidencia> ObtenerNombreAsync(string nombre)
         {
             try
             {
-                return await _dbSet.Where(c => c.Nombre == nombre && c.EstatusIncidencia == EstatusIncidencia.Activo).FirstOrDefaultAsync();
+                return await _dbSet
+                    .Where(c => c.Nombre == nombre && c.EstatusIncidencia != EstatusIncidencia.Inactivo)
+                    .FirstOrDefaultAsync();
             }
             catch (Exception excepcion)
             {

@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pruebas", "Pruebas", "{2EF3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LogicaDeNegocio", "LogicaDeNegocio", "{B79F7F9D-A791-4010-8EDE-22B46DDE4F3B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Incidencias.Interfaces", "Incidencias.Interfaces\Incidencias.Interfaces.csproj", "{CAB74F62-F20E-49EE-87C8-6E62E25F87FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Incidencias.Interfaces", "Incidencias.Interfaces\Incidencias.Interfaces.csproj", "{CAB74F62-F20E-49EE-87C8-6E62E25F87FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Incidencias.AccesoDatos.Test", "Incidencias.AccesoDatos.Test\Incidencias.AccesoDatos.Test.csproj", "{7EBBBF6C-A23D-4C3A-AB3F-6B0C940AAD7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Incidencias.AccesoDatos.Test", "Incidencias.AccesoDatos.Test\Incidencias.AccesoDatos.Test.csproj", "{7EBBBF6C-A23D-4C3A-AB3F-6B0C940AAD7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Incidencias.WebApi.Test", "Incidencias.WebApi.Test\Incidencias.WebApi.Test.csproj", "{8EF4BF7E-FAC0-4DC0-B9E8-3CAA84B10940}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Incidencias.WebApi.Test", "Incidencias.WebApi.Test\Incidencias.WebApi.Test.csproj", "{8EF4BF7E-FAC0-4DC0-B9E8-3CAA84B10940}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

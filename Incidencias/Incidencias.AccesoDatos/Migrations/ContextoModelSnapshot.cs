@@ -26,6 +26,9 @@ namespace Incidencias.AccesoDatos.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("DesarrolladorId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Descripcion")
                         .HasColumnType("nvarchar(max)");
 
@@ -36,6 +39,9 @@ namespace Incidencias.AccesoDatos.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProyectoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TesterId")
                         .HasColumnType("int");
 
                     b.Property<float>("Version")
@@ -51,226 +57,276 @@ namespace Incidencias.AccesoDatos.Migrations
                         new
                         {
                             Id = 1,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            EstatusIncidencia = 1,
+                            EstatusIncidencia = 2,
                             Nombre = "incidencia a",
                             ProyectoId = 1,
+                            TesterId = 5,
                             Version = 1f
                         },
                         new
                         {
                             Id = 2,
+                            DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            EstatusIncidencia = 1,
+                            EstatusIncidencia = 2,
                             Nombre = "incidencia b",
                             ProyectoId = 1,
+                            TesterId = 5,
                             Version = 1f
                         },
                         new
                         {
                             Id = 3,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia c",
                             ProyectoId = 1,
+                            TesterId = 5,
                             Version = 1f
                         },
                         new
                         {
                             Id = 4,
+                            DesarrolladorId = 3,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia ad",
                             ProyectoId = 1,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 5,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia e",
                             ProyectoId = 1,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 6,
+                            DesarrolladorId = 3,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia df",
                             ProyectoId = 1,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 7,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            EstatusIncidencia = 1,
+                            EstatusIncidencia = 2,
                             Nombre = "incidencia 1",
                             ProyectoId = 1,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 8,
+                            DesarrolladorId = 3,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia 40",
                             ProyectoId = 1,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 9,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia g",
                             ProyectoId = 2,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 10,
+                            DesarrolladorId = 3,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia 564",
                             ProyectoId = 2,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 11,
+                            DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            EstatusIncidencia = 1,
+                            EstatusIncidencia = 2,
                             Nombre = "incidencia d1f",
                             ProyectoId = 2,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 12,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia ol",
                             ProyectoId = 2,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 13,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia aew",
                             ProyectoId = 2,
+                            TesterId = 5,
                             Version = 1f
                         },
                         new
                         {
                             Id = 14,
+                            DesarrolladorId = 3,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia afw",
                             ProyectoId = 2,
+                            TesterId = 5,
                             Version = 1f
                         },
                         new
                         {
                             Id = 15,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            EstatusIncidencia = 1,
+                            EstatusIncidencia = 2,
                             Nombre = "incidencia aww",
                             ProyectoId = 3,
+                            TesterId = 5,
                             Version = 1f
                         },
                         new
                         {
                             Id = 16,
+                            DesarrolladorId = 3,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia a598",
                             ProyectoId = 3,
+                            TesterId = 5,
                             Version = 1f
                         },
                         new
                         {
                             Id = 17,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            EstatusIncidencia = 1,
+                            EstatusIncidencia = 2,
                             Nombre = "incidencia a369",
                             ProyectoId = 3,
+                            TesterId = 5,
                             Version = 1f
                         },
                         new
                         {
                             Id = 18,
+                            DesarrolladorId = 3,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia a963",
                             ProyectoId = 3,
+                            TesterId = 5,
                             Version = 1f
                         },
                         new
                         {
                             Id = 19,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            EstatusIncidencia = 1,
+                            EstatusIncidencia = 2,
                             Nombre = "incidencia a1244",
                             ProyectoId = 3,
+                            TesterId = 5,
                             Version = 1f
                         },
                         new
                         {
                             Id = 20,
+                            DesarrolladorId = 3,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia 74568",
                             ProyectoId = 3,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 21,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia carro",
                             ProyectoId = 2,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 22,
+                            DesarrolladorId = 3,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia tejado",
                             ProyectoId = 2,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 23,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            EstatusIncidencia = 1,
+                            EstatusIncidencia = 2,
                             Nombre = "incidencia politico",
                             ProyectoId = 2,
+                            TesterId = 5,
                             Version = 1f
                         },
                         new
                         {
                             Id = 24,
+                            DesarrolladorId = 3,
                             Descripcion = " carreta ",
                             EstatusIncidencia = 1,
                             Nombre = "incidencia casa",
                             ProyectoId = 2,
+                            TesterId = 6,
                             Version = 1f
                         },
                         new
                         {
                             Id = 25,
+                            DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            EstatusIncidencia = 1,
+                            EstatusIncidencia = 2,
                             Nombre = "incidencia tes",
                             ProyectoId = 2,
+                            TesterId = 5,
                             Version = 1f
                         });
                 });
@@ -335,21 +391,21 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 1,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 945, DateTimeKind.Local).AddTicks(9478),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 931, DateTimeKind.Local).AddTicks(8050),
                             Nombre = "Facturacion"
                         },
                         new
                         {
                             Id = 2,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 947, DateTimeKind.Local).AddTicks(679),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 932, DateTimeKind.Local).AddTicks(6014),
                             Nombre = "Financiero"
                         },
                         new
                         {
                             Id = 3,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 947, DateTimeKind.Local).AddTicks(734),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 932, DateTimeKind.Local).AddTicks(6048),
                             Nombre = "Salud"
                         });
                 });
@@ -443,6 +499,17 @@ namespace Incidencias.AccesoDatos.Migrations
                             Password = "AQAAAAEAACcQAAAAEDQZw/655u8YyXe3TDm2sb3LgzHBVOdYZriGphAUgZ7FM2ULzUNe4b9nbRQtjqRiYA==",
                             PerfilId = 3,
                             Username = "juan"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Apellidos = "Perez",
+                            Email = "silvina@gsoft.com.uy",
+                            Estatus = 1,
+                            Nombre = "Silvina",
+                            Password = "AQAAAAEAACcQAAAAEDQZw/655u8YyXe3TDm2sb3LgzHBVOdYZriGphAUgZ7FM2ULzUNe4b9nbRQtjqRiYA==",
+                            PerfilId = 3,
+                            Username = "silvina"
                         });
                 });
 
@@ -474,77 +541,77 @@ namespace Incidencias.AccesoDatos.Migrations
                         new
                         {
                             Id = 1,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(446),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(1835),
                             ProyectoId = 1,
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 2,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(1947),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2639),
                             ProyectoId = 2,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 3,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(1983),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2664),
                             ProyectoId = 3,
                             UsuarioId = 5
                         },
                         new
                         {
                             Id = 4,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2007),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2680),
                             ProyectoId = 1,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 5,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2030),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2694),
                             ProyectoId = 2,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 6,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2058),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2711),
                             ProyectoId = 2,
                             UsuarioId = 3
                         },
                         new
                         {
                             Id = 7,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2080),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2725),
                             ProyectoId = 2,
                             UsuarioId = 4
                         },
                         new
                         {
                             Id = 8,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2103),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2738),
                             ProyectoId = 2,
                             UsuarioId = 5
                         },
                         new
                         {
                             Id = 9,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2126),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2751),
                             ProyectoId = 3,
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 10,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2153),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2766),
                             ProyectoId = 3,
                             UsuarioId = 4
                         },
                         new
                         {
                             Id = 11,
-                            FechaRegistro = new DateTime(2021, 10, 5, 21, 7, 11, 948, DateTimeKind.Local).AddTicks(2177),
+                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2810),
                             ProyectoId = 3,
                             UsuarioId = 5
                         });

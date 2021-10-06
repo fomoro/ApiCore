@@ -16,6 +16,7 @@ namespace Incidencias.WebApi.ViewModels
 
         public int Id { get; set; }
         public string Nombre { get; set; }
+        public int CantidadIncidencias { get; set; }
         public DateTime FechaRegistro { get; set; }
         public DateTime? FechaActualizacion { get; set; }       
 

@@ -14,7 +14,8 @@ namespace Incidencias.WebApi.ViewModels
         public string Descripcion { get; set; }
         public EstatusIncidencia EstatusIncidencia { get; set; }
         public float Version { get; set; }
-        
+        public int DesarrolladorId { get; set; }
+        public int TesterId { get; set; }
     }
 
 }
