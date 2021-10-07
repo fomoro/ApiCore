@@ -1,0 +1,20 @@
+MOCKS:
+- Varios ejemplos en tests de capa de negocios.
+- Un ejemplo a nivel de web api (para StudentController)
+
+TESTS DE CAPAS DE ACCESO A DATOS:
+- Vimos como configurar el proveedor de acceso a datos InMemory.
+- Revisamos algunos tests que lo utilizan.
+
+FILTROS (Carpeta Filters del proyecto de web api):
+- Breve intro teórica. Por favor estudien este material: https://github.com/ORT-DA2/GMendez/blob/main/Clases/Clase5_Filters.md
+- Vimos como implementar filtros en forma de atributos. Usamos como ejemplo un filtro que realiza autorizacion basada en roles.
+- La carpeta contiene un filtro adicional para el manejo de excepciones: TrapExceptions. Funciona tambien como atributo. Revisen
+  el codigo y van a ver que segun el tipo de excepcion retorna un codigo de error y mensaje distinto. La idea es que se use un filtro 
+  asi para no tener que complejizar el codigo de sus controllers con manejo de excepciones.
+
+POR ULTIMO:
+- Les comente que la validacion explicita en los controllers del ModelState no es necesaria si lo que reciben como parametro es un DTO que contiene
+  DataAnnotations para realizar validaciones, como los que hay en el codigo. Asp.NET Core Web Api ya lo hace solo (No así ASP.Net Web Api "vieja", basada 
+  .NET Framework). 
+
