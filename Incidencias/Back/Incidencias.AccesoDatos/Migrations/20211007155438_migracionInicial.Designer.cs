@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Incidencias.AccesoDatos.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20211006063853_seAdicionaTester")]
-    partial class seAdicionaTester
+    [Migration("20211007155438_migracionInicial")]
+    partial class migracionInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -393,21 +393,21 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 1,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 931, DateTimeKind.Local).AddTicks(8050),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 730, DateTimeKind.Local).AddTicks(1),
                             Nombre = "Facturacion"
                         },
                         new
                         {
                             Id = 2,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 932, DateTimeKind.Local).AddTicks(6014),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 731, DateTimeKind.Local).AddTicks(5140),
                             Nombre = "Financiero"
                         },
                         new
                         {
                             Id = 3,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 932, DateTimeKind.Local).AddTicks(6048),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 731, DateTimeKind.Local).AddTicks(5200),
                             Nombre = "Salud"
                         });
                 });
@@ -543,77 +543,77 @@ namespace Incidencias.AccesoDatos.Migrations
                         new
                         {
                             Id = 1,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(1835),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(2711),
                             ProyectoId = 1,
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 2,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2639),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(3908),
                             ProyectoId = 2,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 3,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2664),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(3956),
                             ProyectoId = 3,
                             UsuarioId = 5
                         },
                         new
                         {
                             Id = 4,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2680),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(3977),
                             ProyectoId = 1,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 5,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2694),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(3995),
                             ProyectoId = 2,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 6,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2711),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(4019),
                             ProyectoId = 2,
                             UsuarioId = 3
                         },
                         new
                         {
                             Id = 7,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2725),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(4036),
                             ProyectoId = 2,
                             UsuarioId = 4
                         },
                         new
                         {
                             Id = 8,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2738),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(4053),
                             ProyectoId = 2,
                             UsuarioId = 5
                         },
                         new
                         {
                             Id = 9,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2751),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(4069),
                             ProyectoId = 3,
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 10,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2766),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(4088),
                             ProyectoId = 3,
                             UsuarioId = 4
                         },
                         new
                         {
                             Id = 11,
-                            FechaRegistro = new DateTime(2021, 10, 6, 1, 38, 52, 933, DateTimeKind.Local).AddTicks(2810),
+                            FechaRegistro = new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(4104),
                             ProyectoId = 3,
                             UsuarioId = 5
                         });

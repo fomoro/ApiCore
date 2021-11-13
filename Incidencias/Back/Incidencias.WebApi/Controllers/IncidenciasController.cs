@@ -6,12 +6,15 @@ using AutoMapper;
 using Incidencias.Interfaces.AccesoDatos;
 using Incidencias.Modelos;
 using Incidencias.WebApi.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace Incidencias.WebApi.Controllers
 {
+    [Authorize(Roles = "Tester")]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class IncidenciasController : ControllerBase
@@ -96,6 +99,8 @@ namespace Incidencias.WebApi.Controllers
         }
 
         // PUT: api/usuarios/5
+        [Authorize(Roles = "Desarrollador, Tester")]
+        //[Authorize]
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

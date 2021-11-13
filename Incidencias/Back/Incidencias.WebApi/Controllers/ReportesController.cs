@@ -7,6 +7,7 @@ using Incidencias.Interfaces.AccesoDatos;
 using Incidencias.Modelos;
 using Incidencias.Modelos.Enum;
 using Incidencias.WebApi.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -29,6 +30,8 @@ namespace Incidencias.WebApi.Controllers
             this._logger = logger;
         }
 
+        [Authorize(Roles = "Administrador")]
+        //[Authorize]
         [HttpGet("IncidenciasPorProyecto")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -53,16 +56,18 @@ namespace Incidencias.WebApi.Controllers
             }
         }
 
-        [HttpGet("IncidenciasResueltasDesarrolador")]
+        [Authorize(Roles = "Administrador")]
+        //[Authorize]
+        [HttpGet("IncidenciasResueltasDesarrolador/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<int>> IncidenciasResueltasDesarrolador()
+        public async Task<ActionResult<int>> IncidenciasResueltasDesarrolador(int id)
         {
             try
             {
                 var incidencias = await _incidenciasRepositorio.ObtenerTodosAsync();
                 var resultado = incidencias
-                    .Where(x => x.EstatusIncidencia == EstatusIncidencia.Resuelto)
+                    .Where(x => x.EstatusIncidencia == EstatusIncidencia.Resuelto && x.DesarrolladorId == id)
                     .GroupBy(x => x.DesarrolladorId)
                     .Select(y => new
                     {
@@ -79,7 +84,9 @@ namespace Incidencias.WebApi.Controllers
             }
         }
 
-        [HttpGet("IncidenciasPorTester/{id}")]
+        [Authorize(Roles = "Tester")]
+        //[Authorize]
+        [HttpPut("IncidenciasPorTester/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult> IncidenciasPorTester(int id, [FromBody] IncidenciaFilterVM incidenciaVM)
@@ -89,14 +96,14 @@ namespace Incidencias.WebApi.Controllers
                 var incidencias = await _incidenciasRepositorio.ObtenerTodosAsync();
                 var resultado = from i in incidencias
                         where (i.TesterId == id)
-                        && (i.Id == id || incidenciaVM.Id == null)
+                       // && (i.Id == id || incidenciaVM.Id == null)
                         && (i.ProyectoId == incidenciaVM.ProyectoId || incidenciaVM.ProyectoId == null)
                         && (i.Nombre == incidenciaVM.Nombre || incidenciaVM.Nombre == null)
                         && (i.EstatusIncidencia == incidenciaVM.EstatusIncidencia || incidenciaVM.EstatusIncidencia == null)
                         select new
                         {
-                            i.Id,
-                            i.Proyecto.Nombre,
+                            incidencia = i.Id,
+                            proyecto = i.Proyecto.Nombre,
                             i.EstatusIncidencia                            
                         };
                 

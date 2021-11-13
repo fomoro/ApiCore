@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Incidencias.AccesoDatos.Migrations
 {
-    public partial class creacionDatabase : Migration
+    public partial class migracionInicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -128,9 +128,9 @@ namespace Incidencias.AccesoDatos.Migrations
                 columns: new[] { "Id", "EstatusProyecto", "FechaActualizacion", "FechaRegistro", "Nombre" },
                 values: new object[,]
                 {
-                    { 1, 1, null, new DateTime(2021, 10, 6, 0, 3, 14, 619, DateTimeKind.Local).AddTicks(7716), "Facturacion" },
-                    { 2, 1, null, new DateTime(2021, 10, 6, 0, 3, 14, 620, DateTimeKind.Local).AddTicks(5099), "Financiero" },
-                    { 3, 1, null, new DateTime(2021, 10, 6, 0, 3, 14, 620, DateTimeKind.Local).AddTicks(5133), "Salud" }
+                    { 1, 1, null, new DateTime(2021, 10, 7, 12, 54, 37, 730, DateTimeKind.Local).AddTicks(1), "Facturacion" },
+                    { 2, 1, null, new DateTime(2021, 10, 7, 12, 54, 37, 731, DateTimeKind.Local).AddTicks(5140), "Financiero" },
+                    { 3, 1, null, new DateTime(2021, 10, 7, 12, 54, 37, 731, DateTimeKind.Local).AddTicks(5200), "Salud" }
                 });
 
             migrationBuilder.InsertData(
@@ -138,31 +138,31 @@ namespace Incidencias.AccesoDatos.Migrations
                 columns: new[] { "Id", "DesarrolladorId", "Descripcion", "EstatusIncidencia", "Nombre", "ProyectoId", "TesterId", "Version" },
                 values: new object[,]
                 {
-                    { 10, 2, " carreta ", 1, "incidencia 564", 2, 3, 1f },
-                    { 18, 2, " carreta ", 1, "incidencia a963", 3, 3, 1f },
-                    { 17, 2, " carreta ", 1, "incidencia a369", 3, 3, 1f },
-                    { 16, 2, " carreta ", 1, "incidencia a598", 3, 3, 1f },
-                    { 15, 2, " carreta ", 1, "incidencia aww", 3, 3, 1f },
-                    { 25, 2, " carreta ", 1, "incidencia tes", 2, 3, 1f },
-                    { 24, 2, " carreta ", 1, "incidencia casa", 2, 3, 1f },
-                    { 23, 2, " carreta ", 1, "incidencia politico", 2, 3, 1f },
-                    { 22, 2, " carreta ", 1, "incidencia tejado", 2, 3, 1f },
-                    { 21, 2, " carreta ", 1, "incidencia carro", 2, 3, 1f },
-                    { 14, 2, " carreta ", 1, "incidencia afw", 2, 3, 1f },
-                    { 13, 2, " carreta ", 1, "incidencia aew", 2, 3, 1f },
-                    { 12, 2, " carreta ", 1, "incidencia ol", 2, 3, 1f },
-                    { 11, 2, " carreta ", 1, "incidencia d1f", 2, 3, 1f },
-                    { 20, 2, " carreta ", 1, "incidencia 74568", 3, 3, 1f },
-                    { 9, 2, " carreta ", 1, "incidencia g", 2, 3, 1f },
-                    { 8, 2, " carreta ", 1, "incidencia 40", 1, 3, 1f },
-                    { 7, 2, " carreta ", 1, "incidencia 1", 1, 3, 1f },
-                    { 6, 2, " carreta ", 1, "incidencia df", 1, 3, 1f },
-                    { 5, 2, " carreta ", 1, "incidencia e", 1, 3, 1f },
-                    { 4, 2, " carreta ", 1, "incidencia ad", 1, 3, 1f },
-                    { 3, 2, " carreta ", 1, "incidencia c", 1, 3, 1f },
-                    { 2, 2, " carreta ", 1, "incidencia b", 1, 3, 1f },
-                    { 1, 2, " carreta ", 1, "incidencia a", 1, 3, 1f },
-                    { 19, 2, " carreta ", 1, "incidencia a1244", 3, 3, 1f }
+                    { 10, 3, " carreta ", 1, "incidencia 564", 2, 6, 1f },
+                    { 18, 3, " carreta ", 1, "incidencia a963", 3, 5, 1f },
+                    { 17, 2, " carreta ", 2, "incidencia a369", 3, 5, 1f },
+                    { 16, 3, " carreta ", 1, "incidencia a598", 3, 5, 1f },
+                    { 15, 2, " carreta ", 2, "incidencia aww", 3, 5, 1f },
+                    { 25, 2, " carreta ", 2, "incidencia tes", 2, 5, 1f },
+                    { 24, 3, " carreta ", 1, "incidencia casa", 2, 6, 1f },
+                    { 23, 2, " carreta ", 2, "incidencia politico", 2, 5, 1f },
+                    { 22, 3, " carreta ", 1, "incidencia tejado", 2, 6, 1f },
+                    { 21, 2, " carreta ", 1, "incidencia carro", 2, 6, 1f },
+                    { 14, 3, " carreta ", 1, "incidencia afw", 2, 5, 1f },
+                    { 13, 2, " carreta ", 1, "incidencia aew", 2, 5, 1f },
+                    { 12, 2, " carreta ", 1, "incidencia ol", 2, 6, 1f },
+                    { 11, 3, " carreta ", 2, "incidencia d1f", 2, 6, 1f },
+                    { 19, 2, " carreta ", 2, "incidencia a1244", 3, 5, 1f },
+                    { 20, 3, " carreta ", 1, "incidencia 74568", 3, 6, 1f },
+                    { 8, 3, " carreta ", 1, "incidencia 40", 1, 6, 1f },
+                    { 7, 2, " carreta ", 2, "incidencia 1", 1, 6, 1f },
+                    { 6, 3, " carreta ", 1, "incidencia df", 1, 6, 1f },
+                    { 5, 2, " carreta ", 1, "incidencia e", 1, 6, 1f },
+                    { 4, 3, " carreta ", 1, "incidencia ad", 1, 6, 1f },
+                    { 3, 2, " carreta ", 1, "incidencia c", 1, 5, 1f },
+                    { 2, 3, " carreta ", 2, "incidencia b", 1, 5, 1f },
+                    { 1, 2, " carreta ", 2, "incidencia a", 1, 5, 1f },
+                    { 9, 2, " carreta ", 1, "incidencia g", 2, 6, 1f }
                 });
 
             migrationBuilder.InsertData(
@@ -170,6 +170,7 @@ namespace Incidencias.AccesoDatos.Migrations
                 columns: new[] { "Id", "Apellidos", "Email", "Estatus", "Nombre", "Password", "PerfilId", "Username" },
                 values: new object[,]
                 {
+                    { 6, "Perez", "silvina@gsoft.com.uy", 1, "Silvina", "AQAAAAEAACcQAAAAEDQZw/655u8YyXe3TDm2sb3LgzHBVOdYZriGphAUgZ7FM2ULzUNe4b9nbRQtjqRiYA==", 3, "silvina" },
                     { 5, "Perez", "juan@gsoft.com.uy", 1, "Juan", "AQAAAAEAACcQAAAAEDQZw/655u8YyXe3TDm2sb3LgzHBVOdYZriGphAUgZ7FM2ULzUNe4b9nbRQtjqRiYA==", 3, "juan" },
                     { 4, "Martinez", "pedro@gsoft.com.uy", 1, "Pedro", "AQAAAAEAACcQAAAAEM1iOjAS1temRkV5aBawLp/25jvLduRRT8Slq4NS7O1mflpPnKPIHwGgbZXth0ArxA==", 2, "pedro" },
                     { 3, "Lopez", "maria@gsoft.com.uy", 1, "Maria", "AQAAAAEAACcQAAAAEBX72IRr5qgnJMxFPoqCs84fycEJ4AzZ2XD9UOKtoGpgO2Gs6CIiRj3Oqp5/HMeZjA==", 2, "maria" },
@@ -182,17 +183,17 @@ namespace Incidencias.AccesoDatos.Migrations
                 columns: new[] { "Id", "FechaRegistro", "ProyectoId", "UsuarioId" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2021, 10, 6, 0, 3, 14, 621, DateTimeKind.Local).AddTicks(610), 1, 1 },
-                    { 9, new DateTime(2021, 10, 6, 0, 3, 14, 621, DateTimeKind.Local).AddTicks(1541), 3, 1 },
-                    { 2, new DateTime(2021, 10, 6, 0, 3, 14, 621, DateTimeKind.Local).AddTicks(1432), 2, 2 },
-                    { 4, new DateTime(2021, 10, 6, 0, 3, 14, 621, DateTimeKind.Local).AddTicks(1470), 1, 2 },
-                    { 5, new DateTime(2021, 10, 6, 0, 3, 14, 621, DateTimeKind.Local).AddTicks(1484), 2, 2 },
-                    { 6, new DateTime(2021, 10, 6, 0, 3, 14, 621, DateTimeKind.Local).AddTicks(1501), 2, 3 },
-                    { 7, new DateTime(2021, 10, 6, 0, 3, 14, 621, DateTimeKind.Local).AddTicks(1515), 2, 4 },
-                    { 10, new DateTime(2021, 10, 6, 0, 3, 14, 621, DateTimeKind.Local).AddTicks(1556), 3, 4 },
-                    { 3, new DateTime(2021, 10, 6, 0, 3, 14, 621, DateTimeKind.Local).AddTicks(1455), 3, 5 },
-                    { 8, new DateTime(2021, 10, 6, 0, 3, 14, 621, DateTimeKind.Local).AddTicks(1528), 2, 5 },
-                    { 11, new DateTime(2021, 10, 6, 0, 3, 14, 621, DateTimeKind.Local).AddTicks(1569), 3, 5 }
+                    { 1, new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(2711), 1, 1 },
+                    { 9, new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(4069), 3, 1 },
+                    { 2, new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(3908), 2, 2 },
+                    { 4, new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(3977), 1, 2 },
+                    { 5, new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(3995), 2, 2 },
+                    { 6, new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(4019), 2, 3 },
+                    { 7, new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(4036), 2, 4 },
+                    { 10, new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(4088), 3, 4 },
+                    { 3, new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(3956), 3, 5 },
+                    { 8, new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(4053), 2, 5 },
+                    { 11, new DateTime(2021, 10, 7, 12, 54, 37, 732, DateTimeKind.Local).AddTicks(4104), 3, 5 }
                 });
 
             migrationBuilder.CreateIndex(

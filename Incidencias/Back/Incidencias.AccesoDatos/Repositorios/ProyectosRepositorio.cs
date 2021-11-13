@@ -14,10 +14,10 @@ namespace Incidencias.AccesoDatos.Repositorios
     public class ProyectosRepositorio : IProyectosRepositorio
     {
         private readonly Contexto _contexto;
-        private readonly ILogger<PerfilesRepositorio> _logger;
+        private readonly ILogger<ProyectosRepositorio> _logger;
         private DbSet<Proyecto> _dbSet;
   
-        public ProyectosRepositorio(Contexto contexto, ILogger<PerfilesRepositorio> logger)
+        public ProyectosRepositorio(Contexto contexto, ILogger<ProyectosRepositorio> logger)
         {
             this._contexto = contexto;
             this._logger = logger;

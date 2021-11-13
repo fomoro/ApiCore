@@ -2,42 +2,43 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { PerfilModelo } from '../../modelos/perfil.modelo';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class PerfilesService {
+    //baseUrl = environment.baseUrl;
+    private urlEndPoint: string = 'https://localhost:44364/api/Perfiles';
 
-    private array: PerfilModelo[] = [
-        { id: 1, nombre: 'fallo grabe', descripcion: 'carreta', proyectoId: 1, version: 1, estatusIncidencia: 2, desarrolladorId: 2, testerId: 5 },
-        { id: 2, nombre: 'daño dos', descripcion: 'carreta', proyectoId: 1, version: 1, estatusIncidencia: 2, desarrolladorId: 2, testerId: 5 },
-        { id: 3, nombre: 'incidencia b', descripcion: 'carreta', proyectoId: 1, version: 1, estatusIncidencia: 2, desarrolladorId: 3, testerId: 5 },
-        { id: 4, nombre: 'incidencia c', descripcion: 'carreta', proyectoId: 1, version: 1, estatusIncidencia: 2, desarrolladorId: 3, testerId: 5 }
-    ];
+    private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' })
 
-    get obtenerusuarios(): PerfilModelo[] {
-        return [...this.array];
+    constructor(private http: HttpClient) { }
+
+    getAll(): Observable<PerfilModelo[]> {
+        //return this.http.get<PerfilModelo[]>(this.urlEndPoint);
+        return this.http.get(this.urlEndPoint).pipe(
+            map(response => response as PerfilModelo[])
+        );
     }
 
-    agregar(incidencia: PerfilModelo): void {
-        let tamano = this.array.length + 1
-        incidencia.id = tamano
-        this.array.push(incidencia);
+    delete(id: number): Observable<any> {
+        return this.http.delete(`${this.urlEndPoint}/${id}`);
     }
 
-    actualizar(incidencia: PerfilModelo): void {
-        var foundIndex = this.array.findIndex(x => x.id == incidencia.id);
-        this.array[foundIndex].nombre = incidencia.nombre
-        this.array[foundIndex].descripcion = incidencia.descripcion
+    getById(id: number): Observable<PerfilModelo> {
+        return this.http.get<PerfilModelo>(`${this.urlEndPoint}/${id}`)
     }
 
-    obtenerId(id: number): Observable<PerfilModelo> {
-        let incidencia = this.array.filter((x) => x.id == id)[0];
-        return of(incidencia)
+    save(obj: PerfilModelo): Observable<any> {
+        let headers = new HttpHeaders();
+        headers = headers.set('Content-Type', 'application/json');
+        return this.http.post(this.urlEndPoint + "/", JSON.stringify(obj), { headers: headers });
     }
 
-    eliminar(id: number): Observable<PerfilModelo> {
-        var foundIndex = this.array.findIndex(x => x.id == id);
-        var eliminado = this.array[foundIndex]
-        this.array.splice(foundIndex, 1);
-        return of(eliminado)
+    update(obj: PerfilModelo): Observable<any> {
+        let headers = new HttpHeaders();
+        headers = headers.set('Content-Type', 'application/json');
+        return this.http.put(`${this.urlEndPoint}/${obj.id}`, JSON.stringify(obj), { headers: headers });
     }
 }

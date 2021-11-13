@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Incidencias.WebApi.Controllers
 {
-    [Authorize(Roles = "Desarrollador")]
+    [Authorize(Roles = "Administrador")]
     //[Authorize]
     [Route("api/[controller]")]
     [ApiController]

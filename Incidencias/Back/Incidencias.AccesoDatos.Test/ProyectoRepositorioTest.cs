@@ -8,17 +8,17 @@ using System.Linq;
 namespace Incidencias.AccesoDatos.Test
 {
     [TestClass]
-    public class PerfilessRepositorioTests : BaseRepositoryTest
+    public class ProyectoRepositorioTest : BaseRepositoryTest
     {
-        IRepositorioGenerico<Perfil> _repositoryManager;
-        private readonly ILogger<PerfilesRepositorio> _logger;
+        IRepositorioGenerico<Proyecto> _repositoryManager;
+        private readonly ILogger<ProyectosRepositorio> _logger;
 
-        
+
         [TestInitialize]
         public void TestInitialie()
-        {            
+        {
             SetupInMemoryDatabase();
-            _repositoryManager = new PerfilesRepositorio(DBContext, _logger);
+            _repositoryManager = new ProyectosRepositorio(DBContext, _logger);
         }
 
         [TestCleanup]
@@ -30,60 +30,60 @@ namespace Incidencias.AccesoDatos.Test
         }
 
         [TestMethod]
-        public void BuscamosSiEncuentraUnPefil()
+        public void BuscamosSiEncuentraUnProyecto()
         {
             //**** Arrange ****
             var id = 1;
 
             //**** Act *****
-            var perfil = _repositoryManager.ObtenerAsync(id);
+            var proyecto = _repositoryManager.ObtenerAsync(id);
 
             //**** Assert ****
-            Assert.AreEqual(1, perfil.Id);
+            Assert.AreEqual(1, proyecto.Result.Id);
         }
 
         [TestMethod]
-        public void ComprobamamosQueTraigaTodosLosPerfiles()
+        public void ComprobamamosQueTraigaTodosLosProyectos()
         {
             //**** Arrange ****
             //int Id = "std1"; 
 
             //**** Act ****
-            var perfiles = _repositoryManager.ObtenerTodosAsync();
+            var proyectos = _repositoryManager.ObtenerTodosAsync();
 
             //**** Assert ****
-            Assert.IsNotNull(perfiles.Result);
-            Assert.IsTrue(perfiles.Result.FirstOrDefault().Usuarios.Count > 0);
+            Assert.IsNotNull(proyectos.Result);
+            Assert.IsTrue(proyectos.Result != null);
         }
 
         [TestMethod]
-        public void CrearPerfilNuevo()
+        public void CrearProyectoNuevo()
         {
             //**** Arrange ****
-            Perfil otro = new Perfil()
+            Proyecto otro = new Proyecto()
             {
-                Nombre = "Invitado"
+                Nombre = "Juegos"
             };
 
             //**** Act ****
-            _repositoryManager.Agregar(otro);            
+            _repositoryManager.Agregar(otro);
 
             //**** Assert ****
             Assert.IsTrue(otro.Id > 0);
-            var perfilAgregado = _repositoryManager.ObtenerAsync(otro.Id);
-            Assert.IsTrue(perfilAgregado.Id > 0);
+            var proyectoAgregado = _repositoryManager.ObtenerAsync(otro.Id);
+            Assert.IsTrue(proyectoAgregado.Id > 0);
         }
 
 
         [TestMethod]
-        public void EliminarUnPerfil()
+        public void EliminarUnProyecto()
         {
             //**** Arrange ****
             int Id = 1;
-            var perfilEliminado = _repositoryManager.ObtenerAsync(Id);
+            var proyectoEliminado = _repositoryManager.ObtenerAsync(Id);
 
             //**** Act ****
-            _repositoryManager.Eliminar(perfilEliminado.Result.Id);            
+            _repositoryManager.Eliminar(proyectoEliminado.Result.Id);
 
             //**** Assert ****
             var exists = _repositoryManager.ObtenerAsync(Id);
@@ -91,3 +91,4 @@ namespace Incidencias.AccesoDatos.Test
         }
     }
 }
+

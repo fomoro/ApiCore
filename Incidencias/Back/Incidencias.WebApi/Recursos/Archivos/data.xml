@@ -1,17 +1,17 @@
 <Empresa1>
-	<Proyecto>Bavaria</Proyecto>
+	<Proyecto>Facturacion</Proyecto>
 	<Bugs>
 		<Bug>
-			<Id>1</Id>
-			<Nombre>lobo</Nombre>
-			<Descripcion>Cota Chireño</Descripcion>
+			<Id>26</Id>
+			<Nombre>Error de login</Nombre>
+			<Descripcion>Usuario invalido</Descripcion>
 			<Version>1.0</Version>
 			<Estado>Activo</Estado>
 		</Bug>
 		<Bug>
-			<Id>2</Id>
-			<Nombre>tigre</Nombre>
-			<Descripcion>tigre bogotano </Descripcion>
+			<Id>27</Id>
+			<Nombre>Error </Nombre>
+			<Descripcion>No lista detalle</Descripcion>
 			<Version>1.0</Version>
 			<Estado>Activo</Estado>
 		</Bug>

@@ -1,10 +1,44 @@
 {
 	"info": {
-		"_postman_id": "c7fc7676-d4da-49a5-bef3-ddfbcdb5329a",
-		"name": "Incidencias",
+		"_postman_id": "cae18340-8a4e-4759-91b5-f4f5e54ec9ab",
+		"name": "Incidencias JWT",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Sesion",
+			"item": [
+				{
+					"name": "LoginJWT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"agustina\",\n\t\"password\":\"1234\"\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}sesion/login/",
+							"host": [
+								"{{urlApi}}sesion"
+							],
+							"path": [
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
 		{
 			"name": "01 Perfiles",
 			"item": [
@@ -124,12 +158,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{urlApi}}usuarios/6",
+							"raw": "{{urlApi}}usuarios/1",
 							"host": [
 								"{{urlApi}}usuarios"
 							],
 							"path": [
-								"6"
+								"1"
 							]
 						},
 						"description": "Obtiene un usuario con base en su Identificador"
@@ -165,7 +199,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": 0,\n    \"nombre\": \"Carmen\",\n    \"apellidos\": \"Martinez\",\n    \"email\":\"carmen@correo.com\",\n    \"username\":\"carmen\",\n    \"password\":\"ury123\",\n    \"perfilId\":3\n}"
+							"raw": "{\n    \"id\": 0,\n    \"nombre\": \"Lucia\",\n    \"apellidos\": \"Lopez\",\n    \"email\": \"lucia@gsoft.com.uy\",\n    \"username\": \"lucia\",\n    \"password\": \"AQAAAAEAACcQAAAAEBX72IRr5qgnJMxFPoqCs84fycEJ4AzZ2XD9UOKtoGpgO2Gs6CIiRj3Oqp5/HMeZjA==\",\n    \"perfilId\": 15,\n    \"perfil\": \"Invitado\"\n}"
 						},
 						"url": {
 							"raw": "{{urlApi}}usuarios",
@@ -191,15 +225,15 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"id\": 1,\n    \"nombre\": \"Ingri\",\n    \"apellidos\": \"Rozo\",\n    \"email\":\"testIngri@correo.com\"\n}"
+							"raw": "{\n\t\"id\": 7,\n    \"nombre\": \"Ana\",\n    \"apellidos\": \"Lopez\",\n    \"email\": \"ana.lopez@gsoft.com.uy\",\n    \"username\": \"ana.lopez\",\n    \"password\": \"AQAAAAEAACcQAAAAEBX72IRr5qgnJMxFPoqCs84fycEJ4AzZ2XD9UOKtoGpgO2Gs6CIiRj3Oqp5/HMeZjA==\",\n    \"perfilId\": 1,\n    \"perfil\": \"Administrador\"\n}"
 						},
 						"url": {
-							"raw": "{{urlApi}}usuarios/1",
+							"raw": "{{urlApi}}usuarios/77",
 							"host": [
 								"{{urlApi}}usuarios"
 							],
 							"path": [
-								"1"
+								"77"
 							]
 						},
 						"description": "Actualiza un usuario, aunque en este método no se actualiza su contraseña."
@@ -212,12 +246,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{urlApi}}usuarios/1",
+							"raw": "{{urlApi}}usuarios/77",
 							"host": [
 								"{{urlApi}}usuarios"
 							],
 							"path": [
-								"1"
+								"77"
 							]
 						},
 						"description": "Eliminar un usuario"
@@ -238,7 +272,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 2,\n    \"username\": \"chile\",\n    \"password\": \"chile\"\n}"
+							"raw": "{\n    \"id\": 2,\n    \"username\": \"viviana\",\n    \"password\": \"vivi\"\n}"
 						},
 						"url": {
 							"raw": "{{urlApi}}usuarios/cambiarcontrasena",
@@ -247,6 +281,35 @@
 							],
 							"path": [
 								"cambiarcontrasena"
+							]
+						},
+						"description": "Cambiar la contraseña del usuario"
+					},
+					"response": []
+				},
+				{
+					"name": "UsuarioValidarCredenciales",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}usuarios/validarusuario",
+							"host": [
+								"{{urlApi}}usuarios"
+							],
+							"path": [
+								"validarusuario"
 							]
 						},
 						"description": "Cambiar la contraseña del usuario"
@@ -267,7 +330,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 2,\n    \"perfilId\": 2\n}"
+							"raw": "{\n    \"id\": 4,\n    \"perfilId\": 1\n}"
 						},
 						"url": {
 							"raw": "{{urlApi}}usuarios/cambiarperfil",
@@ -513,8 +576,119 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "05 Archivos",
+			"item": [
+				{
+					"name": "ArchivosPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{    \n    \"URL\": \"C:/Users/Usuari/source/repos/147330-144424/AdministradorDeIncidencias/Incidencias.WebApi/Resources/Archivos/data.txt\",\n    \"Proveedor\": \"Proveedor2\"\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}Archivos",
+							"host": [
+								"{{urlApi}}Archivos"
+							]
+						},
+						"description": "Agrega un usuario"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "06 Reportes",
+			"item": [
+				{
+					"name": "IncidenciasPorProyecto",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}Reportes/IncidenciasPorProyecto",
+							"host": [
+								"{{urlApi}}Reportes"
+							],
+							"path": [
+								"IncidenciasPorProyecto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "IncidenciasPorTester",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ProyectoId\": null,\n    \"EstatusIncidencia\":2\n}"
+						},
+						"url": {
+							"raw": "{{urlApi}}Reportes/IncidenciasPorTester/5",
+							"host": [
+								"{{urlApi}}Reportes"
+							],
+							"path": [
+								"IncidenciasPorTester",
+								"5"
+							]
+						},
+						"description": "Actualiza un usuario, aunque en este método no se actualiza su contraseña."
+					},
+					"response": []
+				},
+				{
+					"name": "IncidenciasResueltasDesarrolador",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{urlApi}}Reportes/IncidenciasResueltasDesarrolador/3",
+							"host": [
+								"{{urlApi}}Reportes"
+							],
+							"path": [
+								"IncidenciasResueltasDesarrolador",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",
@@ -538,7 +712,11 @@
 	"variable": [
 		{
 			"key": "urlApi",
-			"value": "https://localhost:44363/api/"
+			"value": "https://localhost:44364/api/"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiYWd1c3RpbmEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhZG1pbmlzdHJhZG9yeDNhQGNvcnJlby5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhZG9yIiwibmJmIjoxNjMzNTc4MDE5LCJleHAiOjE2MzM1Nzg2MTksImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzYzLyIsImF1ZCI6IkluY2lkZW5jaWFzV2ViQXBpIn0.Vq-7eJOgMm86rweZ9gIRyTlvmA4A7CkNMoosUTNocGo"
 		}
 	]
 }

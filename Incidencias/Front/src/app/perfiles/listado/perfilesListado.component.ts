@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import Swal from 'sweetalert2';
-import { UsuarioModelo } from '../../modelos/Usuario.modelo';
 import { PerfilesService } from '../servicios/perfiles.service';
+import { PerfilModelo } from '../../modelos/perfil.modelo';
 
 @Component({
   selector: 'app-perfilesListado',
@@ -10,7 +10,7 @@ import { PerfilesService } from '../servicios/perfiles.service';
 
 export class PerfilesListadoComponent {
 
-  usuarios: UsuarioModelo[] = [];
+  arreglo: PerfilModelo[] = [];
   errorHttp = false;
   cargando: boolean = false;
 
@@ -18,15 +18,39 @@ export class PerfilesListadoComponent {
 
   ngOnInit() {
     this.cargando = true;
-    //this.cargarLista();
+    this.getAll();
   }
 
-  get cargarLista() {
-    this.cargando = false;
-    return this.servicio.obtenerusuarios;
+  getAll() {
+    this.servicio.getAll().subscribe(
+      (perfiles) => {
+        this.arreglo = perfiles
+        this.cargando = false;
+      },
+      error => {
+        console.log(error);
+      });
+    /*
+  this.servicio.getAll().subscribe(
+    (result: any) => {
+      let arreglo: PerfilModelo[] = [];
+      for (let i = 0; i < result.length; i++) {
+        let obj = result[i] as PerfilModelo;
+        arreglo.push(obj);
+      }
+      this.arreglo = arreglo;
+    },
+    error => {
+      console.log(error);
+    }
+  );*/
   }
 
-  eliminar(obj: UsuarioModelo): void {
+  delete(obj: PerfilModelo): void {
+    if (obj == null || obj.id == null) {
+      return;
+    }
+
     Swal.fire({
       title: 'Está seguro?',
       text: `¿Seguro que desea eliminar al Perfil ${obj.nombre}?`,
@@ -37,14 +61,19 @@ export class PerfilesListadoComponent {
       confirmButtonText: 'Si, eliminar!',
     }).then((result) => {
       if (result.isConfirmed) {
-
-        this.servicio.eliminar(obj.id).subscribe(   response => {
-            this.usuarios = this.usuarios.filter(item => item !== obj)
-            Swal.fire('Eliminado!', `Incidencia ${obj.nombre} eliminado con éxito.`, 'success')
-          })        
+        this.servicio.delete(obj.id).subscribe(response => {
+          this.deleteObject(obj.id);
+          Swal.fire('Eliminado!', `Perfil ${obj.nombre} eliminado con éxito.`, 'success')
+        })
       }
     })
+  }
 
+  deleteObject(id:number){
+    let index = this.arreglo.findIndex((e) => e.id == id);
+    if(index != -1){
+      this.arreglo.splice(index, 1);
+    }
   }
 }
 
