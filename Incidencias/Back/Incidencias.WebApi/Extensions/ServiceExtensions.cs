@@ -80,7 +80,7 @@ namespace Incidencias.WebApi.Extensions
             services.AddScoped<IProyectosRepositorio, ProyectosRepositorio>();
             services.AddScoped<IIncidenciasRepositorio, IncidenciasRepositorio>();
 
-            
+
             services.AddSingleton<TokenService>();
         }
         #endregion
