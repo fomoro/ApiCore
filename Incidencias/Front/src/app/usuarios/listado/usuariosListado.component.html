@@ -1,0 +1,48 @@
+<div class="card card-dark m-3">
+    <div class="card-header">
+        <h3 class="card-title">usuarios</h3>
+    </div>
+    <div class="card-body">               
+        <button type="button" class="btn btn-primary float-left mb-3" [routerLink]="['/usuarios/formulario']">
+            Crear Usuario
+        </button>                        
+
+        <table id="example2" class="table table-bordered table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nombre</th>
+                    <th>descripcion</th>
+                    <th>editar</th>
+                    <th>eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let incidencia of cargarLista">
+                    <td>{{ incidencia.id }}</td>
+                    <td>{{ incidencia.nombre }}</td>
+                    <td>{{ incidencia.descripcion }}</td>
+                    <td>
+                        <button type="button" name="editar" 
+                        class="btn btn-primary btn-sm" 
+                        [routerLink]="['/usuarios/formulario', incidencia.id]">
+                            editar
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" name="eliminar" (click)='delete(incidencia)'class="btn btn-danger btn-sm">
+                            eliminar
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div *ngIf="cargando">
+            <div class="glyphicon glyphicon-hourglass"> </div> CARGANDO...
+        </div>
+        <div class="alert alert-warning" *ngIf="errorHttp">
+            No se puede mostrar la lista.
+        </div>
+    </div>
+</div>
