@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using Incidencias.Interfaces;
+using Incidencias.Interfaces.LogicaDeNegocio;
 using Incidencias.Modelos;
 using Incidencias.WebApi.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -19,11 +19,11 @@ namespace Incidencias.WebApi.Controllers
     [ApiController]
     public class PerfilesController : ControllerBase
     {
-        private IRepositorioGenerico<Perfil> _perfilesRepositorio;
+        private readonly IPerfilesLogica _perfilesRepositorio;
         private readonly ILogger<PerfilesController> _logger;
         private readonly IMapper _mapper;
 
-        public PerfilesController(IRepositorioGenerico<Perfil> perfilesRepositorio, 
+        public PerfilesController(IPerfilesLogica perfilesRepositorio, 
             ILogger<PerfilesController> logger,
             IMapper mapper)
         {
@@ -40,7 +40,7 @@ namespace Incidencias.WebApi.Controllers
         {
             try
             {
-                var perfiles= await _perfilesRepositorio.ObtenerTodosAsync();
+                var perfiles= await _perfilesRepositorio.ObtenerTodos();
                 return _mapper.Map<List<PerfilVM>>(perfiles);
             }
             catch (Exception excepcion)
@@ -60,7 +60,7 @@ namespace Incidencias.WebApi.Controllers
         {           
             try
             {
-                var perfil =  _perfilesRepositorio.ObtenerAsync(id);
+                var perfil =  _perfilesRepositorio.ObtenerPorId(id);
                 if (perfil.Result == null)
                 {
                     return NotFound();
@@ -151,7 +151,5 @@ namespace Incidencias.WebApi.Controllers
                 return BadRequest();
             }
         }
-
-
     }
 }

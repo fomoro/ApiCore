@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Incidencias.Interfaces.AccesoDatos;
+using Incidencias.Interfaces.LogicaDeNegocio;
 using Incidencias.Modelos;
 using Incidencias.WebApi.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -18,11 +18,11 @@ namespace Incidencias.WebApi.Controllers
     [ApiController]
     public class ProyectosController : ControllerBase
     {
-        private IProyectosRepositorio _proyectosRepositorio;
+        private IProyectosLogica _proyectosRepositorio;
         private readonly IMapper _mapper;
         private readonly ILogger<ProyectosController> _logger;
 
-        public ProyectosController(IProyectosRepositorio proyectosRepositorio, ILogger<ProyectosController> logger, IMapper mapper)
+        public ProyectosController(IProyectosLogica proyectosRepositorio, ILogger<ProyectosController> logger, IMapper mapper)
         {
             this._proyectosRepositorio = proyectosRepositorio;
             this._logger = logger;
@@ -37,7 +37,7 @@ namespace Incidencias.WebApi.Controllers
         {
             try
             {
-                var proyectos = await _proyectosRepositorio.ObtenerTodosAsync();
+                var proyectos = await _proyectosRepositorio.ObtenerTodos();
                 return _mapper.Map<List<ProyectoVM>>(proyectos);
             }
             catch (Exception ex)
@@ -57,7 +57,7 @@ namespace Incidencias.WebApi.Controllers
         {
             try
             {
-                var proyectos = await _proyectosRepositorio.ObtenerTodosConDetallesAsync();
+                var proyectos = await _proyectosRepositorio.ObtenerTodosConDetalle();
                 var result = _mapper.Map<List<ProyectoVM>>(proyectos);
                 return result;
             }
@@ -76,7 +76,7 @@ namespace Incidencias.WebApi.Controllers
         {
             try
             {
-                var proyecto = await _proyectosRepositorio.ObtenerAsync(id);
+                var proyecto = await _proyectosRepositorio.ObtenerPorId(id);
                 if (proyecto == null)
                 {
                     return NotFound();
@@ -98,7 +98,7 @@ namespace Incidencias.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ProyectoVM>> GetproyectoConDetalles(int id)
         {
-            var proyecto = await _proyectosRepositorio.ObtenerConDetallesAsync(id);
+            var proyecto = await _proyectosRepositorio.ObtenerConDetallesPorId(id);
             if (proyecto == null)
             {
                 return NotFound();

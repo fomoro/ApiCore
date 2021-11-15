@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Incidencias.Interfaces.AccesoDatos;
+using Incidencias.Interfaces.LogicaDeNegocio;
 using Incidencias.Modelos;
 using Incidencias.Modelos.Enum;
 using Incidencias.WebApi.ViewModels;
@@ -19,12 +19,12 @@ namespace Incidencias.WebApi.Controllers
     [ApiController]
     public class ArchivosController : ControllerBase
     {
-        private IIncidenciasRepositorio _incidenciasRepositorio;
-        private readonly IProyectosRepositorio _proyectosRepositorio;
+        private IIncidenciasLogica _incidenciasRepositorio;
+        private readonly IProyectosLogica _proyectosRepositorio;
         private readonly ILogger<ArchivosController> _logger;
         private readonly IMapper _mapper;
 
-        public ArchivosController(IIncidenciasRepositorio _incidenciasRepositorio, IProyectosRepositorio proyectosRepositorio, ILogger<ArchivosController> logger, IMapper mapper)
+        public ArchivosController(IIncidenciasLogica _incidenciasRepositorio, IProyectosLogica proyectosRepositorio, ILogger<ArchivosController> logger, IMapper mapper)
         {
             this._incidenciasRepositorio = _incidenciasRepositorio;
             this._proyectosRepositorio = proyectosRepositorio;
@@ -56,7 +56,7 @@ namespace Incidencias.WebApi.Controllers
 
                 foreach (var bug in incidencias)
                 {
-                    var incidenciaActual = await _incidenciasRepositorio.ObtenerNombreAsync(bug.Nombre);
+                    var incidenciaActual = await _incidenciasRepositorio.ObtenerPorNombre(bug.Nombre);
                     if (incidenciaActual != null && incidenciaActual.ProyectoId == bug.ProyectoId)
                     {
                         bug.Id = incidenciaActual.Id;
@@ -86,7 +86,7 @@ namespace Incidencias.WebApi.Controllers
                 var nombreProyecto = xmlDoc.SelectNodes("//Empresa1//Proyecto")[0].InnerText;
                 XmlNodeList file = xmlDoc.SelectNodes("//Empresa1");
 
-                var proyecto = await _proyectosRepositorio.ObtenerNombreAsync(nombreProyecto);                
+                var proyecto = await _proyectosRepositorio.ObtenerPorNombre(nombreProyecto);                
                 if (proyecto != null)
                 {
                     List<Incidencia> incidencias = new List<Incidencia>();
@@ -129,7 +129,7 @@ namespace Incidencias.WebApi.Controllers
                     {
                         string line = sr.ReadLine();                        
                         
-                        Proyecto proyecto = await _proyectosRepositorio.ObtenerNombreAsync(line.Substring(0, 29).Trim());
+                        Proyecto proyecto = await _proyectosRepositorio.ObtenerPorNombre(line.Substring(0, 29).Trim());
 
                         if (proyecto != null)
                         {

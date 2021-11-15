@@ -44,7 +44,6 @@ namespace School.WebApi.Controllers
             }
         }
                
-
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -69,13 +68,11 @@ namespace School.WebApi.Controllers
             }
         }
 
-
         [HttpGet("{id}/courses")]
         public string StudentCourses(int id)
         {
             return $"Listamos todos los cursos a lo que el estudiante con Id {id} esta inscripto";
         }
-
 
         [HttpPost]
         public IActionResult Post([FromBody] StudentDTO studentData)
@@ -104,9 +101,7 @@ namespace School.WebApi.Controllers
                 return StatusCode(500, server_error);
             }
         }
-    
-
-        
+            
         [HttpPut()]
         public IActionResult Put([FromBody] StudentDTO studentData)
         {

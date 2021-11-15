@@ -10,6 +10,6 @@ namespace Incidencias.Interfaces.AccesoDatos
 {
     public interface IIncidenciasRepositorio : IRepositorioGenerico<Incidencia>
     {
-        Task<Incidencia> ObtenerNombreAsync(string nombre);
+        Task<Incidencia> ObtenerPorNombre(string nombre);
     }
 }

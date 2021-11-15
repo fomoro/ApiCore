@@ -30,7 +30,6 @@ namespace School.WebApi.Controllers
             _mapper = mapper;
         }
 
-
         //// GET: api/<EnrollmentsController>
         //[HttpGet]
         //public IEnumerable<string> Get()

@@ -1,6 +1,5 @@
-﻿using Incidencias.AccesoDatos.Repositorios;
-using Incidencias.Interfaces;
-using Incidencias.Interfaces.AccesoDatos;
+﻿using Incidencias.Interfaces.LogicaDeNegocio;
+using Incidencias.LogicaDeNegocio;
 using Incidencias.Modelos;
 using Incidencias.WebApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -9,10 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Incidencias.WebApi.Extensions
 {
@@ -74,11 +70,11 @@ namespace Incidencias.WebApi.Extensions
         #region Implementación de las dependencias
         public static void ConfigureDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IRepositorioGenerico<Perfil>, PerfilesRepositorio>();
-            services.AddScoped<IUsuariosRepositorio, UsuariosRepositorio>();
+            services.AddScoped<IPerfilesLogica, LogicaDePerfil>();
+            services.AddScoped<IUsuariosLogica, LogicaDeUsuario>();
             services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
-            services.AddScoped<IProyectosRepositorio, ProyectosRepositorio>();
-            services.AddScoped<IIncidenciasRepositorio, IncidenciasRepositorio>();
+            services.AddScoped<IProyectosLogica, LogicaDeProyectos>();
+            services.AddScoped<IIncidenciasLogica, LogicaDeIncidencia>();
 
 
             services.AddSingleton<TokenService>();

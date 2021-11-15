@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using Incidencias.Interfaces.AccesoDatos;
+using Incidencias.Interfaces.LogicaDeNegocio;
 using Incidencias.Modelos;
 using Incidencias.WebApi.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -20,11 +20,11 @@ namespace Incidencias.WebApi.Controllers
     public class IncidenciasController : ControllerBase
     {
 
-        private IIncidenciasRepositorio _incidenciasRepositorio;
+        private IIncidenciasLogica _incidenciasRepositorio;
         private readonly ILogger<IncidenciasController> _logger;
         private readonly IMapper _mapper;
 
-        public IncidenciasController(IIncidenciasRepositorio _incidenciasRepositorio, ILogger<IncidenciasController> logger, IMapper mapper)
+        public IncidenciasController(IIncidenciasLogica _incidenciasRepositorio, ILogger<IncidenciasController> logger, IMapper mapper)
         {
             this._incidenciasRepositorio = _incidenciasRepositorio;
             this._logger = logger;
@@ -39,7 +39,7 @@ namespace Incidencias.WebApi.Controllers
         {
             try
             {
-                var incidencia = await _incidenciasRepositorio.ObtenerTodosAsync();
+                var incidencia = await _incidenciasRepositorio.ObtenerTodos();
                 return _mapper.Map<List<IncidenciaVM>>(incidencia);
             }
             catch (Exception ex)
@@ -57,7 +57,7 @@ namespace Incidencias.WebApi.Controllers
         {            
             try
             {
-                var incidencia = await _incidenciasRepositorio.ObtenerAsync(id);
+                var incidencia = await _incidenciasRepositorio.ObtenerPorId(id);
                 if (incidencia == null)
                 {
                     return NotFound();

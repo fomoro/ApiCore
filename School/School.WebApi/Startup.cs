@@ -9,7 +9,6 @@ using Microsoft.OpenApi.Models;
 using School.BussinessLogic;
 using School.DataAccess;
 using School.DataAccess.Repositories;
-using School.DomainObjects;
 using School.Interfaces;
 using School.Interfaces.BusinessLogic;
 using School.Interfaces.DataAccess;

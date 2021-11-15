@@ -1,5 +1,6 @@
 ﻿
 using Incidencias.Interfaces;
+using Incidencias.Interfaces.AccesoDatos;
 using Incidencias.Modelos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -66,7 +67,7 @@ namespace Incidencias.AccesoDatos.Repositorios
             return false;
         }
 
-        public async Task<Perfil> ObtenerAsync(int id)
+        public async Task<Perfil> ObtenerPorId(int id)
         {            
             try
             {
@@ -81,7 +82,7 @@ namespace Incidencias.AccesoDatos.Repositorios
             
         }
 
-        public async Task<IEnumerable<Perfil>> ObtenerTodosAsync()
+        public async Task<IEnumerable<Perfil>> ObtenerTodos()
         {
             return await _dbSet.ToListAsync();
         }

@@ -81,21 +81,21 @@ namespace Incidencias.AccesoDatos.Repositorios
             return false;            
         }
 
-        public async Task<Incidencia> ObtenerAsync(int id)
+        public async Task<Incidencia> ObtenerPorId(int id)
         {
             return await _dbSet
                 .Include(Incidencia => Incidencia.Proyecto)
                 .SingleOrDefaultAsync(c => c.Id == id);
         }
 
-        public async Task<IEnumerable<Incidencia>> ObtenerTodosAsync()
+        public async Task<IEnumerable<Incidencia>> ObtenerTodos()
         {
             return await _dbSet
                 .Include(Incidencia => Incidencia.Proyecto)
                 .Where(u => u.EstatusIncidencia != EstatusIncidencia.Inactivo).ToListAsync();
         }
 
-        public async Task<Incidencia> ObtenerNombreAsync(string nombre)
+        public async Task<Incidencia> ObtenerPorNombre(string nombre)
         {
             try
             {
@@ -106,7 +106,7 @@ namespace Incidencias.AccesoDatos.Repositorios
             catch (Exception excepcion)
             {
                 return null;
-                _logger.LogError($"Error en {nameof(ObtenerNombreAsync)}: " + excepcion.Message);
+                _logger.LogError($"Error en {nameof(ObtenerPorNombre)}: " + excepcion.Message);
             }
         }
     }
