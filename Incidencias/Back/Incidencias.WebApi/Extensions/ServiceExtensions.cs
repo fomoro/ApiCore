@@ -74,7 +74,7 @@ namespace Incidencias.WebApi.Extensions
             //services.AddScoped<IProyectosLogica, LogicaDeProyectos>();
             //services.AddScoped<IIncidenciasLogica, LogicaDeIncidencia>();
 
-
+            
             services.AddSingleton<TokenService>();
         }
         #endregion
