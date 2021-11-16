@@ -1,6 +1,4 @@
-﻿
-using Incidencias.Interfaces;
-using Incidencias.Interfaces.AccesoDatos;
+﻿using Incidencias.Interfaces.AccesoDatos;
 using Incidencias.Modelos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;

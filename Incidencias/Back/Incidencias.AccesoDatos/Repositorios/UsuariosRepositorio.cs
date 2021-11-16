@@ -1,14 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using System.Linq;
+﻿using Incidencias.Interfaces.AccesoDatos;
 using Incidencias.Modelos;
 using Incidencias.Modelos.Enum;
 using Microsoft.AspNetCore.Identity;
-using Incidencias.Interfaces.AccesoDatos;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Incidencias.AccesoDatos.Repositorios
 {
@@ -105,13 +104,13 @@ namespace Incidencias.AccesoDatos.Repositorios
             }
             return false;
         }
-        public async Task<Usuario> ObtenerAsync(int id)
+        public async Task<Usuario> ObtenerPorId(int id)
         {
             return await _dbSet
                 .Include(usuario => usuario.Perfil)
                 .SingleOrDefaultAsync(c => c.Id == id && c.Estatus == EstatusUsuario.Activo);
         }
-        public async Task<IEnumerable<Usuario>> ObtenerTodosAsync()
+        public async Task<IEnumerable<Usuario>> ObtenerTodos()
         {
             return await _dbSet
                 .Include(usuario => usuario.Perfil)

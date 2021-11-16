@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Incidencias.WebApi.Enum
+﻿namespace Incidencias.WebApi.Enum
 {
     public enum EstatusUsuario
     {

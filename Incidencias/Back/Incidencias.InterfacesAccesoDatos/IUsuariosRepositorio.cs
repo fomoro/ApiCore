@@ -1,5 +1,4 @@
-﻿using Incidencias.Interfaces;
-using Incidencias.Modelos;
+﻿using Incidencias.Modelos;
 using System.Threading.Tasks;
 
 namespace Incidencias.Interfaces.AccesoDatos

@@ -1,6 +1,4 @@
-﻿using Incidencias.Modelos.Enum;
-using System;
-using System.Collections.Generic;
+﻿using System;
 
 namespace Incidencias.Modelos
 {

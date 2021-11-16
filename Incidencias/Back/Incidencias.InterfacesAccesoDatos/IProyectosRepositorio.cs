@@ -1,12 +1,10 @@
-﻿using Incidencias.Interface.LogicaDeNegocio;
-using Incidencias.Interfaces;
-using Incidencias.Modelos;
+﻿using Incidencias.Modelos;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Incidencias.Interfaces.LogicaDeNegocio
+namespace Incidencias.Interfaces.AccesoDatos
 {
-    public interface IProyectosLogica : Ilogica<Proyecto>
+    public interface IProyectosRepositorio : IRepositorioGenerico<Proyecto>
     {
         Task<Proyecto> ObtenerPorNombre(string nombre);
         Task<IEnumerable<Proyecto>> ObtenerTodosConDetalle();

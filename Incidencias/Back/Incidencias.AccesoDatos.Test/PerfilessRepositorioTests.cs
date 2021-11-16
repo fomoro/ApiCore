@@ -37,7 +37,7 @@ namespace Incidencias.AccesoDatos.Test
             var id = 1;
 
             //**** Act *****
-            var perfil = _repositoryManager.ObtenerAsync(id);
+            var perfil = _repositoryManager.ObtenerPorId(id);
 
             //**** Assert ****
             Assert.AreEqual(1, perfil.Id);
@@ -50,7 +50,7 @@ namespace Incidencias.AccesoDatos.Test
             //int Id = "std1"; 
 
             //**** Act ****
-            var perfiles = _repositoryManager.ObtenerTodosAsync();
+            var perfiles = _repositoryManager.ObtenerTodos();
 
             //**** Assert ****
             Assert.IsNotNull(perfiles.Result);
@@ -71,7 +71,7 @@ namespace Incidencias.AccesoDatos.Test
 
             //**** Assert ****
             Assert.IsTrue(otro.Id > 0);
-            var perfilAgregado = _repositoryManager.ObtenerAsync(otro.Id);
+            var perfilAgregado = _repositoryManager.ObtenerPorId(otro.Id);
             Assert.IsTrue(perfilAgregado.Id > 0);
         }
 
@@ -81,13 +81,13 @@ namespace Incidencias.AccesoDatos.Test
         {
             //**** Arrange ****
             int Id = 1;
-            var perfilEliminado = _repositoryManager.ObtenerAsync(Id);
+            var perfilEliminado = _repositoryManager.ObtenerPorId(Id);
 
             //**** Act ****
             _repositoryManager.Eliminar(perfilEliminado.Result.Id);            
 
             //**** Assert ****
-            var exists = _repositoryManager.ObtenerAsync(Id);
+            var exists = _repositoryManager.ObtenerPorId(Id);
             Assert.IsFalse(exists.Id != Id);
         }
     }

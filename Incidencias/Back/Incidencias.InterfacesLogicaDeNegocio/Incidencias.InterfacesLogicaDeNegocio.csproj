@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Incidencias.Interfaces\Incidencias.Interfaces.csproj" />
     <ProjectReference Include="..\Incidencias.Modelos\Incidencias.Modelos.csproj" />
   </ItemGroup>
 

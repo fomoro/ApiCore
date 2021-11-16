@@ -1,9 +1,7 @@
 ﻿using Incidencias.Interfaces.LogicaDeNegocio;
 using Incidencias.LogicaDeNegocio;
-using Incidencias.Modelos;
 using Incidencias.WebApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -70,11 +68,11 @@ namespace Incidencias.WebApi.Extensions
         #region Implementación de las dependencias
         public static void ConfigureDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IPerfilesLogica, LogicaDePerfil>();
+            //services.AddScoped<IPerfilesLogica, LogicaDePerfil>();
             services.AddScoped<IUsuariosLogica, LogicaDeUsuario>();
-            services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
-            services.AddScoped<IProyectosLogica, LogicaDeProyectos>();
-            services.AddScoped<IIncidenciasLogica, LogicaDeIncidencia>();
+            //services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
+            //services.AddScoped<IProyectosLogica, LogicaDeProyectos>();
+            //services.AddScoped<IIncidenciasLogica, LogicaDeIncidencia>();
 
 
             services.AddSingleton<TokenService>();

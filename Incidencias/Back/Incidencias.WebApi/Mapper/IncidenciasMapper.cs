@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoMapper;
 using Incidencias.Modelos;
 using Incidencias.WebApi.ViewModels;
-using AutoMapper;
 
 namespace Incidencias.WebApi.Mapper
 {

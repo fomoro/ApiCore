@@ -31,7 +31,7 @@ namespace Incidencias.WebApi
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "Incidencias.WebApi", Version = "v1" }); });
 
             services.AddDbContext<Contexto>(x => { x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")); });
-
+            services.AddMemoryCache();
             //Service Extensions
             services.ConfigureDependencies();
             services.ConfigureJwt(Configuration);

@@ -1,9 +1,5 @@
-﻿using System;
+﻿using Incidencias.Modelos.Enum;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Incidencias.Modelos.Enum;
 
 namespace Incidencias.Modelos
 {

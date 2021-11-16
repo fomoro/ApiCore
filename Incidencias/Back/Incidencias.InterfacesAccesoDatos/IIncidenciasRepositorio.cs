@@ -1,9 +1,4 @@
-﻿using Incidencias.Interfaces;
-using Incidencias.Modelos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Incidencias.Modelos;
 using System.Threading.Tasks;
 
 namespace Incidencias.Interfaces.AccesoDatos
