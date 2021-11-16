@@ -1,9 +1,10 @@
-﻿using Incidencias.Modelos;
+﻿using Incidencias.Interface.LogicaDeNegocio;
+using Incidencias.Modelos;
 using System.Threading.Tasks;
 
-namespace Incidencias.Interfaces.AccesoDatos
+namespace Incidencias.Interfaces.LogicaDeNegocio
 {
-    public interface IUsuariosRepositorio : IRepositorioGenerico<Usuario>
+    public interface IUsuariosLogica : Ilogica<Usuario>
     {
         Task<bool> CambiarContrasena(Usuario usuario);
         Task<bool> CambiarPerfil(Usuario usuario);

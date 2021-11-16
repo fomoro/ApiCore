@@ -44,5 +44,4 @@ namespace School.WebApi.Filters
             }
         }
     }
-
 }

@@ -2,45 +2,41 @@
     <div class="card-header">
         <h3 class="card-title">Perfiles</h3>
     </div>
-    <div class="card-body">               
-        <button type="button" class="btn btn-primary float-left mb-3" 
-        [routerLink]="['/perfil/formulario']">
+    <div class="card-body">
+        <button type="button" class="btn btn-primary float-left mb-3" [routerLink]="['/perfil/formulario']">
             Crear Perfil
-        </button>                        
+        </button>
 
         <table id="example2" class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
                     <th>id</th>
                     <th>nombre</th>
-                    <th>editar</th>
-                    <th>eliminar</th>
+                    <th>acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let item of arreglo">
                     <td>{{ item.id }}</td>
                     <td>{{ item.nombre }}</td>
-                    <td>
-                        <button type="button" name="editar" 
-                        class="btn btn-primary btn-sm" 
-                        [routerLink]="['/perfil/formulario', item.id]">
-                            editar
-                        </button>
-                    </td>
-                    <td>
-                        <button type="button" name="delete" (click)='delete(item)'class="btn btn-danger btn-sm">
-                            eliminar
-                        </button>
+                    <td style="width:70px">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info"
+                                [routerLink]="['/perfil/formulario', item.id]">
+                                editar</button>
+                            <button type="button" class="btn btn-default"name="delete" (click)='delete(item)' class="btn btn-danger btn-sm">
+                                eliminar
+                            </button>
+                        </div>
                     </td>
                 </tr>
             </tbody>
         </table>
 
-        <div *ngIf="cargando">
+        <div *ngIf="cargando" class="m-3">
             <div class="glyphicon glyphicon-hourglass"> </div> CARGANDO...
         </div>
-        <div class="alert alert-warning" *ngIf="errorHttp">
+        <div class="alert alert-warning m-3" *ngIf="errorHttp">
             No se puede mostrar la lista.
         </div>
     </div>

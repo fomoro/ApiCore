@@ -1,5 +1,6 @@
 ﻿
 using Incidencias.Interfaces;
+using Incidencias.Interfaces.AccesoDatos;
 using Incidencias.Modelos;
 using System;
 using System.Collections.Generic;
@@ -25,12 +26,12 @@ namespace Incidencias.WebApi.Test.Mocks
             return Task.FromResult(Resultado);
         }
 
-        public Task<Perfil> ObtenerAsync(int id)
+        public Task<Perfil> ObtenerPorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Perfil>> ObtenerTodosAsync()
+        public Task<IEnumerable<Perfil>> ObtenerTodos()
         {
             throw new NotImplementedException();
         }

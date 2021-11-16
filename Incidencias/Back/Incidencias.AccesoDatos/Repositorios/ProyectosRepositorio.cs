@@ -71,7 +71,7 @@ namespace Incidencias.AccesoDatos.Repositorios
             return false;
         }
 
-        public async Task<Proyecto> ObtenerAsync(int id)
+        public async Task<Proyecto> ObtenerPorId(int id)
         {
             return await _dbSet.SingleOrDefaultAsync(c => c.Id == id
                                 && c.EstatusProyecto == EstatusProyecto.Activo);
@@ -89,7 +89,7 @@ namespace Incidencias.AccesoDatos.Repositorios
                 _logger.LogError($"Error en {nameof(ObtenerNombreAsync)}: " + excepcion.Message);
             }            
         }
-        public async Task<Proyecto> ObtenerConDetallesAsync(int id)
+        public async Task<Proyecto> ObtenerConDetallesPorId(int id)
         {
             return await _dbSet.Include(proyecto => proyecto.UsuariosProyectos)                
                                     .ThenInclude(usuariosProyecto => usuariosProyecto.Usuario)
@@ -97,14 +97,14 @@ namespace Incidencias.AccesoDatos.Repositorios
                                 .SingleOrDefaultAsync(c => c.Id == id && c.EstatusProyecto == EstatusProyecto.Activo);
         }
 
-        public async Task<IEnumerable<Proyecto>> ObtenerTodosAsync()
+        public async Task<IEnumerable<Proyecto>> ObtenerTodos()
         {
             return await _dbSet
                 .Where(u => u.EstatusProyecto == EstatusProyecto.Activo)
                 .ToListAsync();
         }
 
-        public async Task<IEnumerable<Proyecto>> ObtenerTodosConDetallesAsync()
+        public async Task<IEnumerable<Proyecto>> ObtenerTodosConDetalle()
         {
             return await _dbSet
                 .Include(proyecto => proyecto.UsuariosProyectos)
@@ -114,5 +114,9 @@ namespace Incidencias.AccesoDatos.Repositorios
                 .ToListAsync();
         }
 
+        public Task<Proyecto> ObtenerPorNombre(string nombre)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

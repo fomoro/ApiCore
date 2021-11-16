@@ -1,22 +1,12 @@
-using System;
-using System.Text;
 using Incidencias.AccesoDatos;
-using Incidencias.AccesoDatos.Repositorios;
-using Incidencias.Interfaces;
-using Incidencias.Interfaces.AccesoDatos;
-using Incidencias.Modelos;
 using Incidencias.WebApi.Extensions;
-using Incidencias.WebApi.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 
@@ -41,7 +31,7 @@ namespace Incidencias.WebApi
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "Incidencias.WebApi", Version = "v1" }); });
 
             services.AddDbContext<Contexto>(x => { x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")); });
-
+            services.AddMemoryCache();
             //Service Extensions
             services.ConfigureDependencies();
             services.ConfigureJwt(Configuration);
@@ -64,7 +54,6 @@ namespace Incidencias.WebApi
 
             app.UseRouting();
 
-            
             app.UseCors("CorsPolicy");
             app.UseAuthentication();
             app.UseAuthorization();

@@ -28,6 +28,8 @@ export class PerfilesListadoComponent {
         this.cargando = false;
       },
       error => {
+        this.cargando = false;
+        this.errorHttp = true;
         console.log(error);
       });
     /*
