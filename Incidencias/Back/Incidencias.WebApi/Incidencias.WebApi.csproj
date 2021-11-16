@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Incidencias.AccesoDatos\Incidencias.AccesoDatos.csproj" />
-    <ProjectReference Include="..\Incidencias.Interfaces\Incidencias.Interfaces.csproj" />
+    <ProjectReference Include="..\Incidencias.InterfacesAccesoDatos\Incidencias.InterfacesAccesoDatos.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

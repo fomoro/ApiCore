@@ -1,5 +1,5 @@
 ﻿using Incidencias.AccesoDatos.Repositorios;
-using Incidencias.Interfaces;
+using Incidencias.InterfacesAccesoDatos;
 using Incidencias.Modelos;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

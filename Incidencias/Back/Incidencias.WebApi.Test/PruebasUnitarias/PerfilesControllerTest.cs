@@ -1,14 +1,12 @@
 ﻿using AutoMapper;
-using Incidencias.Interfaces;
+using Incidencias.InterfacesAccesoDatos;
 using Incidencias.Modelos;
 using Incidencias.WebApi.Controllers;
-using Incidencias.WebApi.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace Incidencias.WebApi.Test.PruebasUnitarias
 {

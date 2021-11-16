@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Incidencias.Interfaces.AccesoDatos;
+using Incidencias.InterfacesAccesoDatos;
 using Incidencias.Modelos;
 using Incidencias.WebApi.ViewModels;
 using Microsoft.AspNetCore.Http;

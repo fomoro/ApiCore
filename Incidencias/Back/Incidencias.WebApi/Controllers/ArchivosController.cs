@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Incidencias.Interfaces.AccesoDatos;
+using Incidencias.InterfacesAccesoDatos;
 using Incidencias.Modelos;
 using Incidencias.Modelos.Enum;
 using Incidencias.WebApi.ViewModels;
@@ -9,7 +9,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Xml;
 

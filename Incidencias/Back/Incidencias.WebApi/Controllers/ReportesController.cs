@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
-using Incidencias.Interfaces.AccesoDatos;
-using Incidencias.Modelos;
+﻿using Incidencias.InterfacesAccesoDatos;
 using Incidencias.Modelos.Enum;
 using Incidencias.WebApi.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Incidencias.WebApi.Controllers
 {

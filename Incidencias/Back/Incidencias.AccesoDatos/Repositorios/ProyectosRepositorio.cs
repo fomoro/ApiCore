@@ -1,4 +1,4 @@
-﻿using Incidencias.Interfaces.AccesoDatos;
+﻿using Incidencias.InterfacesAccesoDatos;
 using Incidencias.Modelos;
 using Incidencias.Modelos.Enum;
 using Microsoft.EntityFrameworkCore;
