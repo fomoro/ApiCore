@@ -33,6 +33,8 @@ namespace Incidencias.WebApi
 
             //Service Extensions
             services.ConfigureDependencies();
+            services.AddMemoryCache();
+
             services.ConfigureJwt(Configuration);
             services.ConfigureCors();
 

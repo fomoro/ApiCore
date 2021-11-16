@@ -44,13 +44,13 @@ namespace School.WebApi
             services.AddScoped<IAuth, AuthLogic>();
 
 
-             services.AddDbContext<MyDBContext>(opts =>
-             opts.UseSqlServer(Configuration.GetConnectionString("sqlConnection"), //Leo el conection string llamado "sqlConnection" desde appsettings.json 
-             b => b.MigrationsAssembly("School.WebApi"))); //Especifico el nombre del ensamblado donde quiero guardar las migraciones.
+            services.AddDbContext<MyDBContext>(opts =>
+            opts.UseSqlServer(Configuration.GetConnectionString("sqlConnection"), //Leo el conection string llamado "sqlConnection" desde appsettings.json 
+            b => b.MigrationsAssembly("School.WebApi"))); //Especifico el nombre del ensamblado donde quiero guardar las migraciones.
 
             //Inyeccion de dependencias de repositorio
             services.AddScoped<IRepositoryManager, RepositoryManager>();
-                        
+
             //TODO: Inyeccion de dependencias de Automapper
             services.AddAutoMapper(typeof(Startup));
 

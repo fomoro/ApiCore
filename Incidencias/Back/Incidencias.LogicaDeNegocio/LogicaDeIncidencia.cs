@@ -1,4 +1,5 @@
-﻿using Incidencias.InterfacesLogicaDeNegocio;
+﻿using Incidencias.InterfacesAccesoDatos;
+using Incidencias.InterfacesLogicaDeNegocio;
 using Incidencias.Modelos;
 using System;
 using System.Collections.Generic;
@@ -10,12 +11,12 @@ namespace Incidencias.LogicaDeNegocio
     {
         private const string null_perfil = "Perfil";
 
-        //IIncidenciasRepositorio _repository;
+        IIncidenciasRepositorio _repository;
 
-        /*public LogicaDeIncidencia(IIncidenciasRepositorio repository)
+        public LogicaDeIncidencia(IIncidenciasRepositorio repository)
         {
             _repository = repository;
-        }*/
+        }
 
         public Task<bool> Actualizar(Incidencia entity)
         {

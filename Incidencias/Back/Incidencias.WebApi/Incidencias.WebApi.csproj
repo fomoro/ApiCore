@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Incidencias.AccesoDatos\Incidencias.AccesoDatos.csproj" />
+    <ProjectReference Include="..\Incidencias.InterfacesAccesoDatos\Incidencias.InterfacesAccesoDatos.csproj" />
     <ProjectReference Include="..\Incidencias.InterfacesLogicaDeNegocio\Incidencias.InterfacesLogicaDeNegocio.csproj" />
     <ProjectReference Include="..\Incidencias.LogicaDeNegocio\Incidencias.LogicaDeNegocio.csproj" />
   </ItemGroup>

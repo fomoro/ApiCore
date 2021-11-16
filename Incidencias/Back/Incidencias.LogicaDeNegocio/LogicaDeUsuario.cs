@@ -1,100 +1,58 @@
-﻿using Incidencias.InterfacesLogicaDeNegocio;
+﻿using Incidencias.InterfacesAccesoDatos;
+using Incidencias.InterfacesLogicaDeNegocio;
 using Incidencias.Modelos;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Incidencias.LogicaDeNegocio
 {
     public class LogicaDeUsuario : IUsuariosLogica
     {
-        private const string null_perfil = "Usuario";
+        private const string null_Usuario = "Usuario";
 
-        /*IUsuariosRepositorio _repository;
-        public LogicaDeUsuario(IUsuariosRepositorio repository)
-        {
-            _repository = repository;
-        }*/
+        IUsuariosRepositorio _repositorio;
 
-        public Task<bool> Actualizar(Usuario entity)
+        public LogicaDeUsuario(IUsuariosRepositorio repositorio)
         {
-            throw new NotImplementedException();
+            _repositorio = repositorio;
         }
-
-        public Task<Usuario> Agregar(Usuario entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> CambiarContrasena(Usuario usuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> CambiarPerfil(Usuario usuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> Eliminar(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Usuario> ObtenerPorId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<Usuario>> ObtenerTodos()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> ValidarContrasena(Usuario usuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<(bool resultado, Usuario usuario)> ValidarDatosLogin(Usuario datosLoginUsuario)
-        {
-            throw new NotImplementedException();
-        }
-
-        /*public async Task<bool> Actualizar(Usuario entity)
+        
+        public async Task<bool> Actualizar(Usuario entity)
         {
             if (entity == null)
             {
-                throw new ArgumentNullException(null_perfil);
+                throw new ArgumentNullException(null_Usuario);
             }
-            return await _repository.Actualizar(entity);
+            return await _repositorio.Actualizar(entity);
         }
 
         public async Task<Usuario> Agregar(Usuario entity)
         {
             if (entity == null)
             {
-                throw new ArgumentNullException(null_perfil);
+                throw new ArgumentNullException(null_Usuario);
             }
-            await _repository.Agregar(entity);
+            await _repositorio.Agregar(entity);
             return entity;
         }
 
         public async Task<bool> CambiarContrasena(Usuario usuario)
         {
-            return await _repository.CambiarContrasena(usuario);
+            return await _repositorio.CambiarContrasena(usuario);
         }
 
         public async Task<bool> CambiarPerfil(Usuario usuario)
         {
-            return await _repository.CambiarPerfil(usuario);
+            return await _repositorio.CambiarPerfil(usuario);
         }
 
         public async Task<bool> Eliminar(int id)
         {
             try
             {
-                return await _repository.Eliminar(id);
+                return await _repositorio.Eliminar(id);
             }
             catch (Exception)
             {
@@ -106,7 +64,7 @@ namespace Incidencias.LogicaDeNegocio
         {
             try
             {
-                return await _repository.ObtenerAsync(id);
+                return await _repositorio.ObtenerAsync(id);
             }
             catch (Exception)
             {
@@ -118,7 +76,7 @@ namespace Incidencias.LogicaDeNegocio
         {
             try
             {
-                return await _repository.ObtenerTodosAsync();
+                return await _repositorio.ObtenerTodosAsync();
             }
             catch (Exception)
             {
@@ -128,12 +86,12 @@ namespace Incidencias.LogicaDeNegocio
 
         public async Task<bool> ValidarContrasena(Usuario usuario)
         {
-            return await _repository.ValidarContrasena(usuario);
+            return await _repositorio.ValidarContrasena(usuario);
         }
 
         public async Task<(bool resultado, Usuario usuario)> ValidarDatosLogin(Usuario datosLoginUsuario)
         {
-            return await _repository.ValidarDatosLogin(datosLoginUsuario);
-        }*/
+            return await _repositorio.ValidarDatosLogin(datosLoginUsuario);
+        }
     }
 }

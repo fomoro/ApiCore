@@ -1,6 +1,5 @@
 ﻿using School.BussinessLogic.Exceptions;
 using School.DomainObjects;
-using School.Interfaces;
 using School.Interfaces.BusinessLogic;
 using School.Interfaces.DataAccess;
 using System;

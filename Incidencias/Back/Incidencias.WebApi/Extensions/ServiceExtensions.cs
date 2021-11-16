@@ -1,4 +1,6 @@
-﻿using Incidencias.InterfacesLogicaDeNegocio;
+﻿using Incidencias.AccesoDatos.Repositorios;
+using Incidencias.InterfacesAccesoDatos;
+using Incidencias.InterfacesLogicaDeNegocio;
 using Incidencias.LogicaDeNegocio;
 using Incidencias.Modelos;
 using Incidencias.WebApi.Services;
@@ -76,11 +78,11 @@ namespace Incidencias.WebApi.Extensions
             services.AddScoped<IProyectosLogica, LogicaDeProyectos>();
             services.AddScoped<IIncidenciasLogica, LogicaDeIncidencia>();
 
-            /*services.AddScoped<IRepositorioGenerico<Perfil>, PerfilesRepositorio>();
+            services.AddScoped<IRepositorioGenerico<Perfil>, PerfilesRepositorio>();
             services.AddScoped<IUsuariosRepositorio, UsuariosRepositorio>();
             services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
             services.AddScoped<IProyectosRepositorio, ProyectosRepositorio>();
-            services.AddScoped<IIncidenciasRepositorio, IncidenciasRepositorio>();*/
+            services.AddScoped<IIncidenciasRepositorio, IncidenciasRepositorio>();
 
 
             services.AddSingleton<TokenService>();
