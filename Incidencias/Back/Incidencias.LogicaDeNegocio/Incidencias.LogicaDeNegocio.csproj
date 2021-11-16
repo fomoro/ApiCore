@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Incidencias.InterfacesAccesoDatos\Incidencias.InterfacesAccesoDatos.csproj" />
+    <ProjectReference Include="..\Incidencias.InterfacesLogicaDeNegocio\Incidencias.InterfacesLogicaDeNegocio.csproj" />
+  </ItemGroup>
+
+</Project>
