@@ -1,5 +1,6 @@
 ﻿using Incidencias.InterfacesAccesoDatos;
 using Incidencias.InterfacesLogicaDeNegocio;
+using Incidencias.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -50,14 +51,14 @@ namespace Incidencias.LogicaDeNegocio
 
         public async Task<Proyecto> ObtenerConDetallesPorId(int id)
         {
-            return await _repository.ObtenerConDetallesPorId(id);
+            return await _repository.ObtenerConDetallesAsync(id);
         }
 
         public async Task<Proyecto> ObtenerPorId(int id)
         {
             try
             {
-                return await _repository.ObtenerPorId(id);
+                return await _repository.ObtenerAsync(id);
             }
             catch (Exception)
             {
@@ -67,14 +68,14 @@ namespace Incidencias.LogicaDeNegocio
 
         public async Task<Proyecto> ObtenerPorNombre(string nombre)
         {
-            return await _repository.ObtenerPorNombre(nombre);
+            return await _repository.ObtenerNombreAsync(nombre);
         }
 
         public async Task<IEnumerable<Proyecto>> ObtenerTodos()
         {
             try
             {
-                return await _repository.ObtenerTodos();
+                return await _repository.ObtenerTodosAsync();
             }
             catch (Exception)
             {
@@ -84,7 +85,7 @@ namespace Incidencias.LogicaDeNegocio
 
         public async Task<IEnumerable<Proyecto>> ObtenerTodosConDetalle()
         {
-            return await _repository.ObtenerTodosConDetalle();
+            return await _repository.ObtenerTodosConDetallesAsync();
         }
     }
 }

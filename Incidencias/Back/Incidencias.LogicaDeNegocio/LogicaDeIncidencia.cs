@@ -1,5 +1,6 @@
 ﻿using Incidencias.InterfacesAccesoDatos;
 using Incidencias.InterfacesLogicaDeNegocio;
+using Incidencias.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -52,7 +53,7 @@ namespace Incidencias.LogicaDeNegocio
         {
             try
             {
-                return await _repository.ObtenerPorId(id);
+                return await _repository.ObtenerAsync(id);
             }
             catch (Exception)
             {
@@ -62,14 +63,14 @@ namespace Incidencias.LogicaDeNegocio
 
         public async Task<Incidencia> ObtenerPorNombre(string nombre)
         {
-            return await _repository.ObtenerPorNombre(nombre);
+            return await _repository.ObtenerNombreAsync(nombre);
         }
 
         public async Task<IEnumerable<Incidencia>> ObtenerTodos()
         {
             try
             {
-                return await _repository.ObtenerTodos();
+                return await _repository.ObtenerTodosAsync();
             }
             catch (Exception)
             {
