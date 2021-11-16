@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Incidencias.InterfacesAccesoDatos;
+using Incidencias.InterfacesLogicaDeNegocio;
 using Incidencias.Modelos;
 using Incidencias.WebApi.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -19,11 +19,11 @@ namespace Incidencias.WebApi.Controllers
     public class UsuariosController : ControllerBase
     {
 
-        private IUsuariosRepositorio _usuariosRepositorio;
+        private IUsuariosLogica _usuariosRepositorio;
         private readonly ILogger<UsuariosController> _logger;
         private readonly IMapper _mapper;
 
-        public UsuariosController(IUsuariosRepositorio _usuariosRepositorio, ILogger<UsuariosController> logger, IMapper mapper)
+        public UsuariosController(IUsuariosLogica _usuariosRepositorio, ILogger<UsuariosController> logger, IMapper mapper)
         {
             this._usuariosRepositorio = _usuariosRepositorio;
             this._logger = logger;
@@ -38,7 +38,7 @@ namespace Incidencias.WebApi.Controllers
         {
             try
             {
-                var usuarios = await _usuariosRepositorio.ObtenerTodosAsync();
+                var usuarios = await _usuariosRepositorio.ObtenerTodos();
                 return _mapper.Map<List<UsuarioRegistroVM>>(usuarios);
             }
             catch (Exception ex)
@@ -56,7 +56,7 @@ namespace Incidencias.WebApi.Controllers
         {            
             try
             {
-                var usuario = await _usuariosRepositorio.ObtenerAsync(id);
+                var usuario = await _usuariosRepositorio.ObtenerPorId(id);
                 if (usuario == null)
                 {
                     return NotFound();

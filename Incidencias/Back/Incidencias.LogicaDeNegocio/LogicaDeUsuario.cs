@@ -1,5 +1,4 @@
-﻿using Incidencias.InterfacesAccesoDatos;
-using Incidencias.InterfacesLogicaDeNegocio;
+﻿using Incidencias.InterfacesLogicaDeNegocio;
 using Incidencias.Modelos;
 using System;
 using System.Collections.Generic;
@@ -11,14 +10,58 @@ namespace Incidencias.LogicaDeNegocio
     {
         private const string null_perfil = "Usuario";
 
-        IUsuariosRepositorio _repository;
-
+        /*IUsuariosRepositorio _repository;
         public LogicaDeUsuario(IUsuariosRepositorio repository)
         {
             _repository = repository;
+        }*/
+
+        public Task<bool> Actualizar(Usuario entity)
+        {
+            throw new NotImplementedException();
         }
 
-        public async Task<bool> Actualizar(Usuario entity)
+        public Task<Usuario> Agregar(Usuario entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> CambiarContrasena(Usuario usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> CambiarPerfil(Usuario usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> Eliminar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Usuario> ObtenerPorId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Usuario>> ObtenerTodos()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> ValidarContrasena(Usuario usuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<(bool resultado, Usuario usuario)> ValidarDatosLogin(Usuario datosLoginUsuario)
+        {
+            throw new NotImplementedException();
+        }
+
+        /*public async Task<bool> Actualizar(Usuario entity)
         {
             if (entity == null)
             {
@@ -91,6 +134,6 @@ namespace Incidencias.LogicaDeNegocio
         public async Task<(bool resultado, Usuario usuario)> ValidarDatosLogin(Usuario datosLoginUsuario)
         {
             return await _repository.ValidarDatosLogin(datosLoginUsuario);
-        }
+        }*/
     }
 }

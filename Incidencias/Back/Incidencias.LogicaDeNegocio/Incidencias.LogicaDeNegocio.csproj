@@ -7,7 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Incidencias.InterfacesAccesoDatos\Incidencias.InterfacesAccesoDatos.csproj" />
     <ProjectReference Include="..\Incidencias.InterfacesLogicaDeNegocio\Incidencias.InterfacesLogicaDeNegocio.csproj" />
-    <ProjectReference Include="..\Incidencias.Modelos\Incidencias.Modelos.csproj" />
   </ItemGroup>
 
 </Project>

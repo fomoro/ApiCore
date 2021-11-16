@@ -1,4 +1,4 @@
-﻿using Incidencias.InterfacesAccesoDatos;
+﻿using Incidencias.InterfacesLogicaDeNegocio;
 using Incidencias.Modelos.Enum;
 using Incidencias.WebApi.ViewModels;
 using Microsoft.AspNetCore.Http;
@@ -15,11 +15,11 @@ namespace Incidencias.WebApi.Controllers
     public class ReportesController : ControllerBase
     {
 
-        private IIncidenciasRepositorio _incidenciasRepositorio;
-        private IProyectosRepositorio _proyectosRepositorio;
+        private IIncidenciasLogica _incidenciasRepositorio;
+        private IProyectosLogica _proyectosRepositorio;
         private readonly ILogger<ReportesController> _logger;
 
-        public ReportesController(IIncidenciasRepositorio _incidenciasRepositorio, ILogger<ReportesController> logger, IProyectosRepositorio _proyectosRepositorio)
+        public ReportesController(IIncidenciasLogica _incidenciasRepositorio, ILogger<ReportesController> logger, IProyectosLogica _proyectosRepositorio)
         {
             this._incidenciasRepositorio = _incidenciasRepositorio;
             this._proyectosRepositorio = _proyectosRepositorio;
@@ -33,7 +33,7 @@ namespace Incidencias.WebApi.Controllers
         {
             try
             {
-                var proyectos = await _proyectosRepositorio.ObtenerTodosConDetallesAsync();
+                var proyectos = await _proyectosRepositorio.ObtenerTodosConDetalle();
                 var resultado = proyectos.Select(x => new
                 {
                     Nombre = x.Nombre,
@@ -57,7 +57,7 @@ namespace Incidencias.WebApi.Controllers
         {
             try
             {
-                var incidencias = await _incidenciasRepositorio.ObtenerTodosAsync();
+                var incidencias = await _incidenciasRepositorio.ObtenerTodos();
                 var resultado = incidencias
                     .Where(x => x.EstatusIncidencia == EstatusIncidencia.Resuelto)
                     .GroupBy(x => x.DesarrolladorId)
@@ -83,7 +83,7 @@ namespace Incidencias.WebApi.Controllers
         {
             try
             {            
-                var incidencias = await _incidenciasRepositorio.ObtenerTodosAsync();
+                var incidencias = await _incidenciasRepositorio.ObtenerTodos();
                 var resultado = from i in incidencias
                         where (i.TesterId == id)
                         && (i.Id == id || incidenciaVM.Id == null)

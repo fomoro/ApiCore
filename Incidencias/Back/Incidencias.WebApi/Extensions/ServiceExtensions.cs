@@ -1,5 +1,5 @@
-﻿using Incidencias.AccesoDatos.Repositorios;
-using Incidencias.InterfacesAccesoDatos;
+﻿using Incidencias.InterfacesLogicaDeNegocio;
+using Incidencias.LogicaDeNegocio;
 using Incidencias.Modelos;
 using Incidencias.WebApi.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -70,13 +70,19 @@ namespace Incidencias.WebApi.Extensions
         #region Implementación de las dependencias
         public static void ConfigureDependencies(this IServiceCollection services)
         {
-            services.AddScoped<IRepositorioGenerico<Perfil>, PerfilesRepositorio>();
+            services.AddScoped<IPerfilesLogica, LogicaDePerfil>();
+            services.AddScoped<IUsuariosLogica, LogicaDeUsuario>();
+            services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
+            services.AddScoped<IProyectosLogica, LogicaDeProyectos>();
+            services.AddScoped<IIncidenciasLogica, LogicaDeIncidencia>();
+
+            /*services.AddScoped<IRepositorioGenerico<Perfil>, PerfilesRepositorio>();
             services.AddScoped<IUsuariosRepositorio, UsuariosRepositorio>();
             services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>();
             services.AddScoped<IProyectosRepositorio, ProyectosRepositorio>();
-            services.AddScoped<IIncidenciasRepositorio, IncidenciasRepositorio>();
+            services.AddScoped<IIncidenciasRepositorio, IncidenciasRepositorio>();*/
 
-            
+
             services.AddSingleton<TokenService>();
         }
         #endregion

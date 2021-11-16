@@ -1,5 +1,4 @@
-﻿using Incidencias.InterfacesAccesoDatos;
-using Incidencias.InterfacesLogicaDeNegocio;
+﻿using Incidencias.InterfacesLogicaDeNegocio;
 using Incidencias.Modelos;
 using System;
 using System.Collections.Generic;
@@ -11,14 +10,44 @@ namespace Incidencias.LogicaDeNegocio
     {
         private const string null_perfil = "Perfil";
 
-        IIncidenciasRepositorio _repository;
+        //IIncidenciasRepositorio _repository;
 
-        public LogicaDeIncidencia(IIncidenciasRepositorio repository)
+        /*public LogicaDeIncidencia(IIncidenciasRepositorio repository)
         {
             _repository = repository;
+        }*/
+
+        public Task<bool> Actualizar(Incidencia entity)
+        {
+            throw new NotImplementedException();
         }
 
-        public async Task<bool> Actualizar(Incidencia entity)
+        public Task<Incidencia> Agregar(Incidencia entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> Eliminar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Incidencia> ObtenerPorId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Incidencia> ObtenerPorNombre(string nombre)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Incidencia>> ObtenerTodos()
+        {
+            throw new NotImplementedException();
+        }
+
+        /*public async Task<bool> Actualizar(Incidencia entity)
         {
             if (entity == null)
             {
@@ -76,6 +105,6 @@ namespace Incidencias.LogicaDeNegocio
             {
                 throw;
             }
-        }
+        }*/
     }
 }

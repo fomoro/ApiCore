@@ -1,5 +1,4 @@
-﻿using Incidencias.InterfacesAccesoDatos;
-using Incidencias.InterfacesLogicaDeNegocio;
+﻿using Incidencias.InterfacesLogicaDeNegocio;
 using Incidencias.Modelos;
 using System;
 using System.Collections.Generic;
@@ -11,14 +10,54 @@ namespace Incidencias.LogicaDeNegocio
     {
         private const string null_Proyecto = "Proyecto";
 
-        IProyectosRepositorio _repository;
+        /*IProyectosRepositorio _repository;
 
         public LogicaDeProyectos(IProyectosRepositorio repository)
         {
             _repository = repository;
+        }*/
+
+        public Task<bool> Actualizar(Proyecto entity)
+        {
+            throw new NotImplementedException();
         }
 
-        public async Task<bool> Actualizar(Proyecto entity)
+        public Task<Proyecto> Agregar(Proyecto entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> Eliminar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Proyecto> ObtenerConDetallesPorId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Proyecto> ObtenerPorId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Proyecto> ObtenerPorNombre(string nombre)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Proyecto>> ObtenerTodos()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Proyecto>> ObtenerTodosConDetalle()
+        {
+            throw new NotImplementedException();
+        }
+
+        /*public async Task<bool> Actualizar(Proyecto entity)
         {
             if (entity == null)
             {
@@ -86,6 +125,6 @@ namespace Incidencias.LogicaDeNegocio
         public async Task<IEnumerable<Proyecto>> ObtenerTodosConDetalle()
         {
             return await _repository.ObtenerTodosConDetallesAsync();
-        }
+        }*/
     }
 }

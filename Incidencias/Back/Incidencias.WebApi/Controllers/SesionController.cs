@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Incidencias.InterfacesAccesoDatos;
+using Incidencias.InterfacesLogicaDeNegocio;
 using Incidencias.Modelos;
 using Incidencias.WebApi.Services;
 using Incidencias.WebApi.ViewModels;
@@ -14,11 +14,11 @@ namespace Incidencias.WebApi.Controllers
     public class SesionController : ControllerBase
     {
 
-        private IUsuariosRepositorio _usuariosRepositorio;
+        private IUsuariosLogica _usuariosRepositorio;
         private IMapper _mapper;
         private TokenService _tokenService;
 
-        public SesionController(IUsuariosRepositorio usuariosRepositorio, IMapper mapper, TokenService tokenService)
+        public SesionController(IUsuariosLogica usuariosRepositorio, IMapper mapper, TokenService tokenService)
         {
             _usuariosRepositorio = usuariosRepositorio;
             _mapper = mapper;
