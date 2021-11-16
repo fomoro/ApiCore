@@ -1,14 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Incidencias.Interfaces.AccesoDatos;
+using Incidencias.Modelos;
+using Incidencias.Modelos.Enum;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 using System.Linq;
-using Incidencias.Modelos;
-using Incidencias.Modelos.Enum;
-using Microsoft.AspNetCore.Identity;
-using Incidencias.Interfaces.AccesoDatos;
+using System.Threading.Tasks;
 
 namespace Incidencias.AccesoDatos.Repositorios
 {
