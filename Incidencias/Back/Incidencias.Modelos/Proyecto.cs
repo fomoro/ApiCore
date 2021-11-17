@@ -9,6 +9,7 @@ namespace Incidencias.Modelos
         public Proyecto()
         {
             Incidencias = new HashSet<Incidencia>();
+            Tareas = new HashSet<Tarea>();
         }
 
         public int Id { get; set; }
@@ -19,5 +20,6 @@ namespace Incidencias.Modelos
 
         public ICollection<UsuariosProyectos> UsuariosProyectos { get; set; }
         public ICollection<Incidencia> Incidencias { get; set; }
+        public ICollection<Tarea> Tareas { get; set; }
     }
 }

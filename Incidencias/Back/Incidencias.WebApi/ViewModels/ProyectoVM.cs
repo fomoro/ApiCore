@@ -11,6 +11,7 @@ namespace Incidencias.WebApi.ViewModels
         public ProyectoVM()
         {
             Incidencias = new List<IncidenciaVM>();
+            Tareas = new List<TareaVM>();
             UsuariosProyectos = new List<UsuariosProyectosVM>();
         }
 
@@ -18,10 +19,10 @@ namespace Incidencias.WebApi.ViewModels
         public string Nombre { get; set; }
         public int CantidadIncidencias { get; set; }
         public DateTime FechaRegistro { get; set; }
-        public DateTime? FechaActualizacion { get; set; }       
+        public DateTime? FechaActualizacion { get; set; }
 
 
-
+        public List<TareaVM> Tareas { get; set; }
         public List<IncidenciaVM> Incidencias { get; set; }
         public List<UsuariosProyectosVM> UsuariosProyectos { get; set; }
     }

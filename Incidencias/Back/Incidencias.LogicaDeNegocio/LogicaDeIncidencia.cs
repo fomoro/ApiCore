@@ -9,7 +9,7 @@ namespace Incidencias.LogicaDeNegocio
 {
     public class LogicaDeIncidencia : IIncidenciasLogica
     {
-        private const string null_perfil = "Perfil";
+        private const string null_incidencia = "Incidencia";
 
         IIncidenciasRepositorio _repository;
 
@@ -22,8 +22,16 @@ namespace Incidencias.LogicaDeNegocio
         {
             if (entity == null)
             {
-                throw new ArgumentNullException(null_perfil);
+                throw new ArgumentNullException(null_incidencia);
             }
+
+            if (entity.EstatusIncidencia == Modelos.Enum.EstatusIncidencia.Resuelto) {
+                if (entity.Duracion <= 0)
+                {
+                    throw new ArgumentException("Debe Ingresar Duracion");
+                }
+            }
+
             return await _repository.Actualizar(entity);
         }
 
@@ -31,7 +39,7 @@ namespace Incidencias.LogicaDeNegocio
         {
             if (entity == null)
             {
-                throw new ArgumentNullException(null_perfil);
+                throw new ArgumentNullException(null_incidencia);
             }
             await _repository.Agregar(entity);
             return entity;

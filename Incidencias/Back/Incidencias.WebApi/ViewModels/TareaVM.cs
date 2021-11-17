@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace Incidencias.WebApi.ViewModels
 {
-    public class IncidenciaVM
+    public class TareaVM
     {
-        public int Id { get; set; }        
+        public int Id { get; set; }
+        
         public string Nombre { get; set; }
-        public string Descripcion { get; set; }
-        public EstatusIncidencia EstatusIncidencia { get; set; }
-        public float Version { get; set; }
+        public decimal Costo { get; set; }
         public int Duracion { get; set; }
 
 
         public int ProyectoId { get; set; }
-        public int DesarrolladorId { get; set; }
-        public int TesterId { get; set; }
     }
 
 }

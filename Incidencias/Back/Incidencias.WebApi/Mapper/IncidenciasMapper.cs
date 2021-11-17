@@ -39,6 +39,9 @@ namespace Incidencias.WebApi.Mapper
             this.CreateMap<Incidencia, IncidenciaVM>()                
                 .ReverseMap();
 
+            this.CreateMap<Tarea, TareaVM>()
+                .ReverseMap();
+
             this.CreateMap<UsuariosProyectos, UsuariosProyectosVM>()
                 .ForMember(u => u.NombreUsuario, p => p.MapFrom(u => u.Usuario.Username))
                 .ReverseMap()

@@ -1,9 +1,4 @@
 ﻿using Incidencias.Modelos.Enum;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Incidencias.Modelos
 {
@@ -14,9 +9,13 @@ namespace Incidencias.Modelos
         public string Descripcion { get; set; }
         public EstatusIncidencia EstatusIncidencia { get; set; }
         public float Version { get; set; }
+        public int Duracion { get; set; }
+
+
         public int ProyectoId { get; set; }
         public virtual Proyecto Proyecto { get; set; }
         public int DesarrolladorId { get; set; }
         public int TesterId { get; set; }
+        
     }
 }

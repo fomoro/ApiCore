@@ -8,6 +8,8 @@ namespace Incidencias.InterfacesAccesoDatos
     {
         Task<Proyecto> ObtenerNombreAsync(string nombre);
         Task<IEnumerable<Proyecto>> ObtenerTodosConDetallesAsync();
-        Task<Proyecto> ObtenerConDetallesAsync(int id);
+        Task<Proyecto> ObtenerConIncidenciasPorId(int id);
+        Task<Proyecto> ObtenerConTareasPorId(int id);
+        Task<IEnumerable<Proyecto>> ObtenerProyectosPorUsuario(int idUsuario);
     }
 }

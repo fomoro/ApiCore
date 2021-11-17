@@ -117,7 +117,7 @@ namespace Incidencias.WebApi.Controllers
             catch (Exception excepcion)
             {
                 _logger.LogError($"Error en {nameof(Put)}: " + excepcion.Message);
-                return BadRequest();
+                return BadRequest(excepcion.Message);
             }
 
    

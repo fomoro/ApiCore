@@ -4,14 +4,16 @@ using Incidencias.AccesoDatos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Incidencias.AccesoDatos.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20211117193930_updateData")]
+    partial class updateData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -419,21 +421,21 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 1,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 478, DateTimeKind.Local).AddTicks(4561),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 52, DateTimeKind.Local).AddTicks(4761),
                             Nombre = "Facturacion"
                         },
                         new
                         {
                             Id = 2,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(1864),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(2746),
                             Nombre = "Financiero"
                         },
                         new
                         {
                             Id = 3,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(1897),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(2779),
                             Nombre = "Salud"
                         });
                 });
@@ -808,7 +810,7 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 2,
                             Apellidos = "Valente",
-                            CostoHora = 1000m,
+                            CostoHora = 0m,
                             Email = "viviana@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Viviana",
@@ -820,7 +822,7 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 3,
                             Apellidos = "Lopez",
-                            CostoHora = 1900m,
+                            CostoHora = 0m,
                             Email = "maria@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Maria",
@@ -832,7 +834,7 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 4,
                             Apellidos = "Martinez",
-                            CostoHora = 1800m,
+                            CostoHora = 0m,
                             Email = "pedro@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Pedro",
@@ -844,7 +846,7 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 5,
                             Apellidos = "Perez",
-                            CostoHora = 1400m,
+                            CostoHora = 0m,
                             Email = "juan@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Juan",
@@ -856,7 +858,7 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 6,
                             Apellidos = "Perez",
-                            CostoHora = 1300m,
+                            CostoHora = 0m,
                             Email = "silvina@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Silvina",
@@ -894,77 +896,77 @@ namespace Incidencias.AccesoDatos.Migrations
                         new
                         {
                             Id = 1,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(7473),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(8319),
                             ProyectoId = 1,
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 2,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8310),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(9221),
                             ProyectoId = 2,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 3,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8332),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(9243),
                             ProyectoId = 3,
                             UsuarioId = 5
                         },
                         new
                         {
                             Id = 4,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8348),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(9258),
                             ProyectoId = 1,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 5,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8362),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(9273),
                             ProyectoId = 2,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 6,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8380),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(9290),
                             ProyectoId = 2,
                             UsuarioId = 3
                         },
                         new
                         {
                             Id = 7,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8394),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(9304),
                             ProyectoId = 2,
                             UsuarioId = 4
                         },
                         new
                         {
                             Id = 8,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8407),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(9317),
                             ProyectoId = 2,
                             UsuarioId = 5
                         },
                         new
                         {
                             Id = 9,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8420),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(9330),
                             ProyectoId = 3,
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 10,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8436),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(9344),
                             ProyectoId = 3,
                             UsuarioId = 4
                         },
                         new
                         {
                             Id = 11,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8450),
+                            FechaRegistro = new DateTime(2021, 11, 17, 14, 39, 30, 53, DateTimeKind.Local).AddTicks(9357),
                             ProyectoId = 3,
                             UsuarioId = 5
                         });

@@ -4,14 +4,16 @@ using Incidencias.AccesoDatos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Incidencias.AccesoDatos.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20211117023411_TablaTareas")]
+    partial class TablaTareas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,9 +33,6 @@ namespace Incidencias.AccesoDatos.Migrations
 
                     b.Property<string>("Descripcion")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Duracion")
-                        .HasColumnType("int");
 
                     b.Property<int>("EstatusIncidencia")
                         .HasColumnType("int");
@@ -62,7 +61,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 1,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 2,
                             EstatusIncidencia = 2,
                             Nombre = "incidencia a",
                             ProyectoId = 1,
@@ -74,7 +72,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 2,
                             DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            Duracion = 3,
                             EstatusIncidencia = 2,
                             Nombre = "incidencia b",
                             ProyectoId = 1,
@@ -86,7 +83,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 3,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 4,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia c",
                             ProyectoId = 1,
@@ -98,7 +94,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 4,
                             DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            Duracion = 5,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia ad",
                             ProyectoId = 1,
@@ -110,7 +105,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 5,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 1,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia e",
                             ProyectoId = 1,
@@ -122,7 +116,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 6,
                             DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            Duracion = 3,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia df",
                             ProyectoId = 1,
@@ -134,7 +127,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 7,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 5,
                             EstatusIncidencia = 2,
                             Nombre = "incidencia 1",
                             ProyectoId = 1,
@@ -146,7 +138,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 8,
                             DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            Duracion = 8,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia 40",
                             ProyectoId = 1,
@@ -158,7 +149,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 9,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 2,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia g",
                             ProyectoId = 2,
@@ -170,7 +160,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 10,
                             DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            Duracion = 4,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia 564",
                             ProyectoId = 2,
@@ -182,7 +171,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 11,
                             DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            Duracion = 3,
                             EstatusIncidencia = 2,
                             Nombre = "incidencia d1f",
                             ProyectoId = 2,
@@ -194,7 +182,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 12,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 4,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia ol",
                             ProyectoId = 2,
@@ -206,7 +193,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 13,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 6,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia aew",
                             ProyectoId = 2,
@@ -218,7 +204,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 14,
                             DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            Duracion = 7,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia afw",
                             ProyectoId = 2,
@@ -230,7 +215,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 15,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 8,
                             EstatusIncidencia = 2,
                             Nombre = "incidencia aww",
                             ProyectoId = 3,
@@ -242,7 +226,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 16,
                             DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            Duracion = 1,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia a598",
                             ProyectoId = 3,
@@ -254,7 +237,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 17,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 5,
                             EstatusIncidencia = 2,
                             Nombre = "incidencia a369",
                             ProyectoId = 3,
@@ -266,7 +248,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 18,
                             DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            Duracion = 6,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia a963",
                             ProyectoId = 3,
@@ -278,7 +259,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 19,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 7,
                             EstatusIncidencia = 2,
                             Nombre = "incidencia a1244",
                             ProyectoId = 3,
@@ -290,7 +270,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 20,
                             DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            Duracion = 8,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia 74568",
                             ProyectoId = 3,
@@ -302,7 +281,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 21,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 5,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia carro",
                             ProyectoId = 2,
@@ -314,7 +292,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 22,
                             DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            Duracion = 8,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia tejado",
                             ProyectoId = 2,
@@ -326,7 +303,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 23,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 2,
                             EstatusIncidencia = 2,
                             Nombre = "incidencia politico",
                             ProyectoId = 2,
@@ -338,7 +314,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 24,
                             DesarrolladorId = 3,
                             Descripcion = " carreta ",
-                            Duracion = 3,
                             EstatusIncidencia = 1,
                             Nombre = "incidencia casa",
                             ProyectoId = 2,
@@ -350,7 +325,6 @@ namespace Incidencias.AccesoDatos.Migrations
                             Id = 25,
                             DesarrolladorId = 2,
                             Descripcion = " carreta ",
-                            Duracion = 4,
                             EstatusIncidencia = 2,
                             Nombre = "incidencia tes",
                             ProyectoId = 2,
@@ -419,21 +393,21 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 1,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 478, DateTimeKind.Local).AddTicks(4561),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 427, DateTimeKind.Local).AddTicks(2665),
                             Nombre = "Facturacion"
                         },
                         new
                         {
                             Id = 2,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(1864),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 428, DateTimeKind.Local).AddTicks(1993),
                             Nombre = "Financiero"
                         },
                         new
                         {
                             Id = 3,
                             EstatusProyecto = 1,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(1897),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 428, DateTimeKind.Local).AddTicks(2040),
                             Nombre = "Salud"
                         });
                 });
@@ -462,296 +436,6 @@ namespace Incidencias.AccesoDatos.Migrations
                     b.HasIndex("ProyectoId");
 
                     b.ToTable("Tareas");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Costo = 100m,
-                            Duracion = 1,
-                            Nombre = "Tarea a",
-                            ProyectoId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Costo = 300m,
-                            Duracion = 2,
-                            Nombre = "Tarea b",
-                            ProyectoId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Costo = 200m,
-                            Duracion = 3,
-                            Nombre = "Tarea c",
-                            ProyectoId = 1
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Costo = 30m,
-                            Duracion = 4,
-                            Nombre = "Tarea d",
-                            ProyectoId = 1
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Costo = 50m,
-                            Duracion = 5,
-                            Nombre = "Tarea e",
-                            ProyectoId = 1
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Costo = 120m,
-                            Duracion = 10,
-                            Nombre = "Tarea f",
-                            ProyectoId = 1
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Costo = 130m,
-                            Duracion = 11,
-                            Nombre = "Tarea g",
-                            ProyectoId = 1
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Costo = 560m,
-                            Duracion = 4,
-                            Nombre = "Tarea h",
-                            ProyectoId = 1
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Costo = 60m,
-                            Duracion = 3,
-                            Nombre = "Tarea i",
-                            ProyectoId = 1
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Costo = 110m,
-                            Duracion = 2,
-                            Nombre = "Tarea j",
-                            ProyectoId = 1
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Costo = 210m,
-                            Duracion = 5,
-                            Nombre = "Tarea k",
-                            ProyectoId = 1
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Costo = 250m,
-                            Duracion = 1,
-                            Nombre = "Tarea l",
-                            ProyectoId = 1
-                        },
-                        new
-                        {
-                            Id = 13,
-                            Costo = 60m,
-                            Duracion = 11,
-                            Nombre = "Tarea 11",
-                            ProyectoId = 2
-                        },
-                        new
-                        {
-                            Id = 14,
-                            Costo = 710m,
-                            Duracion = 2,
-                            Nombre = "Tarea 12",
-                            ProyectoId = 2
-                        },
-                        new
-                        {
-                            Id = 15,
-                            Costo = 80m,
-                            Duracion = 3,
-                            Nombre = "Tarea 13",
-                            ProyectoId = 2
-                        },
-                        new
-                        {
-                            Id = 16,
-                            Costo = 920m,
-                            Duracion = 31,
-                            Nombre = "Tarea 14",
-                            ProyectoId = 2
-                        },
-                        new
-                        {
-                            Id = 17,
-                            Costo = 30m,
-                            Duracion = 15,
-                            Nombre = "Tarea 15",
-                            ProyectoId = 2
-                        },
-                        new
-                        {
-                            Id = 18,
-                            Costo = 130m,
-                            Duracion = 11,
-                            Nombre = "Tarea 16",
-                            ProyectoId = 2
-                        },
-                        new
-                        {
-                            Id = 19,
-                            Costo = 120m,
-                            Duracion = 10,
-                            Nombre = "Tarea 17",
-                            ProyectoId = 2
-                        },
-                        new
-                        {
-                            Id = 20,
-                            Costo = 990m,
-                            Duracion = 8,
-                            Nombre = "Tarea 18",
-                            ProyectoId = 2
-                        },
-                        new
-                        {
-                            Id = 21,
-                            Costo = 880m,
-                            Duracion = 7,
-                            Nombre = "Tarea 19",
-                            ProyectoId = 2
-                        },
-                        new
-                        {
-                            Id = 22,
-                            Costo = 770m,
-                            Duracion = 6,
-                            Nombre = "Tarea 20",
-                            ProyectoId = 2
-                        },
-                        new
-                        {
-                            Id = 23,
-                            Costo = 660m,
-                            Duracion = 5,
-                            Nombre = "Tarea 21",
-                            ProyectoId = 2
-                        },
-                        new
-                        {
-                            Id = 24,
-                            Costo = 550m,
-                            Duracion = 1,
-                            Nombre = "Tarea 22",
-                            ProyectoId = 2
-                        },
-                        new
-                        {
-                            Id = 25,
-                            Costo = 10m,
-                            Duracion = 2,
-                            Nombre = "Tarea a1",
-                            ProyectoId = 3
-                        },
-                        new
-                        {
-                            Id = 26,
-                            Costo = 10m,
-                            Duracion = 3,
-                            Nombre = "Tarea a2",
-                            ProyectoId = 3
-                        },
-                        new
-                        {
-                            Id = 27,
-                            Costo = 10m,
-                            Duracion = 14,
-                            Nombre = "Tarea a3",
-                            ProyectoId = 3
-                        },
-                        new
-                        {
-                            Id = 28,
-                            Costo = 10m,
-                            Duracion = 15,
-                            Nombre = "Tarea a4",
-                            ProyectoId = 3
-                        },
-                        new
-                        {
-                            Id = 29,
-                            Costo = 10m,
-                            Duracion = 11,
-                            Nombre = "Tarea a5",
-                            ProyectoId = 3
-                        },
-                        new
-                        {
-                            Id = 30,
-                            Costo = 10m,
-                            Duracion = 10,
-                            Nombre = "Tarea a6",
-                            ProyectoId = 3
-                        },
-                        new
-                        {
-                            Id = 31,
-                            Costo = 10m,
-                            Duracion = 9,
-                            Nombre = "Tarea a7",
-                            ProyectoId = 3
-                        },
-                        new
-                        {
-                            Id = 32,
-                            Costo = 10m,
-                            Duracion = 8,
-                            Nombre = "Tarea a8",
-                            ProyectoId = 3
-                        },
-                        new
-                        {
-                            Id = 33,
-                            Costo = 10m,
-                            Duracion = 7,
-                            Nombre = "Tarea a9",
-                            ProyectoId = 3
-                        },
-                        new
-                        {
-                            Id = 34,
-                            Costo = 10m,
-                            Duracion = 6,
-                            Nombre = "Tarea b1",
-                            ProyectoId = 3
-                        },
-                        new
-                        {
-                            Id = 35,
-                            Costo = 10m,
-                            Duracion = 1,
-                            Nombre = "Tarea b2",
-                            ProyectoId = 3
-                        },
-                        new
-                        {
-                            Id = 36,
-                            Costo = 10m,
-                            Duracion = 4,
-                            Nombre = "Tarea b3",
-                            ProyectoId = 3
-                        });
                 });
 
             modelBuilder.Entity("Incidencias.Modelos.Usuario", b =>
@@ -763,9 +447,6 @@ namespace Incidencias.AccesoDatos.Migrations
 
                     b.Property<string>("Apellidos")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("CostoHora")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
@@ -796,7 +477,6 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 1,
                             Apellidos = "Somma",
-                            CostoHora = 0m,
                             Email = "agustina@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Agustina",
@@ -808,7 +488,6 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 2,
                             Apellidos = "Valente",
-                            CostoHora = 1000m,
                             Email = "viviana@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Viviana",
@@ -820,7 +499,6 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 3,
                             Apellidos = "Lopez",
-                            CostoHora = 1900m,
                             Email = "maria@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Maria",
@@ -832,7 +510,6 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 4,
                             Apellidos = "Martinez",
-                            CostoHora = 1800m,
                             Email = "pedro@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Pedro",
@@ -844,7 +521,6 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 5,
                             Apellidos = "Perez",
-                            CostoHora = 1400m,
                             Email = "juan@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Juan",
@@ -856,7 +532,6 @@ namespace Incidencias.AccesoDatos.Migrations
                         {
                             Id = 6,
                             Apellidos = "Perez",
-                            CostoHora = 1300m,
                             Email = "silvina@gsoft.com.uy",
                             Estatus = 1,
                             Nombre = "Silvina",
@@ -894,77 +569,77 @@ namespace Incidencias.AccesoDatos.Migrations
                         new
                         {
                             Id = 1,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(7473),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 428, DateTimeKind.Local).AddTicks(9943),
                             ProyectoId = 1,
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 2,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8310),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 429, DateTimeKind.Local).AddTicks(1292),
                             ProyectoId = 2,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 3,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8332),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 429, DateTimeKind.Local).AddTicks(1316),
                             ProyectoId = 3,
                             UsuarioId = 5
                         },
                         new
                         {
                             Id = 4,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8348),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 429, DateTimeKind.Local).AddTicks(1375),
                             ProyectoId = 1,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 5,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8362),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 429, DateTimeKind.Local).AddTicks(1392),
                             ProyectoId = 2,
                             UsuarioId = 2
                         },
                         new
                         {
                             Id = 6,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8380),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 429, DateTimeKind.Local).AddTicks(1413),
                             ProyectoId = 2,
                             UsuarioId = 3
                         },
                         new
                         {
                             Id = 7,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8394),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 429, DateTimeKind.Local).AddTicks(1426),
                             ProyectoId = 2,
                             UsuarioId = 4
                         },
                         new
                         {
                             Id = 8,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8407),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 429, DateTimeKind.Local).AddTicks(1441),
                             ProyectoId = 2,
                             UsuarioId = 5
                         },
                         new
                         {
                             Id = 9,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8420),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 429, DateTimeKind.Local).AddTicks(1454),
                             ProyectoId = 3,
                             UsuarioId = 1
                         },
                         new
                         {
                             Id = 10,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8436),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 429, DateTimeKind.Local).AddTicks(1469),
                             ProyectoId = 3,
                             UsuarioId = 4
                         },
                         new
                         {
                             Id = 11,
-                            FechaRegistro = new DateTime(2021, 11, 17, 14, 45, 10, 479, DateTimeKind.Local).AddTicks(8450),
+                            FechaRegistro = new DateTime(2021, 11, 16, 21, 34, 11, 429, DateTimeKind.Local).AddTicks(1482),
                             ProyectoId = 3,
                             UsuarioId = 5
                         });

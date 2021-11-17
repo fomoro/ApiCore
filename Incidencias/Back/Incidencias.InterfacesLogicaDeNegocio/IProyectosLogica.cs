@@ -8,6 +8,9 @@ namespace Incidencias.InterfacesLogicaDeNegocio
     {
         Task<Proyecto> ObtenerPorNombre(string nombre);
         Task<IEnumerable<Proyecto>> ObtenerTodosConDetalle();
-        Task<Proyecto> ObtenerConDetallesPorId(int id);
+        Task<Proyecto> ObtenerConIncidenciasPorId(int id);
+        Task<Proyecto> ObtenerConTareasPorId(int id);
+        Task<IEnumerable<Proyecto>> GetProyectosPorUsuario(int idUsuario);
+        Task<decimal> GetCostoPorProyecto(int idProyecto);
     }
 }

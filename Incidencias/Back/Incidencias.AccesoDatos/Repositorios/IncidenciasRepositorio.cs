@@ -36,6 +36,7 @@ namespace Incidencias.AccesoDatos.Repositorios
             incidenciaDb.EstatusIncidencia = entity.EstatusIncidencia;
             incidenciaDb.Descripcion = entity.Descripcion;
             incidenciaDb.Version = entity.Version;
+            incidenciaDb.Duracion = entity.Duracion;
 
             try
             {

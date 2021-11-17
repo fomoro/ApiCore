@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 
@@ -16,14 +17,14 @@ namespace Incidencias.AccesoDatos.Repositorios
         private readonly Contexto _contexto;
         private readonly ILogger<PerfilesRepositorio> _logger;
         private DbSet<Proyecto> _dbSet;
-  
+
         public ProyectosRepositorio(Contexto contexto, ILogger<PerfilesRepositorio> logger)
         {
             this._contexto = contexto;
             this._logger = logger;
             this._dbSet = _contexto.Set<Proyecto>();
         }
-        
+
         public async Task<bool> Actualizar(Proyecto entity)
         {
             _dbSet.Attach(entity);
@@ -78,23 +79,57 @@ namespace Incidencias.AccesoDatos.Repositorios
         }
 
         public async Task<Proyecto> ObtenerNombreAsync(string nombre)
-        {                        
+        {
             try
-            {                
-                return await  _dbSet.Where(c => c.Nombre == nombre && c.EstatusProyecto == EstatusProyecto.Activo).FirstOrDefaultAsync();
+            {
+                return await _dbSet.Where(c => c.Nombre == nombre && c.EstatusProyecto == EstatusProyecto.Activo).FirstOrDefaultAsync();
             }
             catch (Exception excepcion)
             {
                 return null;
                 _logger.LogError($"Error en {nameof(ObtenerNombreAsync)}: " + excepcion.Message);
-            }            
+            }
         }
-        public async Task<Proyecto> ObtenerConDetallesAsync(int id)
+
+        public async Task<IEnumerable<Proyecto>> ObtenerProyectosPorUsuario(int idUsuario)
         {
-            return await _dbSet.Include(proyecto => proyecto.UsuariosProyectos)                
+            try
+            {
+                var idsProyectos = await _contexto.Set<UsuariosProyectos>()
+                .Where(c => c.UsuarioId == idUsuario).Select(p => p.ProyectoId ).ToListAsync();
+
+                var proyectosFiltrados = await _dbSet
+                    .Where(allP => idsProyectos.Contains(allP.Id))
+                    .ToListAsync();
+
+                return proyectosFiltrados;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
+        }
+
+
+        public async Task<Proyecto> ObtenerConIncidenciasPorId(int id)
+        {
+            return await _dbSet.Include(proyecto => proyecto.UsuariosProyectos)
                                     .ThenInclude(usuariosProyecto => usuariosProyecto.Usuario)
-                                .Include(proyecto => proyecto.Incidencias)                                
+                                .Include(proyecto => proyecto.Incidencias)
                                 .SingleOrDefaultAsync(c => c.Id == id && c.EstatusProyecto == EstatusProyecto.Activo);
+        }
+
+        public async Task<Proyecto> ObtenerConTareasPorId(int id)
+        {
+            var resultado = await _dbSet.Include(proyecto => proyecto.UsuariosProyectos)
+                                    .ThenInclude(usuariosProyecto => usuariosProyecto.Usuario)
+                                .Include(proyecto => proyecto.Incidencias)
+                                .Include(proyecto => proyecto.Tareas)
+                                .SingleOrDefaultAsync(c => c.Id == id && c.EstatusProyecto == EstatusProyecto.Activo);
+
+            return resultado;
         }
 
         public async Task<IEnumerable<Proyecto>> ObtenerTodosAsync()

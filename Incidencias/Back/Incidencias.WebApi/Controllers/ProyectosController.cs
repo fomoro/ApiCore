@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Incidencias.WebApi.Controllers
@@ -26,8 +27,7 @@ namespace Incidencias.WebApi.Controllers
             this._logger = logger;
             this._mapper = mapper;
         }
-
-        //// GET: api/proyectos
+        
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -89,14 +89,63 @@ namespace Incidencias.WebApi.Controllers
             
         }
 
+        
+        [HttpGet("usuario/{idUsuario}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ProyectoVM>> GetProyectosPorUsuario(int idUsuario)
+        {
+            try
+            {
+                var proyectos = await _proyectosRepositorio.GetProyectosPorUsuario(idUsuario);
+                return Ok(proyectos);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error en {nameof(Get)}: " + ex.Message);
+                return BadRequest();
+            }
 
-        // GET: api/proyectos/5/detalles
+        }
+
+        [HttpGet("{idProyecto}/costoPorProyecto")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<double>> GetCostoPorProyecto(int idProyecto)
+        {
+            try
+            {
+                var proyectos = await _proyectosRepositorio.GetCostoPorProyecto(idProyecto);
+                return Ok(proyectos);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error en {nameof(Get)}: " + ex.Message);
+                return BadRequest();
+            }
+
+        }
+        
+
         [HttpGet("{id}/incidencias")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<ProyectoVM>> GetproyectoConDetalles(int id)
+        public async Task<ActionResult<ProyectoVM>> ObtenerConIncidenciasPorId(int id)
         {
-            var proyecto = await _proyectosRepositorio.ObtenerConDetallesPorId(id);
+            var proyecto = await _proyectosRepositorio.ObtenerConIncidenciasPorId(id);            
+            if (proyecto == null)
+            {
+                return NotFound();
+            }
+            return _mapper.Map<ProyectoVM>(proyecto);
+        }
+
+        [HttpGet("{id}/tareas")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<ActionResult<ProyectoVM>> GetproyectoConTareas(int id)
+        {
+            var proyecto = await _proyectosRepositorio.ObtenerConTareasPorId(id);
             if (proyecto == null)
             {
                 return NotFound();
