@@ -86,9 +86,9 @@ namespace Incidencias.WebApi.Controllers
                 var incidencias = await _incidenciasRepositorio.ObtenerTodos();
                 var resultado = from i in incidencias
                         where (i.TesterId == id)
-                        && (i.Id == id || incidenciaVM.Id == null)
-                        && (i.ProyectoId == incidenciaVM.ProyectoId || incidenciaVM.ProyectoId == null)
-                        && (i.Nombre == incidenciaVM.Nombre || incidenciaVM.Nombre == null)
+                        && (i.Id == incidenciaVM.Id || incidenciaVM.Id == null)
+                        //&& (i.ProyectoId == incidenciaVM.ProyectoId || incidenciaVM.ProyectoId == null)
+                        && (i.Proyecto.Nombre == incidenciaVM.Nombre || incidenciaVM.Nombre == null)
                         && (i.EstatusIncidencia == incidenciaVM.EstatusIncidencia || incidenciaVM.EstatusIncidencia == null)
                         select new
                         {
